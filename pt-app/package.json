@@ -2,6 +2,7 @@
   "name": "pt-app",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -10,6 +11,8 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
+    "concurrently": "^6.2.0",
+    "express": "^4.17.1",
     "formik": "^2.2.6",
     "leaflet": "^1.7.1",
     "react": "^17.0.1",
@@ -24,6 +27,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "server": "node server/index.js",
+    "go": "concurrently --kill-others \"yarn run start\" \"yarn run server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -34,11 +39,11 @@
       "react-app/jest"
     ]
   },
-  "browserslist":  [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
   "devDependencies": {
     "@types/leaflet": "^1.5.19",
     "@types/react-redux": "^7.1.12",
