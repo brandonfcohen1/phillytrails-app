@@ -14,10 +14,7 @@ function App() {
         <Header />
       </nav>
       <main>
-        <Search /> 
         <Map />
-        <Preview />
-        <Form />
       </main>
     </>
   );
