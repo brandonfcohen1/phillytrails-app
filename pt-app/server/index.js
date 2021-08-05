@@ -14,9 +14,9 @@ app.get("/api", (req, res) => {
   res.json({ message: "Hello from server!" });
 });
 
-const db = require('./db');
-app.get('/id', (req, res) => {
-  client.query("SELECT * FROM trails;").then(x => {res.send(x)});
+//const db = require('./db');
+app.get('/api/geojson', (req, res) => {
+  client.query("SELECT ST_AsGeoJSON(trails.*, 'geom') FROM trails;").then(x => {res.send(JSON.stringify(x))});
 })
 
 app.listen(PORT, () => {
