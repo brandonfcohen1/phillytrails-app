@@ -16,7 +16,16 @@ app.get("/api", (req, res) => {
 
 //const db = require('./db');
 app.get('/api/geojson', (req, res) => {
-  client.query("SELECT ST_AsGeoJSON(trails.*, 'geom') FROM trails;").then(x => {res.send(JSON.stringify(x))});
+  client.query("SELECT ST_AsGeoJSON(trails.*, 'geom') FROM trails;").then(x => 
+    {
+      res.send(
+        {
+          "type": "FeatureCollection", 
+          "features": x.rows.map(r=>JSON.parse(r.st_asgeojson))
+        }
+        )
+    }
+    );
 })
 
 app.listen(PORT, () => {

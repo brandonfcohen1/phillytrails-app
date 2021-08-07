@@ -2,22 +2,17 @@ import React from "react";
 import "./App.css";
 
 import Header from "./components/Header/Header";
-import Map from "./components/Map/Map";
+import MapView from "./components/Map/MapView";
 import Search from "./components/Search/Search";
 import Preview from "./components/Preview/Preview";
 import Form from "./components/Form/Form";
 
 function App() {
   return (
-    <>
-      <nav>
-        <Header />
-      </nav>
-      <main>
-        <Map />
-      </main>
-    </>
+    <div className="App">
+      <Header />
+      <MapView/>
+    </div>
   );
 }
-
 export default App;
