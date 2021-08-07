@@ -44,9 +44,21 @@ class MapView extends Component {
                         attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
                         url={mapboxURL}
                         tileSize={512}
-                        zoomOffset={-1}/> 
-                    
-                    {this.state.trails && (<GeoJSON data={this.state.trails}/>)}
+                        zoomOffset={-1}/> {this.state.trails && (<GeoJSON
+                        data={this.state.trails}
+                        style={function (feature) {
+                        switch (feature.properties.type) {
+                            case 'paved trail':
+                                return {color: "#ff0000"};
+                            case 'paved road':
+                                return {color: "#0000ff"};
+                        }
+                    }}
+                        onEachFeature={function onEachFeature(feature, layer) {
+                        if (feature.properties && feature.properties.segment_description) {
+                            layer.bindPopup(feature.properties.segment_description);
+                        }
+                    }}/>)}
 
                 </MapContainer>
             </div>
