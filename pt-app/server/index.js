@@ -14,8 +14,8 @@ app.get("/api", (req, res) => {
   res.json({ message: "Hello from server!" });
 });
 
-//const db = require('./db');
-app.get('/api/geojson', (req, res) => {
+
+app.get('/api/geojson/trails', (req, res) => {
   client.query("SELECT ST_AsGeoJSON(trails.*, 'geom') FROM trails;").then(x => 
     {
       res.send(

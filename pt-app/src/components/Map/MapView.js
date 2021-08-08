@@ -24,7 +24,8 @@ class MapView extends Component {
 
     componentDidMount() {
 
-        fetch("/api/geojson").then(res => res.json()).then(res => {this.setState({trails: res})})
+        // load trails data
+        fetch("/api/geojson/trails").then(res => res.json()).then(res => {this.setState({trails: res})})
 
     }
 
