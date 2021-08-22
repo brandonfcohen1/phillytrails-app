@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {MapContainer, TileLayer, GeoJSON, Popup, LayersControl, Marker} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
 
 // const mapboxURL_streets = "https://api.mapbox.com/styles/v1/brandonfcohen/ckeykvju00t6b19phhhu7en4c/tiles/{" +
 //         "z}/{x}/{y}{r}?access_token=" + process.env.REACT_APP_MAPBOX;
@@ -40,9 +41,9 @@ class MapView extends Component {
                 <MapContainer
                     center={[39.9741171, -75.1914883]}
                     zoom={13}
-                    style={{
-                    height: "100vh"}
-                }>
+                    style={{height: "100vh"}}
+                    renderer = {L.canvas({ tolerance: 10 })}
+                >
 
                     <LayersControl position="topright">
                         <LayersControl.BaseLayer checked name="Streets">

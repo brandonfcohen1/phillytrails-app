@@ -134,7 +134,7 @@ export default function Example() {
                 )}
               </div>
               <div className="pt-4 pb-3 border-t border-gray-700">
-                <div className="flex items-center px-5">
+                {/* <div className="flex items-center px-5">
                   <div className="flex-shrink-0">
                     <img
                       className="h-10 w-10 rounded-full"
@@ -150,7 +150,7 @@ export default function Example() {
                     <span className="sr-only">View notifications</span>
                     <BellIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
-                </div>
+                </div> */}
                 {/* <div className="mt-3 px-2 space-y-1">
                   {profile.map((item) => (
                     <a
