@@ -3,8 +3,8 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
-const navigation = ['Dashboard', 'Team', 'Projects', 'Calendar', 'Reports']
-const profile = ['Your Profile', 'Settings', 'Sign out']
+const navigation = ['Map', 'RouteBuilder', 'About', 'Instagram']
+//const profile = ['Your Profile', 'Settings', 'Sign out']
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -49,14 +49,14 @@ export default function Example() {
                     </div>
                   </div>
                 </div>
-                <div className="hidden md:block">
+                {/* <div className="hidden md:block">
                   <div className="ml-4 flex items-center md:ml-6">
                     <button className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                       <span className="sr-only">View notifications</span>
                       <BellIcon className="h-6 w-6" aria-hidden="true" />
                     </button>
 
-                    {/* Profile dropdown */}
+                    
                     <Menu as="div" className="ml-3 relative">
                       <div>
                         <Menu.Button className="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
@@ -97,7 +97,7 @@ export default function Example() {
                       </Transition>
                     </Menu>
                   </div>
-                </div>
+                </div> */}
                 <div className="-mr-2 flex md:hidden">
                   {/* Mobile menu button */}
                   <Disclosure.Button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
@@ -151,7 +151,7 @@ export default function Example() {
                     <BellIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
                 </div>
-                <div className="mt-3 px-2 space-y-1">
+                {/* <div className="mt-3 px-2 space-y-1">
                   {profile.map((item) => (
                     <a
                       key={item}
@@ -161,7 +161,7 @@ export default function Example() {
                       {item}
                     </a>
                   ))}
-                </div>
+                </div> */}
               </div>
             </Disclosure.Panel>
           </>
