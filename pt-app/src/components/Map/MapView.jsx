@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {MapContainer, TileLayer, GeoJSON, Popup, LayersControl, Marker} from 'react-leaflet';
+import {MapContainer, TileLayer, GeoJSON, Popup, LayersControl, Marker, useMapEvents} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
+import L, { map } from 'leaflet';
 
 // const mapboxURL_streets = "https://api.mapbox.com/styles/v1/brandonfcohen/ckeykvju00t6b19phhhu7en4c/tiles/{" +
 //         "z}/{x}/{y}{r}?access_token=" + process.env.REACT_APP_MAPBOX;
@@ -13,6 +13,17 @@ const mapboxURL = (id) => {
     return "https://api.mapbox.com/styles/v1/brandonfcohen/" + id +  "/tiles/{z}/{x}/{y}{r}?access_token=" + process.env.REACT_APP_MAPBOX;
 }
 
+
+const ClearWideLines = (prev) => {
+    const map = useMapEvents({
+      click() {
+        console.log(prev.prev.options)
+        prev.prev.options.weight = 3;
+      },
+    })
+    return 0;
+}
+
 class MapView extends Component {
     constructor(props) {
         super(props);
@@ -22,7 +33,8 @@ class MapView extends Component {
                 lng: 13.41053
             },
             zoom: 12,
-            trails: ""
+            trails: "",
+            prevClick: "",
         }
     }
 
@@ -33,6 +45,7 @@ class MapView extends Component {
 
     }
 
+
     render() {
         const {currentLocation, zoom} = this.state;
 
@@ -42,7 +55,7 @@ class MapView extends Component {
                     center={[39.9741171, -75.1914883]}
                     zoom={13}
                     style={{height: "100vh"}}
-                    renderer = {L.canvas({ tolerance: 10 })}
+                    renderer = {L.canvas({ tolerance: 5 })}
                 >
 
                     <LayersControl position="topright">
@@ -70,7 +83,6 @@ class MapView extends Component {
                         </LayersControl.Overlay>
 
                         </LayersControl>
-                    
                         
                     {this.state.trails && (<GeoJSON
                             data={this.state.trails}
@@ -99,9 +111,17 @@ class MapView extends Component {
                                 layer.bindPopup(
                                     "<b>" + p.name + "</b><br><i>" + p.length + " mi. " + p.type + "</i><br>" + p.segment_description
                                 );
+                                layer.on('click', (e) => {
+                                    const prev = this.state.prevClick;
+                                    if (prev) {
+                                        prev.options.weight = 3
+                                    };
+                                    e.target.options.weight = 6.5;
+                                    this.setState({currentLocation: e.latLng, prevClick: e.target});
+                                })
                             }
                         }/>)}
-
+                    <ClearWideLines prev={this.state.prevClick} />
                 </MapContainer>
             </div>
         );
