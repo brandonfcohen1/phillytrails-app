@@ -36,9 +36,7 @@ export default function WithAction() {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const handleChange = () => {
-    console.log(1)
     setDrawerOpen(!drawerOpen);
-    console.log(drawerOpen)
   }
 
   return (
