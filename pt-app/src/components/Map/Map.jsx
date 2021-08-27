@@ -1,15 +1,9 @@
 import React, {Component} from 'react';
 import {MapContainer, TileLayer, GeoJSON, Popup, LayersControl, Marker, useMapEvents} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import L, { map } from 'leaflet';
+import L from 'leaflet';
 
 import './Map.css'
-
-// const mapboxURL_streets = "https://api.mapbox.com/styles/v1/brandonfcohen/ckeykvju00t6b19phhhu7en4c/tiles/{" +
-//         "z}/{x}/{y}{r}?access_token=" + process.env.REACT_APP_MAPBOX;
-
-// const mapboxURL_image = "https://api.mapbox.com/styles/v1/brandonfcohen/ckgpuunqr162319n1i6gq8z99/tiles/{" +
-// "z}/{x}/{y}{r}?access_token=" + process.env.REACT_APP_MAPBOX;
 
 const mapboxURL = (id) => {
     return "https://api.mapbox.com/styles/v1/brandonfcohen/" + id +  "/tiles/{z}/{x}/{y}{r}?access_token=" + process.env.REACT_APP_MAPBOX;
@@ -17,9 +11,8 @@ const mapboxURL = (id) => {
 
 
 const ClearWideLines = (prev) => {
-    const map = useMapEvents({
+    useMapEvents({
       click() {
-        console.log(prev.prev.options)
         prev.prev.options.weight = 3;
       },
     })
@@ -49,8 +42,6 @@ class Map extends Component {
 
 
     render() {
-        const {currentLocation, zoom} = this.state;
-
         return (
             <div className="map__container">
                 <MapContainer

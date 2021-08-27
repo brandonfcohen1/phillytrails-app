@@ -2,16 +2,10 @@ import { ReactNode, useState } from 'react';
 import {
   Box,
   Flex,
-  Avatar,
   HStack,
   Link,
   IconButton,
   Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
   useColorModeValue,
   Stack,
@@ -91,10 +85,10 @@ export default function WithAction() {
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
               {Links.map((link) => {
-                if (link == "Instagram") {
-                  <NavLink key={link}>{"test"}</NavLink>
+                if (link === "Instagram") {
+                  return <NavLink key={link}>{"test"}</NavLink>
                 } else {
-                  <NavLink key={link}>{"test"}</NavLink>
+                  return <NavLink key={link}>{"test"}</NavLink>
                 }
               })}
             </Stack>
