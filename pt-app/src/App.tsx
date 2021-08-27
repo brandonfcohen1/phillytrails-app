@@ -1,14 +1,16 @@
 import React from "react";
 import "./App.css";
 
-import MapView from "./components/Map/MapView";
+import Map from "./components/Map/Map";
 import Header from "./components/Header/Header";
+//import RouteBuilder from "./components/RouteBuilder/RouteBuilder";
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      <MapView/>
+      <Map/>
+      {/* <RouteBuilder/> */}
      </div>
   )
 }

@@ -26,7 +26,7 @@ const ClearWideLines = (prev) => {
     return 0;
 }
 
-class MapView extends Component {
+class Map extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -130,4 +130,4 @@ class MapView extends Component {
     }
 }
 
-export default MapView;
+export default Map;
