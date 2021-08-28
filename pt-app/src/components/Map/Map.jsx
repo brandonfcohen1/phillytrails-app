@@ -12,7 +12,8 @@ const mapboxURL = (id) => {
 
 const ClearWideLines = (prev) => {
     useMapEvents({
-      click() {
+      click(e) {
+        console.log(e.latlng);
         try {
             prev.prev.options.weight = 3;
         } catch {}
@@ -107,6 +108,7 @@ class Map extends Component {
                                     "<b>" + p.name + "</b><br><i>" + p.length + " mi. " + p.type + "</i><br>" + p.segment_description
                                 );
                                 layer.on('click', (e) => {
+                                    console.log(e.latlng);
                                     const prev = this.state.prevClick;
                                     if (prev) {
                                         prev.options.weight = 3

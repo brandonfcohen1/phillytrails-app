@@ -12,6 +12,7 @@ import {
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
 import RouteBuilder from '../RouteBuilder/RouteBuilder';
+import Map from '../Map/Map';
 
 const Links = ['Map', 'About', 'Instagram'];
 
@@ -94,7 +95,7 @@ export default function WithAction() {
         ) : null}
       </Box>
 
-      
+      <Map/>
     </>
   );
 }

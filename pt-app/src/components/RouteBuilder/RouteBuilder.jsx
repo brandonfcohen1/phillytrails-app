@@ -1,32 +1,21 @@
 import {
-    Drawer,
-    DrawerBody,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerOverlay,
-    DrawerContent,
-    DrawerCloseButton,
-    Button,
-    Input, 
     Slide,
     VStack,
     Box,
     Flex,
     Heading,
-    IconButton,
-    CloseIcon,
-    onToggle
+    Button,
   } from "@chakra-ui/react"
-import React from 'react'
 
 
 function RouteBuilder(props) {
-    const btnRef = React.useRef()
 
     const handleChange = (event) => {
         props.onChange(false);
     }
 
+    const baseURL = "https://api.mapbox.com/directions/v5/mapbox/walking/";
+    let params = "?geometries=geojson&access_token=" + process.env.REACT_APP_MAPBOX;
 
     return (
         <>
@@ -38,17 +27,17 @@ function RouteBuilder(props) {
                     h="100vh"
                     w="100%"
                     overflowY="scroll">
-                <Box p={5} shadow="md" borderWidth="1px" m="5px" bg="purple.700" color="white">
-                    <Flex> {/* Put in a flex to get the close button on the right */}
-                    <Heading fontSize={28}>Title <span role="img" aria-label="bus">🚌</span> </Heading>
-                    {/* <IconButton aria-label="Close Control Panel" icon={<CloseIcon />} onClick={handleChange} color="black"/> */}
-                    </Flex>
-                    <i> Last updated: January 4, 2021</i>
-                </Box>
-                <Box p={5} shadow="md" borderWidth="1px" m="5px">
-                    <Heading fontSize="xl">Insert more contents!!</Heading>
-                </Box>
-                {/* Insert other contents */}
+                    <Button aria-label="Search database"  onClick={handleChange}  />
+                    <Box p={5} shadow="md" borderWidth="1px" m="5px" bg="purple.700" color="white">
+                        <Flex> {/* Put in a flex to get the close button on the right */}
+                            <Heading fontSize={28}>Title <span role="img" aria-label="bus">🚌</span> </Heading>
+                        </Flex>
+                        <i> Last updated: January 4, 2021</i>
+                    </Box>
+                    <Box p={5} shadow="md" borderWidth="1px" m="5px">
+                        <Heading fontSize="xl">Insert more contents!!</Heading>
+                    </Box>
+                    {/* Insert other contents */}
                 </VStack>
             </Slide>
         </>
