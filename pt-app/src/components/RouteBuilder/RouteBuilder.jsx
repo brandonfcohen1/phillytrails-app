@@ -17,6 +17,11 @@ function RouteBuilder(props) {
     const baseURL = "https://api.mapbox.com/directions/v5/mapbox/walking/";
     let params = "?geometries=geojson&access_token=" + process.env.REACT_APP_MAPBOX;
 
+    const plotRoute = (c1, c2) => {
+        const url = baseURL + c1 + c2 + params;
+        console.log(url)
+    }
+
     return (
         <>
             <Slide direction="bottom" in={props.drawerOpen} style={{height:'30%', width: '100%', zIndex: 1000 }}>

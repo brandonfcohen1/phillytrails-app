@@ -10,21 +10,27 @@ const mapboxURL = (id) => {
 }
 
 
-const ClearWideLines = (prev) => {
-    useMapEvents({
-      click(e) {
-        console.log(e.latlng);
-        try {
-            prev.prev.options.weight = 3;
-        } catch {}
-      },
-    })
-    return 0;
-}
+
 
 const Map = () => {
-    const [trails, setTrails] = useState("")
-    const [prevClick, setPrevClick] = useState("")
+    const [trails, setTrails] = useState("");
+    const [prevClick, setPrevClick] = useState("");
+    const [coord, setCoord] = useState("");
+
+    const ClearWideLines = (prev) => {
+        console.log(prevClick)
+        useMapEvents({
+          click(e) {
+            setCoord(e.latlng);
+            try {
+                prevClick.options.weight = 3;
+            } catch {}
+          },
+        })
+        return 0;
+    }
+
+
 
     useEffect(() => {
 
@@ -97,9 +103,11 @@ const Map = () => {
                                 "<b>" + p.name + "</b><br><i>" + p.length + " mi. " + p.type + "</i><br>" + p.segment_description
                             );
                             layer.on('click', (e) => {
-                                console.log(e.latlng);
-                                const prev = prevClick;
+                                setCoord(e.latlng);
+                                let prev = prevClick;
+                                console.log(prevClick)
                                 if (prev) {
+                                    console.log(1)
                                     prev.options.weight = 3
                                 };
                                 e.target.options.weight = 6.5;
