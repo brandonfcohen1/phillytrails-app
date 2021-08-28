@@ -13,7 +13,9 @@ const mapboxURL = (id) => {
 const ClearWideLines = (prev) => {
     useMapEvents({
       click() {
-        prev.prev.options.weight = 3;
+        try {
+            prev.prev.options.weight = 3;
+        } catch {}
       },
     })
     return 0;
