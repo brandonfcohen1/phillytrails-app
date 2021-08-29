@@ -12,22 +12,31 @@ const mapboxURL = (id) => {
 
 
 
-const Map = () => {
+const Map = (props) => {
     const [trails, setTrails] = useState("");
     const [prevClick, setPrevClick] = useState("");
-    const [coord, setCoord] = useState("");
 
-    const ClearWideLines = (prev) => {
-        console.log(prevClick)
+
+    const ClearWideLines = () => {
         useMapEvents({
           click(e) {
-            setCoord(e.latlng);
+            props.setCoord(e.latlng);
             try {
                 prevClick.options.weight = 3;
             } catch {}
           },
         })
         return 0;
+    }
+
+    const clearPrev = () => {
+        console.log(prevClick)
+        try {
+            prevClick.options.weight = 3
+            
+        } catch (e) {
+            console.log(e);
+        }
     }
 
 
@@ -103,13 +112,8 @@ const Map = () => {
                                 "<b>" + p.name + "</b><br><i>" + p.length + " mi. " + p.type + "</i><br>" + p.segment_description
                             );
                             layer.on('click', (e) => {
-                                setCoord(e.latlng);
-                                let prev = prevClick;
-                                console.log(prevClick)
-                                if (prev) {
-                                    console.log(1)
-                                    prev.options.weight = 3
-                                };
+                                props.setCoord(e.latlng);
+                                clearPrev();
                                 e.target.options.weight = 6.5;
                                 setPrevClick(e.target);
                             })

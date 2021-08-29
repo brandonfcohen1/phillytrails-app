@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode, useState, useContext } from 'react';
 import {
   Box,
   Flex,
@@ -15,8 +15,6 @@ import RouteBuilder from '../RouteBuilder/RouteBuilder';
 import Map from '../Map/Map';
 
 const Links = ['Map', 'About', 'Instagram'];
-
-
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
@@ -35,6 +33,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 export default function WithAction() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [coord, setCoord] = useState("");
 
   const handleChange = () => {
     setDrawerOpen(!drawerOpen);
@@ -78,7 +77,7 @@ export default function WithAction() {
 
         
 
-        <RouteBuilder drawerOpen={drawerOpen} onChange={handleChange}/>
+        <RouteBuilder drawerOpen={drawerOpen} onChange={handleChange} coord={coord}/>
 
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
@@ -95,7 +94,7 @@ export default function WithAction() {
         ) : null}
       </Box>
 
-      <Map/>
+      <Map setCoord={setCoord}/>
     </>
   );
 }

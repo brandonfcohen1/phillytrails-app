@@ -41,8 +41,9 @@ function RouteBuilder(props) {
                     </Box>
                     <Box p={5} shadow="md" borderWidth="1px" m="5px">
                         <Heading fontSize="xl">Insert more contents!!</Heading>
+                        {props.coord.toString()}
                     </Box>
-                    {/* Insert other contents */}
+                    
                 </VStack>
             </Slide>
         </>
