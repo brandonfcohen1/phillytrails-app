@@ -1,4 +1,4 @@
-import { ReactNode, useState, useContext } from 'react';
+import { ReactNode, useState } from 'react';
 import {
   Box,
   Flex,
@@ -34,10 +34,18 @@ export default function WithAction() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [coord, setCoord] = useState("");
+  const [route, setRoute] = useState("");
 
   const handleChange = () => {
     setDrawerOpen(!drawerOpen);
   }
+
+  const handleRoute = (r) => {
+    setRoute(r)
+  }
+  
+
+  //console.log(route);
 
   return (
     <>
@@ -77,7 +85,8 @@ export default function WithAction() {
 
         
 
-        <RouteBuilder drawerOpen={drawerOpen} onChange={handleChange} coord={coord}/>
+        <RouteBuilder drawerOpen={drawerOpen} onChange={handleChange} coord={coord} route={route} handleRoute={handleRoute}/>
+
 
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
@@ -93,6 +102,8 @@ export default function WithAction() {
           </Box>
         ) : null}
       </Box>
+
+      {route}
 
       <Map setCoord={setCoord}/>
     </>

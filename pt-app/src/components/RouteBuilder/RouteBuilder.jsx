@@ -5,22 +5,48 @@ import {
     Flex,
     Heading,
     Button,
-  } from "@chakra-ui/react"
+  } from "@chakra-ui/react";
+
+  import {useState} from 'react';
 
 
+let coord = [];
+let totalDistance = 0;
 function RouteBuilder(props) {
+
+    // this is to render the distance immediately
+    const [,sr] = useState("");
+
 
     const handleChange = (event) => {
         props.onChange(false);
     }
 
-    const baseURL = "https://api.mapbox.com/directions/v5/mapbox/walking/";
-    let params = "?geometries=geojson&access_token=" + process.env.REACT_APP_MAPBOX;
+    const PlotRoute = (c) => {
+        if (props.drawerOpen) {
+            let c_ = [c.lng,c.lat]
+            const baseURL = "https://api.mapbox.com/directions/v5/mapbox/walking/";
+            const params = "?geometries=geojson&access_token=" + process.env.REACT_APP_MAPBOX;
+            const url = baseURL + c_ + ";" + coord[coord.length-1] + params;
 
-    const plotRoute = (c1, c2) => {
-        const url = baseURL + c1 + c2 + params;
-        console.log(url)
+            console.log(coord);
+            if (coord.length > 1) {
+                fetch(url, {method: 'GET'}).then((res) => {return res.json()}).then((res) => {
+                    //setTotalDistance(totalDistance + res.routes[0].distance * 6.214e-4);
+                    totalDistance += res.routes[0].distance * 6.214e-4;
+                    sr();
+                })
+            };
+            coord.push([c_]);
+        }   
     }
+
+    PlotRoute(props.coord);
+    // useEffect(() => {
+    //     PlotRoute(props.coord); 
+    // });
+
+
 
     return (
         <>
@@ -40,8 +66,7 @@ function RouteBuilder(props) {
                         <i> Last updated: January 4, 2021</i>
                     </Box>
                     <Box p={5} shadow="md" borderWidth="1px" m="5px">
-                        <Heading fontSize="xl">Insert more contents!!</Heading>
-                        {props.coord.toString()}
+                        <Heading fontSize="xl">{totalDistance}</Heading>
                     </Box>
                     
                 </VStack>

@@ -30,14 +30,16 @@ const Map = (props) => {
     }
 
     const clearPrev = () => {
-        console.log(prevClick)
+        //console.log(prevClick)
         try {
             prevClick.options.weight = 3
             
         } catch (e) {
-            console.log(e);
+            //console.log(e);
         }
     }
+
+    
 
 
 
@@ -46,7 +48,7 @@ const Map = (props) => {
         // load trails data
         fetch("/api/geojson/trails").then(res => res.json()).then(res => {setTrails(res)})
 
-    });
+    }, []);
 
 
     return (
