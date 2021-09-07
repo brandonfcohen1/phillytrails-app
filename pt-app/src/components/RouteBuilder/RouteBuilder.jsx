@@ -14,7 +14,7 @@ let coord = [];
 let totalDistance = 0;
 function RouteBuilder(props) {
 
-    // this is to render the distance immediately
+    // this is used to render the distance immediately
     const [,sr] = useState("");
 
 
@@ -32,7 +32,6 @@ function RouteBuilder(props) {
             console.log(coord);
             if (coord.length > 1) {
                 fetch(url, {method: 'GET'}).then((res) => {return res.json()}).then((res) => {
-                    //setTotalDistance(totalDistance + res.routes[0].distance * 6.214e-4);
                     totalDistance += res.routes[0].distance * 6.214e-4;
                     sr();
                 })
@@ -42,10 +41,6 @@ function RouteBuilder(props) {
     }
 
     PlotRoute(props.coord);
-    // useEffect(() => {
-    //     PlotRoute(props.coord); 
-    // });
-
 
 
     return (

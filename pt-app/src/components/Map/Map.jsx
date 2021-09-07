@@ -14,6 +14,9 @@ const mapboxURL = (id) => {
 
 const Map = (props) => {
     const [trails, setTrails] = useState("");
+    const [lines, setLines] = useState("");
+    const [stops, setStops] = useState("");
+
     const [prevClick, setPrevClick] = useState("");
 
 
@@ -46,7 +49,14 @@ const Map = (props) => {
     useEffect(() => {
 
         // load trails data
-        fetch("/api/geojson/trails").then(res => res.json()).then(res => {setTrails(res)})
+        fetch("/api/geojson/trails").then(res => res.json()).then(res => {setTrails(res)});
+
+        // load trails data
+        fetch("/api/geojson/transit_lines").then(res => res.json()).then(res => {setLines(res)});
+
+          // load trails data
+        fetch("/api/geojson/transit_stops").then(res => res.json()).then(res => {setStops(res)});
+
 
     }, []);
 
@@ -121,6 +131,35 @@ const Map = (props) => {
                             })
                         }
                     }/>)}
+
+                    {lines && (<GeoJSON
+                        data={lines}
+                        style={(feature) => {
+                            let style = {opacity: 0.8};
+                            switch (feature.properties.type) {
+                                case 'paved trail':
+                                    style['color'] = "#454545";
+                                    break;
+                                case 'paved road':
+                                    style['color'] = "#000000";
+                                    break;
+                                case 'dirt trail':
+                                    style['color'] = "#FF0000";
+                                    break;
+                                case 'dirt road':
+                                    style['color'] = "#800000";
+                                    break;
+                                default:
+                                    style['color'] = "#FF0000";
+                            }
+                        return style;
+                    }}
+                    />)}
+
+                    {stops && (<GeoJSON
+                        data={stops}
+                    />)}
+
                 <ClearWideLines prev={prevClick} />
             </MapContainer>
         </div>
