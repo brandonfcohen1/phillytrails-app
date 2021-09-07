@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {MapContainer, TileLayer, GeoJSON, Popup, LayersControl, Marker, useMapEvents} from 'react-leaflet';
+import {MapContainer, TileLayer, GeoJSON, Popup, LayersControl, Marker, useMapEvents, FeatureGroup} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
@@ -86,15 +86,18 @@ const Map = (props) => {
                             opacity={0.9}
                             zoomOffset={-1}/> 
                     </LayersControl.BaseLayer>
-                    <LayersControl.Overlay name="Marker with popup">
-                        <Marker position={[39.9741171, -75.1914883]}>
-                        <Popup>
-                            A pretty CSS3 popup. <br /> Easily customizable.
-                        </Popup>
-                        </Marker>
+                    <LayersControl.Overlay name="Public Transit">
+                        <FeatureGroup>
+                            {lines && (<GeoJSON
+                                data={lines}
+                            />)}
+                            {stops && (<GeoJSON
+                                data={stops}
+                            />)}
+                        </FeatureGroup>
                     </LayersControl.Overlay>
 
-                    </LayersControl>
+                </LayersControl>
                     
                 {trails && (<GeoJSON
                         data={trails}
@@ -131,34 +134,6 @@ const Map = (props) => {
                             })
                         }
                     }/>)}
-
-                    {lines && (<GeoJSON
-                        data={lines}
-                        style={(feature) => {
-                            let style = {opacity: 0.8};
-                            switch (feature.properties.type) {
-                                case 'paved trail':
-                                    style['color'] = "#454545";
-                                    break;
-                                case 'paved road':
-                                    style['color'] = "#000000";
-                                    break;
-                                case 'dirt trail':
-                                    style['color'] = "#FF0000";
-                                    break;
-                                case 'dirt road':
-                                    style['color'] = "#800000";
-                                    break;
-                                default:
-                                    style['color'] = "#FF0000";
-                            }
-                        return style;
-                    }}
-                    />)}
-
-                    {stops && (<GeoJSON
-                        data={stops}
-                    />)}
 
                 <ClearWideLines prev={prevClick} />
             </MapContainer>
