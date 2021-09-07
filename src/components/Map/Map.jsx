@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {MapContainer, TileLayer, GeoJSON, Popup, LayersControl, Marker, useMapEvents, FeatureGroup} from 'react-leaflet';
+import {MapContainer, TileLayer, GeoJSON, LayersControl, useMapEvents, FeatureGroup, useMap} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
@@ -16,6 +16,7 @@ const Map = (props) => {
     const [trails, setTrails] = useState("");
     const [lines, setLines] = useState("");
     const [stops, setStops] = useState("");
+    const [bikes, setBikes] = useState("");
 
     const [prevClick, setPrevClick] = useState("");
 
@@ -42,6 +43,15 @@ const Map = (props) => {
         }
     }
 
+    const MapZoom = () => {
+        useMapEvents({
+            zoom(e) {
+              console.log(e.target._zoom);
+            }
+        })
+        return null;
+    }
+
     
 
 
@@ -51,11 +61,15 @@ const Map = (props) => {
         // load trails data
         fetch("/api/geojson/trails").then(res => res.json()).then(res => {setTrails(res)});
 
-        // load trails data
+        // load transit lines data
         fetch("/api/geojson/transit_lines").then(res => res.json()).then(res => {setLines(res)});
 
-          // load trails data
+        // load transit stops data
         fetch("/api/geojson/transit_stops").then(res => res.json()).then(res => {setStops(res)});
+
+        // load Indego data
+        fetch("https://kiosks.bicycletransit.workers.dev/phl").then(res => res.json()).then(res => {setBikes(res)});
+        
 
 
     }, []);
@@ -67,7 +81,7 @@ const Map = (props) => {
                 center={[39.9741171, -75.1914883]}
                 zoom={13}
                 style={{height: "calc(100vh - 64px)"}}
-                renderer = {L.canvas({ tolerance: 5 })}
+                renderer = {L.canvas({ tolerance: 5 })} // this allows for line clicks with a tolerance of 5px
             >
 
                 <LayersControl position="topright">
@@ -90,11 +104,24 @@ const Map = (props) => {
                         <FeatureGroup>
                             {lines && (<GeoJSON
                                 data={lines}
+                                onEachFeature={(feature, layer) => {
+                                    const p = feature.properties;
+                                    layer.bindPopup(
+                                        "<b>" + p.Route + "</b><br><i>" + p.agency + "</i> " + p.type
+                                    );
+                                }}
                             />)}
                             {stops && (<GeoJSON
                                 data={stops}
                             />)}
                         </FeatureGroup>
+                    </LayersControl.Overlay>
+                    <LayersControl.Overlay name="Indego">
+                        {bikes && (<GeoJSON
+                            data={bikes}
+                        />)}
+
+                    
                     </LayersControl.Overlay>
 
                 </LayersControl>
@@ -136,6 +163,7 @@ const Map = (props) => {
                     }/>)}
 
                 <ClearWideLines prev={prevClick} />
+                <MapZoom />
             </MapContainer>
         </div>
     );
