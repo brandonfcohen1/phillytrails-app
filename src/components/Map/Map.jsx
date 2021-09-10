@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import {MapContainer, TileLayer, GeoJSON, LayersControl, useMapEvents, FeatureGroup, useMap} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-
+import indego_logo from './indego_logo.png';
 import './Map.css'
 
 const mapboxURL = (id) => {
@@ -52,10 +52,6 @@ const Map = (props) => {
         return null;
     }
 
-    
-
-
-
     useEffect(() => {
 
         // load trails data
@@ -70,9 +66,15 @@ const Map = (props) => {
         // load Indego data
         fetch("https://kiosks.bicycletransit.workers.dev/phl").then(res => res.json()).then(res => {setBikes(res)});
         
-
-
     }, []);
+
+
+    // Custom Icons
+
+    const indegoIcon = new L.icon({
+        iconUrl: './indego_logo.png',
+        iconSize:  [12, 18],
+    });
 
 
     return (
@@ -118,7 +120,10 @@ const Map = (props) => {
                     </LayersControl.Overlay>
                     <LayersControl.Overlay name="Indego">
                         {bikes && (<GeoJSON
-                            data={bikes}
+                            data = {bikes}
+                            pointToLayer = {(feature, latlng) => {
+                                return L.marker(latlng, {icon: indegoIcon});
+                            }}
                         />)}
 
                     
