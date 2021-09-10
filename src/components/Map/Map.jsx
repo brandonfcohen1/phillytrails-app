@@ -2,7 +2,6 @@ import {useEffect, useState} from 'react';
 import {MapContainer, TileLayer, GeoJSON, LayersControl, useMapEvents, FeatureGroup, useMap} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import indego_logo from './indego_logo.png';
 import './Map.css'
 
 const mapboxURL = (id) => {
@@ -72,7 +71,12 @@ const Map = (props) => {
     // Custom Icons
 
     const indegoIcon = new L.icon({
-        iconUrl: './indego_logo.png',
+        iconUrl: '/indego_logo.png',
+        iconSize:  [12, 18],
+    });
+
+    const septaStopIcon = new L.icon ({
+        iconUrl: './septa.png',
         iconSize:  [12, 18],
     });
 
@@ -115,6 +119,9 @@ const Map = (props) => {
                             />)}
                             {stops && (<GeoJSON
                                 data={stops}
+                                pointToLayer = {(feature,latlng) => {
+                                    return L.marker(latlng, {icon: septaStopIcon});
+                                }}
                             />)}
                         </FeatureGroup>
                     </LayersControl.Overlay>
