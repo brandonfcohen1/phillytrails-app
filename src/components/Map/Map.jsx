@@ -124,6 +124,9 @@ const Map = (props) => {
                             pointToLayer = {(feature, latlng) => {
                                 return L.marker(latlng, {icon: indegoIcon});
                             }}
+                            onEachFeature = {(feature, layer) => {
+                                layer.bindPopup("<b>" + feature.properties.name + "</b><br><i>" + feature.properties.addressStreet + "</i><br>Bikes available: " + feature.properties.bikesAvailable + "<br>Docks available: " + feature.properties.docksAvailable);
+                            }}
                         />)}
 
                     
