@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {MapContainer, TileLayer, GeoJSON, LayersControl, useMapEvents, FeatureGroup, useMap} from 'react-leaflet';
+import {MapContainer, TileLayer, GeoJSON, LayersControl, useMapEvents, FeatureGroup} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import './Map.css'
@@ -110,6 +110,22 @@ const Map = (props) => {
                         <FeatureGroup>
                             {lines && (<GeoJSON
                                 data={lines}
+                                style={(feature) => {
+                                    const p = feature.properties;
+                                    let style = {opacity: 0.8};
+                                    if (p.Route === "Broad Street Line") {
+                                        style.color = "#FFA500"
+                                    } else if (p.Route === "Market-Frankford Line") {
+                                        style.color = "#0000FF"
+                                    } else if (p.Route === "Patco Speedline") {
+                                        style.color = "#FF0000"
+                                    } else if (p.type === "Trolley") {
+                                        style.color = "#00FF00"
+                                    } else {
+                                        style.color = "#A020F0"
+                                    }
+                                    return style;
+                                }}
                                 onEachFeature={(feature, layer) => {
                                     const p = feature.properties;
                                     layer.bindPopup(
@@ -121,6 +137,12 @@ const Map = (props) => {
                                 data={stops}
                                 pointToLayer = {(feature,latlng) => {
                                     return L.marker(latlng, {icon: septaStopIcon});
+                                }}
+                                onEachFeature={(feature, layer) => {
+                                    const p = feature.properties;
+                                    layer.bindPopup(
+                                        "<b>" + p.route + "</b>: " + p.station_name
+                                    );
                                 }}
                             />)}
                         </FeatureGroup>
