@@ -1,8 +1,9 @@
 import {useEffect, useState} from 'react';
-import {MapContainer, TileLayer, GeoJSON, LayersControl, useMapEvents, FeatureGroup} from 'react-leaflet';
+import {MapContainer, TileLayer, GeoJSON, LayersControl, useMapEvents, FeatureGroup, useMap} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import './Map.css'
+import './Map.css';
+import Legend from '../Legend/Legend';
 
 const mapboxURL = (id) => {
     return "https://api.mapbox.com/styles/v1/brandonfcohen/" + id +  "/tiles/{z}/{x}/{y}{r}?access_token=" + process.env.REACT_APP_MAPBOX;
@@ -42,14 +43,19 @@ const Map = (props) => {
         }
     }
 
-    const MapZoom = () => {
-        useMapEvents({
-            zoom(e) {
-              console.log(e.target._zoom);
-            }
-        })
-        return null;
-    }
+    // const MapZoom = () => {
+    //     const map = useMap();
+    //     useMapEvents({
+    //         zoom(e) {
+    //             let z = e.target._zoom;
+    //             window.map = map;
+    //             if (z < 14) {
+    //                 map.removeLayer()
+    //             }
+    //         }
+    //     })
+    //     return null;
+    // }
 
     useEffect(() => {
 
@@ -80,6 +86,8 @@ const Map = (props) => {
         iconSize:  [12, 18],
     });
 
+    
+
 
     return (
         <div className="map__container">
@@ -89,6 +97,7 @@ const Map = (props) => {
                 style={{height: "calc(100vh - 64px)"}}
                 renderer = {L.canvas({ tolerance: 5 })} // this allows for line clicks with a tolerance of 5px
             >
+                <Legend />
 
                 <LayersControl position="topright">
                     <LayersControl.BaseLayer checked name="Streets">
@@ -136,7 +145,10 @@ const Map = (props) => {
                             {stops && (<GeoJSON
                                 data={stops}
                                 pointToLayer = {(feature,latlng) => {
-                                    return L.marker(latlng, {icon: septaStopIcon});
+                                    // Hide trolley stops
+                                    if (feature.properties.route.indexOf("Trolley") === -1 ) {
+                                        return L.marker(latlng, {icon: septaStopIcon});
+                                    }
                                 }}
                                 onEachFeature={(feature, layer) => {
                                     const p = feature.properties;
@@ -200,7 +212,7 @@ const Map = (props) => {
                     }/>)}
 
                 <ClearWideLines prev={prevClick} />
-                <MapZoom />
+                {/* <MapZoom /> */}
             </MapContainer>
         </div>
     );
