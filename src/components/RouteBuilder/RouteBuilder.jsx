@@ -7,15 +7,17 @@ import {
     Button,
   } from "@chakra-ui/react";
 
-  import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 
 let coord = [];
-let totalDistance = 0;
+//let totalDistance = 0;
 function RouteBuilder(props) {
 
     // this is used to render the distance immediately
     const [,sr] = useState("");
+
+    const [totalDistance, setTotalDistance] = useState(0);
 
 
     const handleChange = (event) => {
@@ -29,23 +31,29 @@ function RouteBuilder(props) {
             const params = "?geometries=geojson&access_token=" + process.env.REACT_APP_MAPBOX;
             const url = baseURL + c_ + ";" + coord[coord.length-1] + params;
 
-            console.log(coord);
             if (coord.length > 1) {
-                fetch(url, {method: 'GET'}).then((res) => {return res.json()}).then((res) => {
-                    totalDistance += res.routes[0].distance * 6.214e-4;
+                fetch(url).then((res) => {return res.json()}).then((res) => {
+                    //props.handleBuiltRoute(res.routes[0].geometry);
+                    //totalDistance += res.routes[0].distance * 6.214e-4;
+                    setTotalDistance(totalDistance + res.routes[0].distance * 6.214e-4);
                     sr();
                 })
             };
             coord.push([c_]);
         }   
+        return null;
     }
 
-    PlotRoute(props.coord);
+    // useEffect(() => {
+    //     PlotRoute(props.coord);
+    // }, [] )
+    
 
 
     return (
         <>
             <Slide direction="bottom" in={props.drawerOpen} style={{height:'30%', width: '100%', zIndex: 1000 }}>
+                <PlotRoute c={props.coord} />
                 <VStack            
                     color="black"
                     bg="white"

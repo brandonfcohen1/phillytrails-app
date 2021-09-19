@@ -35,6 +35,7 @@ export default function WithAction() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [coord, setCoord] = useState("");
   const [route, setRoute] = useState("");
+  const [builtRoute, setBuiltRoute] = useState("");
 
   const handleChange = () => {
     setDrawerOpen(!drawerOpen);
@@ -42,6 +43,12 @@ export default function WithAction() {
 
   const handleRoute = (r) => {
     setRoute(r)
+  }
+
+  const handleBuiltRoute = (g) => {
+    console.log(g)
+    console.log("handle");
+    setBuiltRoute(g);
   }
   
 
@@ -85,7 +92,14 @@ export default function WithAction() {
 
         
 
-        <RouteBuilder drawerOpen={drawerOpen} onChange={handleChange} coord={coord} route={route} handleRoute={handleRoute}/>
+        <RouteBuilder 
+          drawerOpen={drawerOpen} 
+          onChange={handleChange} 
+          coord={coord} 
+          route={route} 
+          handleRoute={handleRoute}
+          handleBuiltRoute={handleBuiltRoute}
+        />
 
 
         {isOpen ? (
@@ -105,7 +119,10 @@ export default function WithAction() {
 
       {route}
 
-      <Map setCoord={setCoord}/>
+      <Map 
+        setCoord={setCoord}
+        builtRoute={builtRoute}
+      />
     </>
   );
 }

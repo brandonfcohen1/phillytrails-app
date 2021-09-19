@@ -17,6 +17,7 @@ const Map = (props) => {
     const [lines, setLines] = useState("");
     const [stops, setStops] = useState("");
     const [bikes, setBikes] = useState("");
+    const [bikeNetwork, setBikeNetwork] = useState("");
 
     const [prevClick, setPrevClick] = useState("");
 
@@ -34,12 +35,9 @@ const Map = (props) => {
     }
 
     const clearPrev = () => {
-        //console.log(prevClick)
         try {
-            prevClick.options.weight = 3
-            
+            prevClick.options.weight = 3          
         } catch (e) {
-            //console.log(e);
         }
     }
 
@@ -70,6 +68,9 @@ const Map = (props) => {
 
         // load Indego data
         fetch("https://kiosks.bicycletransit.workers.dev/phl").then(res => res.json()).then(res => {setBikes(res)});
+
+        // load bike network data
+        fetch("api/geojson/bike_network").then(res => res.json()).then(res => {setBikeNetwork(res)});
         
     }, []);
 
@@ -86,8 +87,6 @@ const Map = (props) => {
         iconSize:  [12, 18],
     });
 
-    
-
 
     return (
         <div className="map__container">
@@ -98,6 +97,9 @@ const Map = (props) => {
                 renderer = {L.canvas({ tolerance: 5 })} // this allows for line clicks with a tolerance of 5px
             >
                 <Legend />
+
+                
+                 {/* && (<GeoJSON data={props.builtRoute} />)} */}
 
                 <LayersControl position="topright">
                     <LayersControl.BaseLayer checked name="Streets">
@@ -169,11 +171,22 @@ const Map = (props) => {
                                 layer.bindPopup("<b>" + feature.properties.name + "</b><br><i>" + feature.properties.addressStreet + "</i><br>Bikes available: " + feature.properties.bikesAvailable + "<br>Docks available: " + feature.properties.docksAvailable);
                             }}
                         />)}
-
-                    
+                    </LayersControl.Overlay>
+                    <LayersControl.Overlay name="Bike Network">
+                        {bikeNetwork && (<GeoJSON
+                            data = {bikeNetwork}
+                            // pointToLayer = {(feature, latlng) => {
+                            //     return L.marker(latlng, {icon: indegoIcon});
+                            // }}
+                            // onEachFeature = {(feature, layer) => {
+                            //     layer.bindPopup("<b>" + feature.properties.name + "</b><br><i>" + feature.properties.addressStreet + "</i><br>Bikes available: " + feature.properties.bikesAvailable + "<br>Docks available: " + feature.properties.docksAvailable);
+                            // }}
+                        />)}
                     </LayersControl.Overlay>
 
                 </LayersControl>
+
+                {console.log(props.builtRoute)}
                     
                 {trails && (<GeoJSON
                         data={trails}
