@@ -46,7 +46,7 @@ export default function WithAction() {
   }
 
   const handleBuiltRoute = (g) => {
-    console.log(g)
+    console.log("g: " + g)
     console.log("handle");
     setBuiltRoute(g);
   }

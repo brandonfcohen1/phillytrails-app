@@ -99,7 +99,6 @@ const Map = (props) => {
                 <Legend />
 
                 
-                 {/* && (<GeoJSON data={props.builtRoute} />)} */}
 
                 <LayersControl position="topright">
                     <LayersControl.BaseLayer checked name="Streets">
@@ -186,7 +185,6 @@ const Map = (props) => {
 
                 </LayersControl>
 
-                {console.log(props.builtRoute)}
                     
                 {trails && (<GeoJSON
                         data={trails}

@@ -25,14 +25,17 @@ function RouteBuilder(props) {
     }
 
     const PlotRoute = (c) => {
+        console.log("w")
         if (props.drawerOpen) {
             let c_ = [c.lng,c.lat]
+            console.log("c_ " + c_)
             const baseURL = "https://api.mapbox.com/directions/v5/mapbox/walking/";
             const params = "?geometries=geojson&access_token=" + process.env.REACT_APP_MAPBOX;
             const url = baseURL + c_ + ";" + coord[coord.length-1] + params;
 
             if (coord.length > 1) {
                 fetch(url).then((res) => {return res.json()}).then((res) => {
+                    console.log("promise")
                     //props.handleBuiltRoute(res.routes[0].geometry);
                     //totalDistance += res.routes[0].distance * 6.214e-4;
                     setTotalDistance(totalDistance + res.routes[0].distance * 6.214e-4);
@@ -44,16 +47,18 @@ function RouteBuilder(props) {
         return null;
     }
 
-    // useEffect(() => {
-    //     PlotRoute(props.coord);
-    // }, [] )
+    useEffect(() => {
+        PlotRoute(props.coord);
+    })
+
+    //PlotRoute(props.coord);
     
 
 
     return (
         <>
             <Slide direction="bottom" in={props.drawerOpen} style={{height:'30%', width: '100%', zIndex: 1000 }}>
-                <PlotRoute c={props.coord} />
+                {/* <PlotRoute c={props.coord} /> */}
                 <VStack            
                     color="black"
                     bg="white"
