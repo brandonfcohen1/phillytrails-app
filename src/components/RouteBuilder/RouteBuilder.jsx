@@ -6,19 +6,17 @@ import {
     Heading,
     Button,
   } from "@chakra-ui/react";
-
+import { useSelector, useDispatch } from 'react-redux';
 import {useState, useEffect} from 'react';
+import counterSlice, {incrementByAmount, reset} from './counterSlice'
+
 
 
 let coord = [];
-//let totalDistance = 0;
 function RouteBuilder(props) {
 
-    // this is used to render the distance immediately
-    const [,sr] = useState("");
-
-    const [totalDistance, setTotalDistance] = useState(0);
-
+    const count = useSelector((state) => state.counter.value)
+    const dispatch = useDispatch()
 
     const handleChange = (event) => {
         props.onChange(false);
@@ -28,18 +26,13 @@ function RouteBuilder(props) {
         console.log("w")
         if (props.drawerOpen) {
             let c_ = [c.lng,c.lat]
-            console.log("c_ " + c_)
             const baseURL = "https://api.mapbox.com/directions/v5/mapbox/walking/";
             const params = "?geometries=geojson&access_token=" + process.env.REACT_APP_MAPBOX;
             const url = baseURL + c_ + ";" + coord[coord.length-1] + params;
 
             if (coord.length > 1) {
                 fetch(url).then((res) => {return res.json()}).then((res) => {
-                    console.log("promise")
-                    //props.handleBuiltRoute(res.routes[0].geometry);
-                    //totalDistance += res.routes[0].distance * 6.214e-4;
-                    setTotalDistance(totalDistance + res.routes[0].distance * 6.214e-4);
-                    sr();
+                    dispatch(incrementByAmount(res.routes[0].distance * 6.214e-4));
                 })
             };
             coord.push([c_]);
@@ -66,15 +59,16 @@ function RouteBuilder(props) {
                     h="100vh"
                     w="100%"
                     overflowY="scroll">
-                    <Button aria-label="Search database"  onClick={handleChange}  />
+                    <Button aria-label="close" onClick={handleChange}>Close</Button>
+                    <Button aria-label="reset" onClick={() => {dispatch(reset())}}>Reset</Button>
                     <Box p={5} shadow="md" borderWidth="1px" m="5px" bg="purple.700" color="white">
                         <Flex> {/* Put in a flex to get the close button on the right */}
-                            <Heading fontSize={28}>Title <span role="img" aria-label="bus">🚌</span> </Heading>
+                            <Heading fontSize={28}>Title </Heading>
                         </Flex>
                         <i> Last updated: January 4, 2021</i>
                     </Box>
                     <Box p={5} shadow="md" borderWidth="1px" m="5px">
-                        <Heading fontSize="xl">{totalDistance}</Heading>
+                        <Heading fontSize="xl">{count}</Heading>
                     </Box>
                     
                 </VStack>
