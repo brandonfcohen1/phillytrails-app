@@ -1,6 +1,7 @@
 import {
     Slide,
     VStack,
+    HStack,
     Box,
     Flex,
     Heading,
@@ -15,16 +16,32 @@ import counterSlice, {incrementByAmount, reset} from './counterSlice'
 let coord = [];
 function RouteBuilder(props) {
 
+    const [activeMeasure, setActiveMeasure] = useState(false);
+
     const count = useSelector((state) => state.counter.value)
     const dispatch = useDispatch()
 
     const handleChange = (event) => {
         props.onChange(false);
+        setActiveMeasure(false);
+        dispatch(reset());
     }
 
+    const handleActiveMeasure = () => {
+        setActiveMeasure(true);
+    }
+
+    const handleReset = () => {
+        dispatch(reset());
+        setActiveMeasure(false);
+        coord = [];
+    }
+
+    // rewrite this
+
     const PlotRoute = (c) => {
-        console.log("w")
-        if (props.drawerOpen) {
+        if (props.drawerOpen && activeMeasure) {
+            console.log(activeMeasure);
             let c_ = [c.lng,c.lat]
             const baseURL = "https://api.mapbox.com/directions/v5/mapbox/walking/";
             const params = "?geometries=geojson&access_token=" + process.env.REACT_APP_MAPBOX;
@@ -59,8 +76,11 @@ function RouteBuilder(props) {
                     h="100vh"
                     w="100%"
                     overflowY="scroll">
-                    <Button aria-label="close" onClick={handleChange}>Close</Button>
-                    <Button aria-label="reset" onClick={() => {dispatch(reset())}}>Reset</Button>
+                    <HStack>
+                        <Button aria-label="close" onClick={handleChange}>Close</Button>
+                        <Button aria-label="close" onClick={handleActiveMeasure}>Start</Button>
+                        <Button aria-label="reset" onClick={handleReset}>Reset</Button>
+                    </HStack>
                     <Box p={5} shadow="md" borderWidth="1px" m="5px" bg="purple.700" color="white">
                         <Flex> {/* Put in a flex to get the close button on the right */}
                             <Heading fontSize={28}>Title </Heading>
