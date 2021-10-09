@@ -25,3 +25,5 @@ yarn-error.log*
 .eslintcache
 yarn.lock
 .env
+
+/qgis
