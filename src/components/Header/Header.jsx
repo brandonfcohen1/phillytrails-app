@@ -40,7 +40,6 @@ export default function WithAction() {
     setDrawerOpen(!drawerOpen);
   }
 
-  //console.log(route);
 
   return (
     <>

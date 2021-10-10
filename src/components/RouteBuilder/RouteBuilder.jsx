@@ -37,11 +37,10 @@ function RouteBuilder(props) {
         coord = [];
     }
 
-    // rewrite this
 
-    const PlotRoute = (c) => {
+    useEffect(() => {
+        const c = props.coord;
         if (props.drawerOpen && activeMeasure) {
-            console.log(activeMeasure);
             let c_ = [c.lng,c.lat]
             const baseURL = "https://api.mapbox.com/directions/v5/mapbox/walking/";
             const params = "?geometries=geojson&access_token=" + process.env.REACT_APP_MAPBOX;
@@ -49,16 +48,11 @@ function RouteBuilder(props) {
 
             if (coord.length > 1) {
                 fetch(url).then((res) => {return res.json()}).then((res) => {
-                    dispatch(incrementByAmount(res.routes[0].distance * 6.214e-4));
+                    dispatch(incrementByAmount(res)); //res.routes[0].distance * 6.214e-4));
                 })
             };
             coord.push([c_]);
         }   
-        return null;
-    }
-
-    useEffect(() => {
-        PlotRoute(props.coord);
     })
 
     //PlotRoute(props.coord);

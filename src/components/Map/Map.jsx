@@ -4,6 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import './Map.css';
 import Legend from '../Legend/Legend';
+import { useSelector, useDispatch } from 'react-redux';
 
 const mapboxURL = (id) => {
     return "https://api.mapbox.com/styles/v1/brandonfcohen/" + id +  "/tiles/{z}/{x}/{y}{r}?access_token=" + process.env.REACT_APP_MAPBOX;
@@ -87,6 +88,8 @@ const Map = (props) => {
         iconSize:  [12, 18],
     });
 
+    let routebuilt = useSelector((state) => state.counter.route)
+    console.log(routebuilt)
 
     return (
         <div className="map__container">
@@ -97,8 +100,6 @@ const Map = (props) => {
                 renderer = {L.canvas({ tolerance: 5 })} // this allows for line clicks with a tolerance of 5px
             >
                 <Legend />
-
-                
 
                 <LayersControl position="topright">
                     <LayersControl.BaseLayer checked name="Streets">
@@ -184,6 +185,11 @@ const Map = (props) => {
                     </LayersControl.Overlay>
 
                 </LayersControl>
+
+
+                {routebuilt && (
+                    <GeoJSON data={routebuilt} />
+                )}
 
                     
                 {trails && (<GeoJSON
