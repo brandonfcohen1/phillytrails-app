@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const blankGeoJSON = {type: "FeatureCollection", features: [{type: "Feature", properties: {}, geometry: {type: "LineString", coordinates: []}}]};
 
 export const counterSlice = createSlice({
   name: 'counter',
   initialState: {
     value: 0,
-    route: {type: "Feature", geometry: {type: "LineString", coordinates: []}}
+    route: blankGeoJSON
   },
   reducers: {
     increment: (state) => {
@@ -17,13 +18,16 @@ export const counterSlice = createSlice({
     incrementByAmount: (state, action) => {
       state.value += action.payload.routes[0].distance * 6.214e-4
       const coord = action.payload.routes[0].geometry.coordinates
+      console.log(action)
       for (var i = 0; i < coord.length; i++) {
-        state.route.geometry.coordinates.push(coord[i])
+        //console.log(i)
+        state.route.features[0].geometry.coordinates.push(coord[i])
       }
       
     },
     reset: (state) => {
       state.value = 0
+      state.route = blankGeoJSON
     }
   }, 
 })

@@ -57,7 +57,7 @@ function RouteBuilder(props) {
 
     //PlotRoute(props.coord);
     
-
+    const routebuilt = useSelector((state) => state.counter.route)
 
     return (
         <>
@@ -83,6 +83,7 @@ function RouteBuilder(props) {
                     </Box>
                     <Box p={5} shadow="md" borderWidth="1px" m="5px">
                         <Heading fontSize="xl">{count}</Heading>
+                        {JSON.stringify(routebuilt)}
                     </Box>
                     
                 </VStack>

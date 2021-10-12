@@ -42,19 +42,6 @@ const Map = (props) => {
         }
     }
 
-    // const MapZoom = () => {
-    //     const map = useMap();
-    //     useMapEvents({
-    //         zoom(e) {
-    //             let z = e.target._zoom;
-    //             window.map = map;
-    //             if (z < 14) {
-    //                 map.removeLayer()
-    //             }
-    //         }
-    //     })
-    //     return null;
-    // }
 
     useEffect(() => {
 
@@ -71,7 +58,7 @@ const Map = (props) => {
         fetch("https://kiosks.bicycletransit.workers.dev/phl").then(res => res.json()).then(res => {setBikes(res)});
 
         // load bike network data
-        fetch("api/geojson/bike_network").then(res => res.json()).then(res => {setBikeNetwork(res)});
+        fetch("api/geojson/bike_network").then(res => res.json()).then(res => {setBikeNetwork(res);});
         
     }, []);
 
@@ -88,8 +75,7 @@ const Map = (props) => {
         iconSize:  [12, 18],
     });
 
-    let routebuilt = useSelector((state) => state.counter.route)
-    console.log(routebuilt)
+    //const routebuilt = useSelector((state) => state.counter.route)
 
     return (
         <div className="map__container">
@@ -187,9 +173,7 @@ const Map = (props) => {
                 </LayersControl>
 
 
-                {routebuilt && (
-                    <GeoJSON data={routebuilt} />
-                )}
+                {/* {<GeoJSON data={routebuilt} />} */}
 
                     
                 {trails && (<GeoJSON
