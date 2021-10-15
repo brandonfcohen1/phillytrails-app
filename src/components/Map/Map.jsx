@@ -1,18 +1,17 @@
-import { useEffect, useState, useReducer} from "react";
+import { useEffect, useState} from "react";
 import {
   MapContainer,
   TileLayer,
   GeoJSON,
   LayersControl,
   useMapEvents,
-  FeatureGroup,
-  useMap,
+  FeatureGroup
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import "./Map.css";
 import Legend from "../Legend/Legend";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import hash from 'object-hash';
 
 const mapboxURL = (id) => {

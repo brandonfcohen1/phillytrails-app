@@ -54,7 +54,7 @@ function RouteBuilder(props) {
       }
       coord.push([c_]);
     }
-  }, [props.coord]);
+  }, [props.coord, activeMeasure, dispatch, props.drawerOpen]);
 
   return (
     <>

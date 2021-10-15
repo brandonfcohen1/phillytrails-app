@@ -30,7 +30,7 @@ export default function Legend() {
         };
 
         legend.addTo(map);
-    }, []);
+    }, [map]);
 
     return null;
 }

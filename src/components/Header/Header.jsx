@@ -34,7 +34,6 @@ export default function WithAction() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [coord, setCoord] = useState("");
-  const [route, setRoute] = useState("");
 
   const handleChange = () => {
     setDrawerOpen(!drawerOpen);
@@ -83,7 +82,6 @@ export default function WithAction() {
           drawerOpen={drawerOpen} 
           onChange={handleChange} 
           coord={coord} 
-          route={route} 
         />
 
 
@@ -101,8 +99,6 @@ export default function WithAction() {
           </Box>
         ) : null}
       </Box>
-
-      {route}
 
       <Map 
         setCoord={setCoord}
