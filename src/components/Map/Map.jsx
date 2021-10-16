@@ -47,9 +47,7 @@ const Map = (props) => {
   const clearPrev = () => {
     try {
       prevClick.options.weight = 3;
-    } catch (e) {
-      console.log(e);
-    }
+    } catch (e) {}
   };
 
   useEffect(() => {
@@ -82,11 +80,22 @@ const Map = (props) => {
       });
 
     // load bike network data
-    fetch("api/geojson/bike_network")
+    fetch("/api/geojson/bike_network")
       .then((res) => res.json())
       .then((res) => {
         setBikeNetwork(res);
       });
+
+    // get route details based on id
+    if (props.id > 0) {
+      fetch("/api/center/trail/" + props.id)
+        .then((res) => 
+          res.json()
+        )
+        .then((res) => {
+          console.log(res.rows[0]);
+        });
+    }
   }, []);
 
   // Custom Icons
@@ -260,14 +269,6 @@ const Map = (props) => {
                     "</i><br>" +
                     p.segment_description
                 );
-                // layer.on("click", (e) => {
-                //   props.setCoord(e.latlng);
-                //   const f = prevClick;
-                //   console.log(f);
-                //   clearPrev();
-                //   e.target.options.weight = 6.5;
-                //   setPrevClick(e.target);
-                // });
               }}
               eventHandlers={{
                 click: (e) => {
@@ -281,7 +282,6 @@ const Map = (props) => {
           )}
 
           <ClearWideLines prev={prevClick} />
-          {/* <MapZoom /> */}
         </MapContainer>
       </div>
     </>

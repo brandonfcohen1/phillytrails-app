@@ -1,12 +1,37 @@
 import "./App.css";
 import Header from "./components/Header/Header";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+  useParams,
+} from "react-router-dom";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <Header />
-    </div>
-  )
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <div className="App">
+            <Header />
+          </div>
+        </Route>
+        <Route exact path="/route/:id" children={<DirectRoute />} />
+        <Route render={() => <Redirect to="/" />} />
+      </Switch>
+    </Router>
+  );
 }
 
-export default App;
+function DirectRoute() {
+  let { id } = useParams();
+
+  return (
+    <div className="App">
+      <div className="App">
+        <Header id={id}/>
+      </div>
+    </div>
+  );
+}

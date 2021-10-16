@@ -30,7 +30,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
   </Link>
 );
 
-export default function WithAction() {
+export default function WithAction(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [coord, setCoord] = useState("");
@@ -38,6 +38,8 @@ export default function WithAction() {
   const handleChange = () => {
     setDrawerOpen(!drawerOpen);
   }
+
+  const routeId = props.id || 0;
 
 
   return (
@@ -102,6 +104,7 @@ export default function WithAction() {
 
       <Map 
         setCoord={setCoord}
+        id={routeId}
       />
     </>
   );
