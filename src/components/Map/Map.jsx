@@ -1,18 +1,18 @@
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import {
   MapContainer,
   TileLayer,
   GeoJSON,
   LayersControl,
   useMapEvents,
-  FeatureGroup
+  FeatureGroup,
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import "./Map.css";
 import Legend from "../Legend/Legend";
 import { useSelector } from "react-redux";
-import hash from 'object-hash';
+import hash from "object-hash";
 
 const mapboxURL = (id) => {
   return (
@@ -47,7 +47,9 @@ const Map = (props) => {
   const clearPrev = () => {
     try {
       prevClick.options.weight = 3;
-    } catch (e) {}
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   useEffect(() => {
@@ -103,7 +105,6 @@ const Map = (props) => {
 
   return (
     <>
-
       <div className="map__container">
         <MapContainer
           center={[39.9741171, -75.1914883]}
@@ -222,7 +223,7 @@ const Map = (props) => {
           </LayersControl>
 
           {/* this key/hash thing is hacky, but recommended by the author of react-leaflet*/}
-          {routebuilt && (<GeoJSON data={routebuilt} key={hash(routebuilt)} />)}
+          {routebuilt && <GeoJSON data={routebuilt} key={hash(routebuilt)} />}
 
           {trails && (
             <GeoJSON
@@ -259,12 +260,22 @@ const Map = (props) => {
                     "</i><br>" +
                     p.segment_description
                 );
-                layer.on("click", (e) => {
+                // layer.on("click", (e) => {
+                //   props.setCoord(e.latlng);
+                //   const f = prevClick;
+                //   console.log(f);
+                //   clearPrev();
+                //   e.target.options.weight = 6.5;
+                //   setPrevClick(e.target);
+                // });
+              }}
+              eventHandlers={{
+                click: (e) => {
                   props.setCoord(e.latlng);
                   clearPrev();
-                  e.target.options.weight = 6.5;
-                  setPrevClick(e.target);
-                });
+                  e.propagatedFrom.options.weight = 6.5;
+                  setPrevClick(e.propagatedFrom);
+                },
               }}
             />
           )}
