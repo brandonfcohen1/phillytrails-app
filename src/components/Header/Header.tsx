@@ -30,7 +30,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
   </Link>
 );
 
-export default function WithAction(props) {
+export default function WithAction(props: any) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [coord, setCoord] = useState("");

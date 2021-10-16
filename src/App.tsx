@@ -25,7 +25,7 @@ export default function App() {
 }
 
 function DirectRoute() {
-  let { id } = useParams();
+  let id: number = useParams();
 
   return (
     <div className="App">

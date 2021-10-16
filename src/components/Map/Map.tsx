@@ -14,7 +14,7 @@ import Legend from "../Legend/Legend";
 import { useSelector } from "react-redux";
 import hash from "object-hash";
 
-const mapboxURL = (id) => {
+const mapboxURL = (id: number) => {
   return (
     "https://api.mapbox.com/styles/v1/brandonfcohen/" +
     id +
@@ -23,14 +23,14 @@ const mapboxURL = (id) => {
   );
 };
 
-const Map = (props) => {
+const Map = (props: any) => {
   const [trails, setTrails] = useState("");
   const [lines, setLines] = useState("");
   const [stops, setStops] = useState("");
   const [bikes, setBikes] = useState("");
   const [bikeNetwork, setBikeNetwork] = useState("");
 
-  const [prevClick, setPrevClick] = useState("");
+  const [prevClick, setPrevClick] = useState("" as any);
 
   const ClearWideLines = () => {
     useMapEvents({
@@ -89,26 +89,24 @@ const Map = (props) => {
     // get route details based on id
     if (props.id > 0) {
       fetch("/api/center/trail/" + props.id)
-        .then((res) => 
-          res.json()
-        )
+        .then((res) => res.json())
         .then((res) => {
           console.log(res.rows[0]);
         });
     }
-  }, []);
+  }, [props.id]);
 
   // Custom Icons
 
   const indegoIcon = new L.icon({
     iconUrl: "/indego_logo.png",
     iconSize: [12, 18],
-  });
+  }) as any;
 
   const septaStopIcon = new L.icon({
     iconUrl: "./septa.png",
     iconSize: [12, 18],
-  });
+  }) as any;
 
   const routebuilt = useSelector((state) => state.counter.route);
 
