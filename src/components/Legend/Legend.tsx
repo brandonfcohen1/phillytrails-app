@@ -10,10 +10,12 @@ export default function Legend() {
 
     useEffect(() => {
 
-        // Add legend
-        let legend = new L.Control() as any;
 
-        legend.position = 'bottomleft';
+
+        // Add legend
+        let legend = new L.Control();
+
+        legend.options.position = 'bottomleft';
 
         legend.onAdd = function (map: any) {
 
