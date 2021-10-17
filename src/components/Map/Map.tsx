@@ -13,8 +13,9 @@ import "./Map.css";
 import Legend from "../Legend/Legend";
 import { useSelector } from "react-redux";
 import hash from "object-hash";
+import { RootState } from "../../app/store";
 
-const mapboxURL = (id: number) => {
+const mapboxURL = (id: string) => {
   return (
     "https://api.mapbox.com/styles/v1/brandonfcohen/" +
     id +
@@ -41,7 +42,7 @@ const Map = (props: any) => {
         } catch {}
       },
     });
-    return 0;
+    return null;
   };
 
   const clearPrev = () => {
@@ -55,35 +56,35 @@ const Map = (props: any) => {
     fetch("/api/geojson/trails")
       .then((res) => res.json())
       .then((res) => {
-        setTrails(res);
+        setTrails(JSON.stringify(res));
       });
 
     // load transit lines data
     fetch("/api/geojson/transit_lines")
       .then((res) => res.json())
       .then((res) => {
-        setLines(res);
+        setLines(JSON.stringify(res));
       });
 
     // load transit stops data
     fetch("/api/geojson/transit_stops")
       .then((res) => res.json())
       .then((res) => {
-        setStops(res);
+        setStops(JSON.stringify(res));
       });
 
     // load Indego data
     fetch("https://kiosks.bicycletransit.workers.dev/phl")
       .then((res) => res.json())
       .then((res) => {
-        setBikes(res);
+        setBikes(JSON.stringify(res));
       });
 
     // load bike network data
     fetch("/api/geojson/bike_network")
       .then((res) => res.json())
       .then((res) => {
-        setBikeNetwork(res);
+        setBikeNetwork(JSON.stringify(res));
       });
 
     // get route details based on id
@@ -98,17 +99,17 @@ const Map = (props: any) => {
 
   // Custom Icons
 
-  const indegoIcon = new L.icon({
+  const indegoIcon = (L.icon({
     iconUrl: "/indego_logo.png",
     iconSize: [12, 18],
-  }) as any;
+  }) as any);
 
-  const septaStopIcon = new L.icon({
+  const septaStopIcon = (L.icon({
     iconUrl: "./septa.png",
     iconSize: [12, 18],
-  }) as any;
+  }) as any);
 
-  const routebuilt = useSelector((state) => state.counter.route);
+  const routebuilt = useSelector((state: RootState) => state.counter.route);
 
   return (
     <>
@@ -143,10 +144,10 @@ const Map = (props: any) => {
               <FeatureGroup>
                 {lines && (
                   <GeoJSON
-                    data={lines}
+                    data={JSON.parse(lines)}
                     style={(feature) => {
-                      const p = feature.properties;
-                      let style = { opacity: 0.8 };
+                      const p = feature?.properties;
+                      let style = { opacity: 0.8, color : "#A020F0" };
                       if (p.Route === "Broad Street Line") {
                         style.color = "#FFA500";
                       } else if (p.Route === "Market-Frankford Line") {
@@ -155,9 +156,7 @@ const Map = (props: any) => {
                         style.color = "#FF0000";
                       } else if (p.type === "Trolley") {
                         style.color = "#00FF00";
-                      } else {
-                        style.color = "#A020F0";
-                      }
+                      } 
                       return style;
                     }}
                     onEachFeature={(feature, layer) => {
@@ -175,13 +174,14 @@ const Map = (props: any) => {
                 )}
                 {stops && (
                   <GeoJSON
-                    data={stops}
-                    pointToLayer={(feature, latlng) => {
+                    data={JSON.parse(stops)}
+                    // @ts-expect-error
+                    pointToLayer={(feature : Feature<Point> , latlng: LatLng) => {
                       // Hide trolley stops
                       if (feature.properties.route.indexOf("Trolley") === -1) {
                         return L.marker(latlng, { icon: septaStopIcon });
-                      }
-                    }}
+                      } 
+                    }} 
                     onEachFeature={(feature, layer) => {
                       const p = feature.properties;
                       layer.bindPopup(
@@ -195,7 +195,7 @@ const Map = (props: any) => {
             <LayersControl.Overlay name="Indego">
               {bikes && (
                 <GeoJSON
-                  data={bikes}
+                  data={JSON.parse(bikes)}
                   pointToLayer={(feature, latlng) => {
                     return L.marker(latlng, { icon: indegoIcon });
                   }}
@@ -217,7 +217,7 @@ const Map = (props: any) => {
             <LayersControl.Overlay name="Bike Network">
               {bikeNetwork && (
                 <GeoJSON
-                  data={bikeNetwork}
+                  data={JSON.parse(bikeNetwork)}
                   // pointToLayer = {(feature, latlng) => {
                   //     return L.marker(latlng, {icon: indegoIcon});
                   // }}
@@ -234,10 +234,10 @@ const Map = (props: any) => {
 
           {trails && (
             <GeoJSON
-              data={trails}
+              data={JSON.parse(trails)}
               style={(feature) => {
-                let style = { opacity: 0.8 };
-                switch (feature.properties.type) {
+                let style = { opacity: 0.8, color: "#FF0000"};
+                switch (feature?.properties.type) {
                   case "paved trail":
                     style["color"] = "#454545";
                     break;
@@ -279,7 +279,7 @@ const Map = (props: any) => {
             />
           )}
 
-          <ClearWideLines prev={prevClick} />
+          <ClearWideLines />
         </MapContainer>
       </div>
     </>

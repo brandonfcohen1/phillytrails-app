@@ -10,15 +10,16 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { incrementByAmount, reset } from "./counterSlice";
+import { RootState } from "../../app/store";
 
-let coord = [];
-function RouteBuilder(props) {
+let coord: any = [];
+function RouteBuilder(props: any) {
   const [activeMeasure, setActiveMeasure] = useState(false);
 
-  const count = useSelector((state) => state.counter.value);
+  const count = useSelector((state: RootState) => state.counter.value);
   const dispatch = useDispatch();
 
-  const handleChange = (event) => {
+  const handleChange = () => {
     props.onChange(false);
     setActiveMeasure(false);
     dispatch(reset());

@@ -11,9 +11,11 @@ export default function Legend() {
     useEffect(() => {
 
         // Add legend
-        let legend = L.control({position: 'bottomleft'});
+        let legend = new L.Control() as any;
 
-        legend.onAdd = function (map) {
+        legend.position = 'bottomleft';
+
+        legend.onAdd = function (map: any) {
 
             var div = L.DomUtil.create('div', 'info legend'),
                     types = [
