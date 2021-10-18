@@ -6,6 +6,7 @@ import {
   LayersControl,
   useMapEvents,
   FeatureGroup,
+  useMap
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -30,6 +31,7 @@ const Map = (props: any) => {
   const [stops, setStops] = useState("");
   const [bikes, setBikes] = useState("");
   const [bikeNetwork, setBikeNetwork] = useState("");
+  const [center, setCenter] = useState([39.9741171, -75.1914883]);
 
   const [prevClick, setPrevClick] = useState("" as any);
 
@@ -93,34 +95,48 @@ const Map = (props: any) => {
         .then((res) => res.json())
         .then((res) => {
           console.log(res.rows[0]);
+          const parseCoord = res.rows[0].centroid
+            .split("(")[1]
+            .split(")")[0]
+            .split(" ");
+          setCenter([parseFloat(parseCoord[1]), parseFloat(parseCoord[0])]);
         });
     }
   }, [props]);
 
   // Custom Icons
 
-  const indegoIcon = (L.icon({
+  const indegoIcon = L.icon({
     iconUrl: "/indego_logo.png",
     iconSize: [12, 18],
-  }) as any);
+  }) as any;
 
-  const septaStopIcon = (L.icon({
+  const septaStopIcon = L.icon({
     iconUrl: "./septa.png",
     iconSize: [12, 18],
-  }) as any);
+  }) as any;
 
   const routebuilt = useSelector((state: RootState) => state.counter.route);
 
+  // function to set center when loading a specific route
+  const CenterMap = () => {
+    const map = useMap();
+    map.setView([center[0], center[1]], 16);
+    return null;
+  };
+
   return (
     <>
+      
       <div className="map__container">
         <MapContainer
-          center={[39.9741171, -75.1914883]}
+          center={[center[0], center[1]]}
           zoom={13}
           style={{ height: "calc(100vh - 64px)" }}
           renderer={L.canvas({ tolerance: 5 })} // this allows for line clicks with a tolerance of 5px
         >
           <Legend />
+          <CenterMap />
 
           <LayersControl position="topright">
             <LayersControl.BaseLayer checked name="Streets">
@@ -147,7 +163,7 @@ const Map = (props: any) => {
                     data={JSON.parse(lines)}
                     style={(feature) => {
                       const p = feature?.properties;
-                      let style = { opacity: 0.8, color : "#A020F0" };
+                      let style = { opacity: 0.8, color: "#A020F0" };
                       if (p.Route === "Broad Street Line") {
                         style.color = "#FFA500";
                       } else if (p.Route === "Market-Frankford Line") {
@@ -156,7 +172,7 @@ const Map = (props: any) => {
                         style.color = "#FF0000";
                       } else if (p.type === "Trolley") {
                         style.color = "#00FF00";
-                      } 
+                      }
                       return style;
                     }}
                     onEachFeature={(feature, layer) => {
@@ -176,12 +192,12 @@ const Map = (props: any) => {
                   <GeoJSON
                     data={JSON.parse(stops)}
                     // @ts-expect-error
-                    pointToLayer={(feature : Feature<Point> , latlng: LatLng) => {
+                    pointToLayer={(feature: Feature<Point>, latlng: LatLng) => {
                       // Hide trolley stops
                       if (feature.properties.route.indexOf("Trolley") === -1) {
                         return L.marker(latlng, { icon: septaStopIcon });
-                      } 
-                    }} 
+                      }
+                    }}
                     onEachFeature={(feature, layer) => {
                       const p = feature.properties;
                       layer.bindPopup(
@@ -236,7 +252,7 @@ const Map = (props: any) => {
             <GeoJSON
               data={JSON.parse(trails)}
               style={(feature) => {
-                let style = { opacity: 0.8, color: "#FF0000"};
+                let style = { opacity: 0.8, color: "#FF0000" };
                 switch (feature?.properties.type) {
                   case "paved trail":
                     style["color"] = "#454545";
