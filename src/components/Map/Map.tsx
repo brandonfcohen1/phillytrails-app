@@ -48,7 +48,7 @@ const Map = (props: any) => {
   const clearPrev = () => {
     try {
       prevClick.options.weight = 3;
-    } catch (e) {}
+    } catch {}
   };
 
   useEffect(() => {
@@ -87,15 +87,15 @@ const Map = (props: any) => {
         setBikeNetwork(JSON.stringify(res));
       });
 
-    // get route details based on id
-    if (props.id > 0) {
-      fetch("/api/center/trail/" + props.id)
+    // get route details based on id, if /route/id is accessed
+    if (props.id) {
+      fetch("/api/center/trail/" + props.id.id)
         .then((res) => res.json())
         .then((res) => {
           console.log(res.rows[0]);
         });
     }
-  }, [props.id]);
+  }, [props]);
 
   // Custom Icons
 
