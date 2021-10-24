@@ -51,5 +51,5 @@ app.get("/api/center/trail/:id", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server listening on ${PORT}`);
+  console.log(`Server listening on ${PORT}`, '0.0.0.0');
 });
