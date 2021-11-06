@@ -2,6 +2,7 @@
   "name": "pt-app",
   "version": "0.1.0",
   "private": true,
+  "license": "beerware",
   "proxy": "http://localhost:3001",
   "dependencies": {
     "@chakra-ui/icons": "^1.0.15",
