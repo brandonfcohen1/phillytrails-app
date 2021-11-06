@@ -42,7 +42,7 @@ function RouteBuilder(props: any) {
       const baseURL = "https://api.mapbox.com/directions/v5/mapbox/walking/";
       const params =
         "?geometries=geojson&access_token=" + process.env.REACT_APP_MAPBOX;
-      const url = baseURL + c_ + ";" + coord[coord.length - 1] + params;
+      const url = baseURL + coord[coord.length - 1] + ";" + c_ + params;
 
       if (coord.length > 1) {
         fetch(url)
@@ -93,7 +93,6 @@ function RouteBuilder(props: any) {
             color="white"
           >
             <Flex>
-              {" "}
               {/* Put in a flex to get the close button on the right */}
               <Heading fontSize={28}>Title </Heading>
             </Flex>
