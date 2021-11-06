@@ -16,7 +16,8 @@ import { useSelector } from "react-redux";
 import hash from "object-hash";
 import { RootState } from "../../app/store";
 
-import VectorGrid from "./vector-grid";
+import VectorGrid from "./VectorGrid";
+//import {VectorGrid} from './react-leaflet-vectorgrid-v3.js'
 
 const mapboxURL = (id: string) => {
   return (
@@ -55,7 +56,7 @@ const Map = (props: any) => {
     } catch {}
   };
 
-  useEffect(() => {});
+  // useEffect(() => {});
 
   // Custom Icons
 
@@ -254,7 +255,7 @@ const Map = (props: any) => {
             />
           )}
 
-          <ClearWideLines />
+          {/* <ClearWideLines /> */}
         </MapContainer>
       </div>
     </>
