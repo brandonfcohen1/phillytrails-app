@@ -6,7 +6,7 @@ import {
   LayersControl,
   useMapEvents,
   FeatureGroup,
-  useMap
+  useMap,
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -15,6 +15,8 @@ import Legend from "../Legend/Legend";
 import { useSelector } from "react-redux";
 import hash from "object-hash";
 import { RootState } from "../../app/store";
+
+import VectorGrid from "./vector-grid";
 
 const mapboxURL = (id: string) => {
   return (
@@ -53,56 +55,7 @@ const Map = (props: any) => {
     } catch {}
   };
 
-  useEffect(() => {
-    // load trails data
-    fetch("/api/geojson/trails")
-      .then((res) => res.json())
-      .then((res) => {
-        setTrails(JSON.stringify(res));
-      });
-
-    // load transit lines data
-    fetch("/api/geojson/transit_lines")
-      .then((res) => res.json())
-      .then((res) => {
-        setLines(JSON.stringify(res));
-      });
-
-    // load transit stops data
-    fetch("/api/geojson/transit_stops")
-      .then((res) => res.json())
-      .then((res) => {
-        setStops(JSON.stringify(res));
-      });
-
-    // load Indego data
-    fetch("https://kiosks.bicycletransit.workers.dev/phl")
-      .then((res) => res.json())
-      .then((res) => {
-        setBikes(JSON.stringify(res));
-      });
-
-    // load bike network data
-    fetch("/api/geojson/bike_network")
-      .then((res) => res.json())
-      .then((res) => {
-        setBikeNetwork(JSON.stringify(res));
-      });
-
-    // get route details based on id, if /route/id is accessed
-    if (props.id) {
-      fetch("/api/center/trail/" + props.id.id)
-        .then((res) => res.json())
-        .then((res) => {
-          console.log(res.rows[0]);
-          const parseCoord = res.rows[0].centroid
-            .split("(")[1]
-            .split(")")[0]
-            .split(" ");
-          setCenter([parseFloat(parseCoord[1]), parseFloat(parseCoord[0])]);
-        });
-    }
-  }, [props]);
+  useEffect(() => {});
 
   // Custom Icons
 
@@ -125,9 +78,13 @@ const Map = (props: any) => {
     return null;
   };
 
+  const tileOptions = {
+    type: "protobuf",
+    url: "http://localhost:3001/public.trails/{z}/{x}/{y}.pbf",
+  };
+
   return (
     <>
-      
       <div className="map__container">
         <MapContainer
           center={[center[0], center[1]]}
@@ -137,6 +94,7 @@ const Map = (props: any) => {
         >
           <Legend />
           <CenterMap />
+
 
           <LayersControl position="topright">
             <LayersControl.BaseLayer checked name="Streets">
@@ -156,6 +114,7 @@ const Map = (props: any) => {
                 zoomOffset={-1}
               />
             </LayersControl.BaseLayer>
+            <VectorGrid />
             <LayersControl.Overlay name="Public Transit">
               <FeatureGroup>
                 {lines && (
