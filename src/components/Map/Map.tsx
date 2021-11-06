@@ -116,8 +116,6 @@ const Map = (props: any) => {
     iconSize: [12, 18],
   }) as any;
 
-  console.log("build")
-
   const routebuilt = useSelector((state: RootState) => state.counter.route);
 
   // function to set center when loading a specific route

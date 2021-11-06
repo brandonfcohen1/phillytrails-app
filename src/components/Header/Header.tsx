@@ -9,10 +9,12 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
+  Image
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
 import RouteBuilder from '../RouteBuilder/RouteBuilder';
 import Map from '../Map/Map';
+import logo from '/pt_logo.png';
 
 const Links = ['Map', 'About', 'Instagram'];
 
@@ -54,7 +56,7 @@ export default function WithAction(props: any) {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Box>Logo</Box>
+            <Box><Image src = "/pt_logo.png" alt="Logo" boxSize="70%"/></Box>
             <HStack
               as={'nav'}
               spacing={4}
