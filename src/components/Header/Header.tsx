@@ -17,7 +17,7 @@ import Map from "../Map/Map";
 
 const Links = ["Map", "About", "Instagram"];
 
-const linkRef = (heading: any) => {
+const linkRef = (heading: string | undefined) => {
   switch (heading) {
     case 'Map':
       return "/"
@@ -30,7 +30,7 @@ const linkRef = (heading: any) => {
   }
 }
 
-const NavLink = ({ children }: { children: ReactNode }, href: string) => (
+const NavLink = (props: any) => (
   <Link
     px={2}
     py={1}
@@ -39,9 +39,10 @@ const NavLink = ({ children }: { children: ReactNode }, href: string) => (
       textDecoration: "none",
       bg: useColorModeValue("gray.200", "gray.700"),
     }}
-    href={linkRef(children?.toString())}
+    href={props.href}
+    target={props.target}
   >
-    {children}
+    {props.children}
   </Link>
 );
 
@@ -77,7 +78,7 @@ export default function WithAction(props: any) {
               display={{ base: "none", md: "flex" }}
             >
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link} href={"google.com"} target={"_blank"}>{link}</NavLink>
               ))}
             </HStack>
           </HStack>
