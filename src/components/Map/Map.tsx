@@ -30,7 +30,6 @@ const Map = (props: any) => {
   const [lines, setLines] = useState("");
   const [stops, setStops] = useState("");
   const [bikes, setBikes] = useState("");
-  const [bikeNetwork, setBikeNetwork] = useState("");
   const [center, setCenter] = useState([39.9741171, -75.1914883]);
 
   const [prevClick, setPrevClick] = useState("" as any);
@@ -82,13 +81,6 @@ const Map = (props: any) => {
       .then((res) => {
         setBikes(JSON.stringify(res));
       });
-
-    // load bike network data
-    // fetch(process.env.API_URL + "/api/geojson/bike_network")
-    //   .then((res) => res.json())
-    //   .then((res) => {
-    //     setBikeNetwork(JSON.stringify(res));
-    //   });
 
     // get route details based on id, if /route/id is accessed
     if (props.id) {
@@ -229,19 +221,6 @@ const Map = (props: any) => {
                         feature.properties.docksAvailable
                     );
                   }}
-                />
-              )}
-            </LayersControl.Overlay>
-            <LayersControl.Overlay name="Bike Network">
-              {bikeNetwork && (
-                <GeoJSON
-                  data={JSON.parse(bikeNetwork)}
-                  // pointToLayer = {(feature, latlng) => {
-                  //     return L.marker(latlng, {icon: indegoIcon});
-                  // }}
-                  // onEachFeature = {(feature, layer) => {
-                  //     layer.bindPopup("<b>" + feature.properties.name + "</b><br><i>" + feature.properties.addressStreet + "</i><br>Bikes available: " + feature.properties.bikesAvailable + "<br>Docks available: " + feature.properties.docksAvailable);
-                  // }}
                 />
               )}
             </LayersControl.Overlay>

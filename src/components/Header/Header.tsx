@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import {useState } from "react";
 import {
   Box,
   Flex,
@@ -16,19 +16,6 @@ import RouteBuilder from "../RouteBuilder/RouteBuilder";
 import Map from "../Map/Map";
 
 const Links = ["Map", "About", "Instagram"];
-
-const linkRef = (heading: string | undefined) => {
-  switch (heading) {
-    case 'Map':
-      return "/"
-    case 'About':
-      return "/about"
-    case 'Instagram':
-      return 'https://www.instagram.com/phillytrails/'
-    default:
-      return "/"
-  }
-}
 
 const NavLink = (props: any) => (
   <Link
