@@ -62,9 +62,8 @@ function RouteBuilder(props: any) {
       <Slide
         direction="bottom"
         in={props.drawerOpen}
-        style={{ height: "30%", width: "100%", zIndex: 1000 }}
+        style={{ height: "15%", width: "100%", zIndex: 1000 }}
       >
-
         <VStack
           color="black"
           bg="white"
@@ -74,14 +73,27 @@ function RouteBuilder(props: any) {
           overflowY="scroll"
         >
           <HStack>
-            <Button aria-label="close" onClick={handleChange}>
-              Close
-            </Button>
-            <Button aria-label="close" onClick={handleActiveMeasure}>
+            <Button
+              aria-label="close"
+              onClick={handleActiveMeasure}
+              backgroundColor={"#90ee90"}
+              _hover={{ fontWeight: "semibold" }}
+            >
               Start
             </Button>
-            <Button aria-label="reset" onClick={handleReset}>
+            <Button
+              aria-label="reset"
+              onClick={handleReset}
+              backgroundColor={""}
+            >
               Reset
+            </Button>
+            <Button
+              aria-label="close"
+              onClick={handleChange}
+              backgroundColor={"gray"}
+            >
+              Close
             </Button>
           </HStack>
           <Box
@@ -93,13 +105,10 @@ function RouteBuilder(props: any) {
             color="white"
           >
             <Flex>
-              {/* Put in a flex to get the close button on the right */}
-              <Heading fontSize={28}>Title </Heading>
+              <Heading fontSize="xl">
+                {count > 0 ? "Route Distance: " + Math.round(count * 100) / 100 + " mi.": "Press Start"}
+              </Heading>
             </Flex>
-            <i> Last updated: January 4, 2021</i>
-          </Box>
-          <Box p={5} shadow="md" borderWidth="1px" m="5px">
-            <Heading fontSize="xl">{count}</Heading>
           </Box>
         </VStack>
       </Slide>

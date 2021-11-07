@@ -46,7 +46,7 @@ export default function WithAction(props: any) {
 
   return (
     <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
+      <Box bg={useColorModeValue("gray.100", "gray.900")} >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
@@ -80,7 +80,7 @@ export default function WithAction(props: any) {
               onClick={handleChange}
               leftIcon={<AddIcon />}
             >
-              Action
+              RouteBuilder
             </Button>
           </Flex>
         </Flex>
