@@ -166,11 +166,11 @@ const Map = (props: any) => {
                     style={(feature) => {
                       const p = feature?.properties;
                       let style = { opacity: 0.8, color: "#A020F0" };
-                      if (p.Route === "Broad Street Line") {
+                      if (p.route === "Broad Street Line") {
                         style.color = "#FFA500";
-                      } else if (p.Route === "Market-Frankford Line") {
+                      } else if (p.route === "Market-Frankford Line") {
                         style.color = "#0000FF";
-                      } else if (p.Route === "Patco Speedline") {
+                      } else if (p.route === "Patco Speedline") {
                         style.color = "#FF0000";
                       } else if (p.type === "Trolley") {
                         style.color = "#00FF00";
@@ -181,7 +181,7 @@ const Map = (props: any) => {
                       const p = feature.properties;
                       layer.bindPopup(
                         "<b>" +
-                          p.Route +
+                          p.route +
                           "</b><br><i>" +
                           p.agency +
                           "</i> " +
