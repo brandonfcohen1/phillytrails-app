@@ -64,7 +64,7 @@ function RouteBuilder(props: any) {
         in={props.drawerOpen}
         style={{ height: "30%", width: "100%", zIndex: 1000 }}
       >
-        {/* <PlotRoute c={props.coord} /> */}
+
         <VStack
           color="black"
           bg="white"
