@@ -54,22 +54,23 @@ const Map = (props: any) => {
   };
 
   useEffect(() => {
+    console.log(process.env.REACT_APP_API_URL)
     // load trails data
-    fetch("/api/geojson/trails")
+    fetch(process.env.REACT_APP_API_URL + "/api/geojson/trails", {mode: 'cors'})
       .then((res) => res.json())
       .then((res) => {
         setTrails(JSON.stringify(res));
       });
 
     // load transit lines data
-    fetch("/api/geojson/transit_lines")
+    fetch(process.env.REACT_APP_API_URL + "/api/geojson/transit_lines", {mode: 'cors'})
       .then((res) => res.json())
       .then((res) => {
         setLines(JSON.stringify(res));
       });
 
     // load transit stops data
-    fetch("/api/geojson/transit_stops")
+    fetch(process.env.REACT_APP_API_URL + "/api/geojson/transit_stops", {mode: 'cors'})
       .then((res) => res.json())
       .then((res) => {
         setStops(JSON.stringify(res));
@@ -83,11 +84,11 @@ const Map = (props: any) => {
       });
 
     // load bike network data
-    fetch("/api/geojson/bike_network")
-      .then((res) => res.json())
-      .then((res) => {
-        setBikeNetwork(JSON.stringify(res));
-      });
+    // fetch(process.env.API_URL + "/api/geojson/bike_network")
+    //   .then((res) => res.json())
+    //   .then((res) => {
+    //     setBikeNetwork(JSON.stringify(res));
+    //   });
 
     // get route details based on id, if /route/id is accessed
     if (props.id) {
