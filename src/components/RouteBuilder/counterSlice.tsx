@@ -26,9 +26,12 @@ export const counterSlice = createSlice({
       state.value -= 1;
     },
     incrementByAmount: (state, action) => {
+      console.log(action.payload)
       state.value += action.payload.routes[0].distance * 6.214e-4;
       const coord = action.payload.routes[0].geometry.coordinates;
+      console.log(coord)
       for (var i = 0; i < coord.length; i++) {
+        console.log(coord[i])
         state.route.features[0].geometry.coordinates.push(coord[i]);
       }
     },

@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode, useState } from "react";
 import {
   Box,
   Flex,
@@ -9,24 +9,40 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
-} from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
-import RouteBuilder from '../RouteBuilder/RouteBuilder';
-import Map from '../Map/Map';
+  Image,
+} from "@chakra-ui/react";
+import { HamburgerIcon, CloseIcon, AddIcon } from "@chakra-ui/icons";
+import RouteBuilder from "../RouteBuilder/RouteBuilder";
+import Map from "../Map/Map";
 
-const Links = ['Map', 'About', 'Instagram'];
+const Links = ["Map", "About", "Instagram"];
 
-const NavLink = ({ children }: { children: ReactNode }) => (
+const linkRef = (heading: string | undefined) => {
+  switch (heading) {
+    case 'Map':
+      return "/"
+    case 'About':
+      return "/about"
+    case 'Instagram':
+      return 'https://www.instagram.com/phillytrails/'
+    default:
+      return "/"
+  }
+}
+
+const NavLink = (props: any) => (
   <Link
     px={2}
     py={1}
-    rounded={'md'}
+    rounded={"md"}
     _hover={{
-      textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
+      textDecoration: "none",
+      bg: useColorModeValue("gray.200", "gray.700"),
     }}
-    href={'#'}>
-    {children}
+    href={props.href}
+    target={props.target}
+  >
+    {props.children}
   </Link>
 );
 
@@ -37,64 +53,63 @@ export default function WithAction(props: any) {
 
   const handleChange = () => {
     setDrawerOpen(!drawerOpen);
-  }
+  };
 
   const routeId = props.id || 0;
 
-
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
+        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
-            size={'md'}
+            size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={'Open Menu'}
-            display={{ md: 'none' }}
+            aria-label={"Open Menu"}
+            display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack spacing={8} alignItems={'center'}>
-            <Box>Logo</Box>
+          <HStack spacing={-14} alignItems={"center"}>
+            <Box mx={0} mr={0}>
+              <Image src="/pt_logo.png" alt="Logo" boxSize="70%" />
+            </Box>
             <HStack
-              as={'nav'}
+              as={"nav"}
               spacing={4}
-              display={{ base: 'none', md: 'flex' }}>
+              display={{ base: "none", md: "flex" }}
+            >
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link} href={"google.com"} target={"_blank"}>{link}</NavLink>
               ))}
             </HStack>
           </HStack>
-          <Flex alignItems={'center'}>
+          <Flex alignItems={"center"}>
             <Button
-              variant={'solid'}
-              colorScheme={'teal'}
-              size={'sm'}
+              variant={"solid"}
+              colorScheme={"teal"}
+              size={"sm"}
               mr={4}
               onClick={handleChange}
-              leftIcon={<AddIcon />}>
+              leftIcon={<AddIcon />}
+            >
               Action
             </Button>
-
           </Flex>
         </Flex>
 
-        
-
-        <RouteBuilder 
-          drawerOpen={drawerOpen} 
-          onChange={handleChange} 
-          coord={coord} 
+        <RouteBuilder
+          drawerOpen={drawerOpen}
+          onChange={handleChange}
+          coord={coord}
         />
 
-
         {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={4}>
+          <Box pb={4} display={{ md: "none" }}>
+            <Stack as={"nav"} spacing={4}>
               {Links.map((link) => {
                 if (link === "Instagram") {
-                  return <NavLink key={link}>{"test"}</NavLink>
+                  return <NavLink key={link}>{"test"}</NavLink>;
                 } else {
-                  return <NavLink key={link}>{"test"}</NavLink>
+                  return <NavLink key={link}>{"test"}</NavLink>;
                 }
               })}
             </Stack>
@@ -102,10 +117,7 @@ export default function WithAction(props: any) {
         ) : null}
       </Box>
 
-      <Map 
-        setCoord={setCoord}
-        id={routeId}
-      />
+      <Map setCoord={setCoord} id={routeId} />
     </>
   );
 }

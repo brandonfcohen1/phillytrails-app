@@ -6,7 +6,7 @@ import {
   LayersControl,
   useMapEvents,
   FeatureGroup,
-  useMap
+  useMap,
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -121,13 +121,14 @@ const Map = (props: any) => {
   // function to set center when loading a specific route
   const CenterMap = () => {
     const map = useMap();
-    map.setView([center[0], center[1]], 16);
+    if (window.location.toString().indexOf("route") > -1) {
+      map.setView([center[0], center[1]], 16);
+    }
     return null;
   };
 
   return (
     <>
-      
       <div className="map__container">
         <MapContainer
           center={[center[0], center[1]]}
