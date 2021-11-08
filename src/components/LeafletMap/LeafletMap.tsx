@@ -10,7 +10,7 @@ import {
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import "./MapContainer.css";
+import "./LeafletMap.css";
 import Legend from "../Legend/Legend";
 import { useSelector } from "react-redux";
 import hash from "object-hash";
@@ -25,7 +25,7 @@ const mapboxURL = (id: string) => {
   );
 };
 
-const Map = (props: any) => {
+const LeafletMap = (props: any) => {
   const [trails, setTrails] = useState("");
   const [lines, setLines] = useState("");
   const [stops, setStops] = useState("");
@@ -60,43 +60,43 @@ const Map = (props: any) => {
       .then((res) => res.json())
       .then((res) => {
         setTrails(JSON.stringify(res));
-      });
+      }).catch()
 
     // load transit lines data
     fetch(process.env.REACT_APP_API_URL + "/api/geojson/transit_lines", {
       mode: "cors",
-    })
+    }).catch()
       .then((res) => res.json())
       .then((res) => {
         setLines(JSON.stringify(res));
-      });
+      })
+      .catch();
 
     // load transit stops data
     fetch(process.env.REACT_APP_API_URL + "/api/geojson/transit_stops", {
       mode: "cors",
-    })
+    }).catch()
       .then((res) => res.json())
       .then((res) => {
         setStops(JSON.stringify(res));
-      });
+      })
+      ;
 
     // load Indego data
     fetch("https://kiosks.bicycletransit.workers.dev/phl")
       .then((res) => res.json())
       .then((res) => {
         setBikes(JSON.stringify(res));
-      });
+      })
+      .catch();
   }, []);
 
   useEffect(() => {
-    
     // get route details based on id, if /route/id is accessed
     if (props.id) {
-      console.log("fetch");
       fetch("/api/center/trail/" + props.id.id)
         .then((res) => res.json())
         .then((res) => {
-          console.log(res.rows[0]);
           const parseCoord = res.rows[0].centroid
             .split("(")[1]
             .split(")")[0]
@@ -292,4 +292,4 @@ const Map = (props: any) => {
   );
 };
 
-export default Map;
+export default LeafletMap;

@@ -1,5 +1,5 @@
 import "./App.css";
-import Header from "./components/Map/Map";
+import Map from "./components/Map/Map";
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,7 +20,7 @@ export default function App() {
       <Switch>
         <Route exact path="/">
           <div className="App">
-            <Header />
+            <Map />
           </div>
         </Route>
         <Route exact path="/route/:id" children={<DirectRoute />} />
@@ -36,7 +36,7 @@ function DirectRoute() {
   return (
     <div className="App">
       <div className="App">
-        <Header id={id} />
+        <Map id={id} />
       </div>
     </div>
   );
