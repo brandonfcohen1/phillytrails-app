@@ -7,15 +7,10 @@ import {
   ModalCloseButton,
   ModalBody,
   ModalFooter,
-  //useDisclosure,
 } from "@chakra-ui/react";
 import "./AboutModal.css";
 
-//const linkStyle = { textDecoration: "underline" };
-
 export default function AboutModal(props: any) {
-  //const { isOpen, onOpen, onClose } = useDisclosure();
-
   return (
     <>
       <Modal isOpen={props.open} onClose={props.toggleModal} size={"xl"}>
