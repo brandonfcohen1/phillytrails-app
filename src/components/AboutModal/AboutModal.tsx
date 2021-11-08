@@ -21,7 +21,7 @@ export default function AboutModal(props: any) {
       <Modal isOpen={props.open} onClose={props.toggleModal} size={"xl"}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
+          <ModalHeader>About PhillyTrails</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <p>
