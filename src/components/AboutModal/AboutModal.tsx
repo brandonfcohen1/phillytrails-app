@@ -7,7 +7,7 @@ import {
   ModalCloseButton,
   ModalBody,
   ModalFooter,
-  useDisclosure
+  useDisclosure,
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 
@@ -16,21 +16,17 @@ export default function AboutModal(props: any) {
 
   return (
     <>
-
-      <Modal isOpen={props.open} onClose={props.toggleModal}>
+      <Modal isOpen={props.open} onClose={props.toggleModal} size={"xl"}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Modal Title</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>
-           {"hello"}
-          </ModalBody>
+          <ModalBody>{"hello"}</ModalBody>
 
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={props.toggleModal}>
               Close
             </Button>
-            <Button variant="ghost">Secondary Action</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>

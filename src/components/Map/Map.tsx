@@ -16,8 +16,6 @@ import RouteBuilder from "../RouteBuilder/RouteBuilder";
 import LeafletMap from "../LeafletMap/LeafletMap";
 import AboutModal from "../AboutModal/AboutModal";
 
-
-
 const NavLink = (props: any) => (
   <Link
     px={2}
@@ -41,11 +39,21 @@ export default function WithAction(props: any) {
 
   const toggleModal = () => {
     setModalOpen(false);
-  }
+  };
 
   const Links = [
-    { text: "About", onClick: () => {setModalOpen(!modalOpen)} },
-    { text: "Instagram", onClick: () => {window.open("https://www.instagram.com/phillytrails/", "_blank")} },
+    {
+      text: "About",
+      onClick: () => {
+        setModalOpen(!modalOpen);
+      },
+    },
+    {
+      text: "Instagram",
+      onClick: () => {
+        window.open("https://www.instagram.com/phillytrails/", "_blank");
+      },
+    },
   ];
 
   const handleChange = () => {
