@@ -13,9 +13,10 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, AddIcon } from "@chakra-ui/icons";
 import RouteBuilder from "../RouteBuilder/RouteBuilder";
-import Map from "../MapContainer/MapContainer";
+import LeafletMap from "../LeafletMap/LeafletMap";
+import AboutModal from "../AboutModal/AboutModal";
 
-const Links = ["Map", "About", "Instagram"];
+
 
 const NavLink = (props: any) => (
   <Link
@@ -26,8 +27,7 @@ const NavLink = (props: any) => (
       textDecoration: "none",
       bg: useColorModeValue("gray.200", "gray.700"),
     }}
-    href={props.href}
-    target={props.target}
+    onClick={props.onClick}
   >
     {props.children}
   </Link>
@@ -37,6 +37,16 @@ export default function WithAction(props: any) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [coord, setCoord] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setModalOpen(false);
+  }
+
+  const Links = [
+    { text: "About", onClick: () => {setModalOpen(!modalOpen)} },
+    { text: "Instagram", onClick: () => {window.open("https://www.instagram.com/phillytrails/", "_blank")} },
+  ];
 
   const handleChange = () => {
     setDrawerOpen(!drawerOpen);
@@ -46,7 +56,7 @@ export default function WithAction(props: any) {
 
   return (
     <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} >
+      <Box bg={useColorModeValue("gray.100", "gray.900")}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
@@ -57,7 +67,9 @@ export default function WithAction(props: any) {
           />
           <HStack spacing={-14} alignItems={"center"}>
             <Box mx={0} mr={0}>
-              <Image src="/pt_logo.png" alt="Logo" boxSize="70%" />
+              <Link href="/">
+                <Image src="/pt_logo.png" alt="Logo" boxSize="70%" />
+              </Link>
             </Box>
             <HStack
               as={"nav"}
@@ -65,8 +77,8 @@ export default function WithAction(props: any) {
               display={{ base: "none", md: "flex" }}
             >
               {Links.map((link) => (
-                <NavLink key={link} href={"google.com"} target={"_blank"}>
-                  {link}
+                <NavLink key={link.text} onClick={link.onClick}>
+                  {link.text}
                 </NavLink>
               ))}
             </HStack>
@@ -84,28 +96,27 @@ export default function WithAction(props: any) {
             </Button>
           </Flex>
         </Flex>
+        <AboutModal open={modalOpen} toggleModal={toggleModal} />
 
-        <Map setCoord={setCoord} id={routeId} />
+        {isOpen ? (
+          <Box pb={4} display={{ md: "none" }}>
+            <Stack as={"nav"} spacing={4}>
+              {Links.map((link) => (
+                <NavLink key={link.text} onClick={link.onClick}>
+                  {link.text}
+                </NavLink>
+              ))}
+            </Stack>
+          </Box>
+        ) : null}
+
+        <LeafletMap setCoord={setCoord} id={routeId} />
 
         <RouteBuilder
           drawerOpen={drawerOpen}
           onChange={handleChange}
           coord={coord}
         />
-
-        {isOpen ? (
-          <Box pb={4} display={{ md: "none" }}>
-            <Stack as={"nav"} spacing={4}>
-              {Links.map((link) => {
-                if (link === "Instagram") {
-                  return <NavLink key={link}>{"test"}</NavLink>;
-                } else {
-                  return <NavLink key={link}>{"test"}</NavLink>;
-                }
-              })}
-            </Stack>
-          </Box>
-        ) : null}
       </Box>
     </>
   );
