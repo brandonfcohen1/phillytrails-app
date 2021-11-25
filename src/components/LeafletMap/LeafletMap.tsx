@@ -99,7 +99,12 @@ const LeafletMap = (props: any) => {
   useEffect(() => {
     // get route details based on id, if /route/id is accessed
     if (props.id) {
-      fetch("/api/center/trail/" + props.id.id)
+      fetch("/api/center/trail/" + props.id.id, {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      })
         .then((res) => res.json())
         .then((res) => {
           const parseCoord = res.rows[0].centroid
