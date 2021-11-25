@@ -272,7 +272,7 @@ const LeafletMap = (props: any) => {
                     " mi. " +
                     p.type +
                     "</i><br>" +
-                    p.segment_description
+                    p.segment_description 
                 );
               }}
               eventHandlers={{
