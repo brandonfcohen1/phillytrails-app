@@ -99,7 +99,7 @@ const LeafletMap = (props: any) => {
   useEffect(() => {
     // get route details based on id, if /route/id is accessed
     if (props.id) {
-      fetch("/api/center/trail/" + props.id.id, {
+      fetch(process.env.REACT_APP_API_URL + "/api/center/trail/" + props.id.id, {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
