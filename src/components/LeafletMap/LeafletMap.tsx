@@ -136,6 +136,7 @@ const LeafletMap = (props: any) => {
           center={[center[0], center[1]]}
           zoom={13}
           style={{ height: "calc(100vh - 64px)" }}
+          tap={false}
           renderer={L.canvas({ tolerance: 5 })} // this allows for line clicks with a tolerance of 5px
         >
           <Legend />
