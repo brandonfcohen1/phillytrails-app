@@ -15,6 +15,9 @@ import Legend from "../Legend/Legend";
 import { useSelector } from "react-redux";
 import hash from "object-hash";
 import { RootState } from "../../app/store";
+import ReactDOMServer from "react-dom/server";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShareSquare } from "@fortawesome/free-solid-svg-icons";
 
 const mapboxURL = (id: string) => {
   return (
@@ -60,12 +63,14 @@ const LeafletMap = (props: any) => {
       .then((res) => res.json())
       .then((res) => {
         setTrails(JSON.stringify(res));
-      }).catch()
+      })
+      .catch();
 
     // load transit lines data
     fetch(process.env.REACT_APP_API_URL + "/api/geojson/transit_lines", {
       mode: "cors",
-    }).catch()
+    })
+      .catch()
       .then((res) => res.json())
       .then((res) => {
         setLines(JSON.stringify(res));
@@ -75,12 +80,12 @@ const LeafletMap = (props: any) => {
     // load transit stops data
     fetch(process.env.REACT_APP_API_URL + "/api/geojson/transit_stops", {
       mode: "cors",
-    }).catch()
+    })
+      .catch()
       .then((res) => res.json())
       .then((res) => {
         setStops(JSON.stringify(res));
-      })
-      ;
+      });
 
     // load Indego data
     fetch("https://kiosks.bicycletransit.workers.dev/phl")
@@ -267,7 +272,13 @@ const LeafletMap = (props: any) => {
                 layer.bindPopup(
                   "<b>" +
                     p.name +
-                    "</b><br><i>" +
+                    "</b>&nbsp&nbsp&nbsp<button onclick='navigator.clipboard.writeText(`https://www.phillytrails.com/route/" +
+                    p.id +
+                    "`);'>" +
+                    ReactDOMServer.renderToString(
+                      <FontAwesomeIcon icon={faShareSquare} />
+                    ) +
+                    "</button><br><i>" +
                     p.length +
                     " mi. " +
                     p.type +
