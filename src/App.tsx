@@ -23,7 +23,7 @@ export default function App() {
             <Map />
           </div>
         </Route>
-        <Route exact path="/route/:id" children={<DirectRoute />} />
+        <Route path="/route/:id" children={<DirectRoute />} />
         <Route render={() => <Redirect to="/" />} />
       </Switch>
     </Router>
