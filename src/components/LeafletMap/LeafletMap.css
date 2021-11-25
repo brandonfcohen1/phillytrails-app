@@ -1,7 +1,5 @@
 .map__container {
-
   width: 100vw;
-  /* top: 64px;  */
-  /* height: calc(100vh-64px);  */
-  /* position: absolute; */
+  height: 100%;
+  position: fixed;
 }
