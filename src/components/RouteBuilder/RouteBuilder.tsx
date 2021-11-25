@@ -68,7 +68,7 @@ function RouteBuilder(props: any) {
           color="black"
           bg="white"
           rounded="md"
-          h="100vh"
+          h="100%"
           w="100%"
           overflowY="scroll"
         >
