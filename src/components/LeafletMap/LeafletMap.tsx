@@ -18,6 +18,7 @@ import { RootState } from "../../app/store";
 import ReactDOMServer from "react-dom/server";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareSquare } from "@fortawesome/free-solid-svg-icons";
+import { FeatureLayer } from "react-esri-leaflet";
 
 const mapboxURL = (id: string) => {
   return (
@@ -26,6 +27,21 @@ const mapboxURL = (id: string) => {
     "/tiles/{z}/{x}/{y}{r}?access_token=" +
     process.env.REACT_APP_MAPBOX
   );
+};
+
+const LTSMapping = (ltsString: string) => {
+  switch (ltsString) {
+    case "LTS 1":
+      return { style: {}, description: "Relaxing, suitable for most riders" };
+    case "LTS 2":
+      return { style: {}, description: "Comfortable for most adults" };
+    case "LTS 3":
+      return { style: {}, description: "Comfortable for confident bicyclists" };
+    case "LTS 4":
+      return { style: {}, description: "Uncomfortable for most" };
+    case "Off-road trail/path":
+      return { style: {}, description: "Off-road trail/path" };
+  }
 };
 
 const LeafletMap = (props: any) => {
@@ -99,12 +115,15 @@ const LeafletMap = (props: any) => {
   useEffect(() => {
     // get route details based on id, if /route/id is accessed
     if (props.id) {
-      fetch(process.env.REACT_APP_API_URL + "/api/center/trail/" + props.id.id, {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      })
+      fetch(
+        process.env.REACT_APP_API_URL + "/api/center/trail/" + props.id.id,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }
+      )
         .then((res) => res.json())
         .then((res) => {
           const parseCoord = res.rows[0].centroid
@@ -244,9 +263,39 @@ const LeafletMap = (props: any) => {
                 />
               )}
             </LayersControl.Overlay>
+            <LayersControl.Overlay name="Level of Traffic Stress">
+              <FeatureLayer
+                // @ts-expect-error
+                url={
+                  "https://arcgis.dvrpc.org/portal/rest/services/Transportation/BSTRESSv2_ExistingConditionLTS/FeatureServer/0"
+                }
+                minZoom={15}
+                style={(feature: any) => {
+                  const p = feature?.properties;
+                  let style = { opacity: 0.8, color: "#A020F0" };
+                  if (p.linklts === "LTS 1") {
+                    style.color = "#FFA500";
+                  } else if (p.linklts === "LTS 2") {
+                    style.color = "#0000FF";
+                  } else if (p.linklts === "LTS 3") {
+                    style.color = "#FF0000";
+                  } else if (p.linklts === "LTS 4") {
+                    style.color = "#00FF00";
+                  } else if (p.linklts === "Off-road trail/path") {
+                    style.color = "#00FF00";
+                  }
+                  return style;
+                }}
+                onEachFeature={(feature: any, layer: any) => {
+                  const p = feature?.properties;
+                  layer.bindPopup(
+                    "LTS Designation: " + LTSMapping(p.linklts)?.description
+                  );
+                }}
+              />
+            </LayersControl.Overlay>
           </LayersControl>
 
-          {/* this key/hash thing is hacky, but recommended by the author of react-leaflet*/}
           {routebuilt && <GeoJSON data={routebuilt} key={hash(routebuilt)} />}
 
           {trails && (
