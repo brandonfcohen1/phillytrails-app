@@ -12,6 +12,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import "./LeafletMap.css";
 import Legend from "../Legend/Legend";
+import StreetLegend from "../Legend/StreetLegend";
 import { useSelector } from "react-redux";
 import hash from "object-hash";
 import { RootState } from "../../app/store";
@@ -32,15 +33,30 @@ const mapboxURL = (id: string) => {
 const LTSMapping = (ltsString: string) => {
   switch (ltsString) {
     case "LTS 1":
-      return { style: {}, description: "Relaxing, suitable for most riders" };
+      return {
+        style: { color: "#348939" },
+        description: "Relaxing, suitable for most riders",
+      };
     case "LTS 2":
-      return { style: {}, description: "Comfortable for most adults" };
+      return {
+        style: { color: "#FDBF02" },
+        description: "Comfortable for most adults",
+      };
     case "LTS 3":
-      return { style: {}, description: "Comfortable for confident bicyclists" };
+      return {
+        style: { color: "#FE7E03" },
+        description: "Comfortable for confident bicyclists",
+      };
     case "LTS 4":
-      return { style: {}, description: "Uncomfortable for most" };
+      return {
+        style: { color: "#9B1D1E" },
+        description: "Uncomfortable for most",
+      };
     case "Off-road trail/path":
-      return { style: {}, description: "Off-road trail/path" };
+      return {
+        style: { color: "#348939" },
+        description: "Off-road trail/path",
+      };
   }
 };
 
@@ -49,6 +65,7 @@ const LeafletMap = (props: any) => {
   const [lines, setLines] = useState("");
   const [stops, setStops] = useState("");
   const [bikes, setBikes] = useState("");
+  const [streets, setStreets] = useState(false);
   const [center, setCenter] = useState([39.9741171, -75.1914883]);
 
   const [prevClick, setPrevClick] = useState("" as any);
@@ -169,6 +186,7 @@ const LeafletMap = (props: any) => {
           renderer={L.canvas({ tolerance: 5 })} // this allows for line clicks with a tolerance of 5px
         >
           <Legend />
+          <StreetLegend streets={streets} />
           <CenterMap />
 
           <LayersControl position="topright">
@@ -269,28 +287,28 @@ const LeafletMap = (props: any) => {
                 url={
                   "https://arcgis.dvrpc.org/portal/rest/services/Transportation/BSTRESSv2_ExistingConditionLTS/FeatureServer/0"
                 }
-                minZoom={15}
+                minZoom={13}
                 style={(feature: any) => {
                   const p = feature?.properties;
-                  let style = { opacity: 0.8, color: "#A020F0" };
-                  if (p.linklts === "LTS 1") {
-                    style.color = "#FFA500";
-                  } else if (p.linklts === "LTS 2") {
-                    style.color = "#0000FF";
-                  } else if (p.linklts === "LTS 3") {
-                    style.color = "#FF0000";
-                  } else if (p.linklts === "LTS 4") {
-                    style.color = "#00FF00";
-                  } else if (p.linklts === "Off-road trail/path") {
-                    style.color = "#00FF00";
-                  }
+                  let style = { opacity: 0.8, color: "#A020F0", weight: 2 };
+                  style.color = LTSMapping(p.linklts)?.style.color || "#A020F0";
                   return style;
                 }}
                 onEachFeature={(feature: any, layer: any) => {
                   const p = feature?.properties;
                   layer.bindPopup(
-                    "LTS Designation: " + LTSMapping(p.linklts)?.description
+                    "<b>Street Class: </b>" +
+                      LTSMapping(p.linklts)?.description +
+                      "<br><b>Bike Facilities: </b>: " +
+                      p.bikefacili +
+                      "<br><b>Number of Lanes: </b>: " +
+                      p.numlanes +
+                      "<br><b>Avg Traffic Speed: </b>: " +
+                      p.speed
                   );
+                }}
+                eventHandlers={{
+                  loading: () => setStreets(true),
                 }}
               />
             </LayersControl.Overlay>
