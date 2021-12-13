@@ -12,12 +12,14 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import "./LeafletMap.css";
 import Legend from "../Legend/Legend";
+import StreetLegend from "../Legend/StreetLegend";
 import { useSelector } from "react-redux";
 import hash from "object-hash";
 import { RootState } from "../../app/store";
 import ReactDOMServer from "react-dom/server";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareSquare } from "@fortawesome/free-solid-svg-icons";
+import { FeatureLayer } from "react-esri-leaflet";
 
 const mapboxURL = (id: string) => {
   return (
@@ -28,11 +30,42 @@ const mapboxURL = (id: string) => {
   );
 };
 
+const LTSMapping = (ltsString: string) => {
+  switch (ltsString) {
+    case "LTS 1":
+      return {
+        style: { color: "#348939" },
+        description: "Relaxing, suitable for most riders",
+      };
+    case "LTS 2":
+      return {
+        style: { color: "#FDBF02" },
+        description: "Comfortable for most adults",
+      };
+    case "LTS 3":
+      return {
+        style: { color: "#FE7E03" },
+        description: "Comfortable for confident bicyclists",
+      };
+    case "LTS 4":
+      return {
+        style: { color: "#9B1D1E" },
+        description: "Uncomfortable for most",
+      };
+    case "Off-road trail/path":
+      return {
+        style: { color: "#348939" },
+        description: "Off-road trail/path",
+      };
+  }
+};
+
 const LeafletMap = (props: any) => {
   const [trails, setTrails] = useState("");
   const [lines, setLines] = useState("");
   const [stops, setStops] = useState("");
   const [bikes, setBikes] = useState("");
+  const [streets, setStreets] = useState(false);
   const [center, setCenter] = useState([39.9741171, -75.1914883]);
 
   const [prevClick, setPrevClick] = useState("" as any);
@@ -99,12 +132,15 @@ const LeafletMap = (props: any) => {
   useEffect(() => {
     // get route details based on id, if /route/id is accessed
     if (props.id) {
-      fetch(process.env.REACT_APP_API_URL + "/api/center/trail/" + props.id.id, {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      })
+      fetch(
+        process.env.REACT_APP_API_URL + "/api/center/trail/" + props.id.id,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }
+      )
         .then((res) => res.json())
         .then((res) => {
           const parseCoord = res.rows[0].centroid
@@ -150,6 +186,7 @@ const LeafletMap = (props: any) => {
           renderer={L.canvas({ tolerance: 5 })} // this allows for line clicks with a tolerance of 5px
         >
           <Legend />
+          <StreetLegend streets={streets} />
           <CenterMap />
 
           <LayersControl position="topright">
@@ -244,9 +281,39 @@ const LeafletMap = (props: any) => {
                 />
               )}
             </LayersControl.Overlay>
+            <LayersControl.Overlay name="Level of Traffic Stress">
+              <FeatureLayer
+                // @ts-expect-error
+                url={
+                  "https://arcgis.dvrpc.org/portal/rest/services/Transportation/BSTRESSv2_ExistingConditionLTS/FeatureServer/0"
+                }
+                minZoom={13}
+                style={(feature: any) => {
+                  const p = feature?.properties;
+                  let style = { opacity: 0.8, color: "#A020F0", weight: 2 };
+                  style.color = LTSMapping(p.linklts)?.style.color || "#A020F0";
+                  return style;
+                }}
+                onEachFeature={(feature: any, layer: any) => {
+                  const p = feature?.properties;
+                  layer.bindPopup(
+                    "<b>Street Class: </b>" +
+                      LTSMapping(p.linklts)?.description +
+                      "<br><b>Bike Facilities: </b>: " +
+                      p.bikefacili +
+                      "<br><b>Number of Lanes: </b>: " +
+                      p.numlanes +
+                      "<br><b>Avg Traffic Speed: </b>: " +
+                      p.speed
+                  );
+                }}
+                eventHandlers={{
+                  loading: () => setStreets(true),
+                }}
+              />
+            </LayersControl.Overlay>
           </LayersControl>
 
-          {/* this key/hash thing is hacky, but recommended by the author of react-leaflet*/}
           {routebuilt && <GeoJSON data={routebuilt} key={hash(routebuilt)} />}
 
           {trails && (
