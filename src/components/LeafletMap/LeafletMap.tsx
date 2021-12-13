@@ -299,11 +299,11 @@ const LeafletMap = (props: any) => {
                   layer.bindPopup(
                     "<b>Street Class: </b>" +
                       LTSMapping(p.linklts)?.description +
-                      "<br><b>Bike Facilities: </b>: " +
+                      "<br><b>Bike Facilities: </b>" +
                       p.bikefacili +
-                      "<br><b>Number of Lanes: </b>: " +
+                      "<br><b>Number of Lanes: </b>" +
                       p.numlanes +
-                      "<br><b>Avg Traffic Speed: </b>: " +
+                      "<br><b>Avg Traffic Speed: </b>" +
                       p.speed
                   );
                 }}
