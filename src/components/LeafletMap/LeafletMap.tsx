@@ -341,6 +341,9 @@ const LeafletMap = (props: any) => {
               }}
               onEachFeature={(feature, layer) => {
                 const p = feature.properties;
+                const safety = p.safety
+                  ? "<br><b>Safety</b><br>" + p.safety
+                  : "";
                 layer.bindPopup(
                   "<b>" +
                     p.name +
@@ -355,7 +358,9 @@ const LeafletMap = (props: any) => {
                     " mi. " +
                     p.type +
                     "</i><br>" +
-                    p.segment_description
+                    p.segment_description +
+                    "</i><br>" +
+                    safety
                 );
               }}
               eventHandlers={{
