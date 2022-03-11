@@ -65,6 +65,7 @@ const LeafletMap = (props: any) => {
   const [lines, setLines] = useState("");
   const [stops, setStops] = useState("");
   const [bikes, setBikes] = useState("");
+  const [injury, setInjury] = useState("");
   const [streets, setStreets] = useState(false);
   const [center, setCenter] = useState([39.9741171, -75.1914883]);
 
@@ -127,6 +128,20 @@ const LeafletMap = (props: any) => {
         setBikes(JSON.stringify(res));
       })
       .catch();
+
+    // load High Injury Network data
+    fetch(
+      process.env.REACT_APP_API_URL + "/api/geojson/high_injury_network_2020",
+      {
+        mode: "cors",
+      }
+    )
+      .catch()
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        setInjury(JSON.stringify(res));
+      });
   }, []);
 
   useEffect(() => {
@@ -277,6 +292,21 @@ const LeafletMap = (props: any) => {
                         "<br>Docks available: " +
                         feature.properties.docksAvailable
                     );
+                  }}
+                />
+              )}
+            </LayersControl.Overlay>
+            <LayersControl.Overlay name="High Injury Network">
+              {injury && (
+                <GeoJSON
+                  data={JSON.parse(injury)}
+                  onEachFeature={(feature, layer) => {
+                    layer.bindPopup(
+                      "<b>Street: </b>" + feature.properties.street_name
+                    );
+                  }}
+                  style={() => {
+                    return { color: "black", opacity: 0.8 };
                   }}
                 />
               )}
