@@ -317,7 +317,7 @@ const LeafletMap = (props: any) => {
                 url={
                   "https://arcgis.dvrpc.org/portal/rest/services/Transportation/BSTRESSv2_ExistingConditionLTS/FeatureServer/0"
                 }
-                minZoom={13}
+                minZoom={15}
                 style={(feature: any) => {
                   const p = feature?.properties;
                   let style = { opacity: 0.8, color: "#A020F0", weight: 2 };
