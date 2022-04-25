@@ -139,7 +139,6 @@ const LeafletMap = (props: any) => {
       .catch()
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         setInjury(JSON.stringify(res));
       });
   }, []);
