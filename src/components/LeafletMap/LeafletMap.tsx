@@ -12,7 +12,6 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import "./LeafletMap.css";
 import Legend from "../Legend/Legend";
-import StreetLegend from "../Legend/StreetLegend";
 import { useSelector } from "react-redux";
 import hash from "object-hash";
 import { RootState } from "../../app/store";
@@ -59,6 +58,11 @@ const LTSMapping = (ltsString: string) => {
       };
   }
 };
+
+export interface mapPropsOn {
+  streets: boolean;
+  sidewalks: boolean;
+}
 
 const LeafletMap = (props: any) => {
   const [trails, setTrails] = useState("");
@@ -124,10 +128,7 @@ const LeafletMap = (props: any) => {
 
     // load Indego data
     fetch("https://kiosks.bicycletransit.workers.dev/phl")
-      .then((res) => {
-        console.log(res);
-        res.json();
-      })
+      .then((res) => res.json())
       .then((res) => {
         setBikes(JSON.stringify(res));
       })
@@ -187,6 +188,11 @@ const LeafletMap = (props: any) => {
   // function to set center when loading a specific route
   const CenterMap = () => {
     const map = useMap();
+
+    useEffect(() => {
+      console.log(map);
+    }, [map]);
+
     if (window.location.toString().indexOf("route") > -1) {
       map.setView([center[0], center[1]], 16);
     }
@@ -203,8 +209,7 @@ const LeafletMap = (props: any) => {
           tap={false}
           renderer={L.canvas({ tolerance: 5 })} // this allows for line clicks with a tolerance of 5px
         >
-          <Legend />
-          <StreetLegend streets={streets} />
+          <Legend streets={streets} sidewalks={sidewalks} />
           <CenterMap />
 
           <LayersControl position="topright">
@@ -342,6 +347,7 @@ const LeafletMap = (props: any) => {
                 }}
                 eventHandlers={{
                   loading: () => setStreets(true),
+                  removefeature: () => setStreets(false),
                 }}
               />
             </LayersControl.Overlay>
@@ -367,6 +373,7 @@ const LeafletMap = (props: any) => {
                 }}
                 eventHandlers={{
                   loading: () => setSidewalks(true),
+                  removefeature: () => setSidewalks(false),
                 }}
               />
             </LayersControl.Overlay>
