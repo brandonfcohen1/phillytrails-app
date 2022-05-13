@@ -66,6 +66,7 @@ const LeafletMap = (props: any) => {
   const [stops, setStops] = useState("");
   const [bikes, setBikes] = useState("");
   const [injury, setInjury] = useState("");
+  const [sidewalks, setSidewalks] = useState(false);
   const [streets, setStreets] = useState(false);
   const [center, setCenter] = useState([39.9741171, -75.1914883]);
 
@@ -123,7 +124,10 @@ const LeafletMap = (props: any) => {
 
     // load Indego data
     fetch("https://kiosks.bicycletransit.workers.dev/phl")
-      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        res.json();
+      })
       .then((res) => {
         setBikes(JSON.stringify(res));
       })
@@ -338,6 +342,31 @@ const LeafletMap = (props: any) => {
                 }}
                 eventHandlers={{
                   loading: () => setStreets(true),
+                }}
+              />
+            </LayersControl.Overlay>
+            <LayersControl.Overlay name="Sidewalks">
+              <FeatureLayer
+                // @ts-expect-error
+                url={
+                  "https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/PedPortal_AppFeatures/FeatureServer/5"
+                }
+                minZoom={16}
+                style={(feature: any) => {
+                  let style = { opacity: 0.8, color: "#808080", weight: 2 };
+                  return style;
+                }}
+                onEachFeature={(feature: any, layer: any) => {
+                  const p = feature?.properties;
+                  layer.bindPopup(
+                    "<b>Material: </b>" +
+                      p.material.toLowerCase() +
+                      "<br><b>Type: </b>" +
+                      p.feat_type.toLowerCase()
+                  );
+                }}
+                eventHandlers={{
+                  loading: () => setSidewalks(true),
                 }}
               />
             </LayersControl.Overlay>
