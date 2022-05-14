@@ -352,7 +352,7 @@ const LeafletMap = (props: any) => {
                 url={
                   "https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/PedPortal_AppFeatures/FeatureServer/5"
                 }
-                minZoom={16}
+                minZoom={17}
                 style={(feature: any) => {
                   let style = { opacity: 0.8, color: "#808080", weight: 2 };
                   return style;
