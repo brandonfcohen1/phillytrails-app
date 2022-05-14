@@ -321,6 +321,7 @@ const LeafletMap = (props: any) => {
                   "https://arcgis.dvrpc.org/portal/rest/services/Transportation/BSTRESSv2_ExistingConditionLTS/FeatureServer/0"
                 }
                 minZoom={16}
+                simplifyFactor={1}
                 style={(feature: any) => {
                   const p = feature?.properties;
                   let style = { opacity: 0.8, color: "#A020F0", weight: 2 };
@@ -353,6 +354,7 @@ const LeafletMap = (props: any) => {
                   "https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/PedPortal_AppFeatures/FeatureServer/5"
                 }
                 minZoom={17}
+                simplifyFactor={1}
                 style={(feature: any) => {
                   let style = { opacity: 0.8, color: "#808080", weight: 2 };
                   return style;
