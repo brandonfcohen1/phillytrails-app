@@ -12,7 +12,6 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import "./LeafletMap.css";
 import Legend from "../Legend/Legend";
-import StreetLegend from "../Legend/StreetLegend";
 import { useSelector } from "react-redux";
 import hash from "object-hash";
 import { RootState } from "../../app/store";
@@ -60,12 +59,18 @@ const LTSMapping = (ltsString: string) => {
   }
 };
 
+export interface mapPropsOn {
+  streets: boolean;
+  sidewalks: boolean;
+}
+
 const LeafletMap = (props: any) => {
   const [trails, setTrails] = useState("");
   const [lines, setLines] = useState("");
   const [stops, setStops] = useState("");
   const [bikes, setBikes] = useState("");
   const [injury, setInjury] = useState("");
+  const [sidewalks, setSidewalks] = useState(false);
   const [streets, setStreets] = useState(false);
   const [center, setCenter] = useState([39.9741171, -75.1914883]);
 
@@ -199,8 +204,7 @@ const LeafletMap = (props: any) => {
           tap={false}
           renderer={L.canvas({ tolerance: 5 })} // this allows for line clicks with a tolerance of 5px
         >
-          <Legend />
-          <StreetLegend streets={streets} />
+          <Legend streets={streets} sidewalks={sidewalks} />
           <CenterMap />
 
           <LayersControl position="topright">
@@ -338,6 +342,33 @@ const LeafletMap = (props: any) => {
                 }}
                 eventHandlers={{
                   loading: () => setStreets(true),
+                  removefeature: () => setStreets(false),
+                }}
+              />
+            </LayersControl.Overlay>
+            <LayersControl.Overlay name="Sidewalks">
+              <FeatureLayer
+                // @ts-expect-error
+                url={
+                  "https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/PedPortal_AppFeatures/FeatureServer/5"
+                }
+                minZoom={16}
+                style={(feature: any) => {
+                  let style = { opacity: 0.8, color: "#808080", weight: 2 };
+                  return style;
+                }}
+                onEachFeature={(feature: any, layer: any) => {
+                  const p = feature?.properties;
+                  layer.bindPopup(
+                    "<b>Material: </b>" +
+                      p.material.toLowerCase() +
+                      "<br><b>Type: </b>" +
+                      p.feat_type.toLowerCase()
+                  );
+                }}
+                eventHandlers={{
+                  loading: () => setSidewalks(true),
+                  removefeature: () => setSidewalks(false),
                 }}
               />
             </LayersControl.Overlay>
@@ -378,11 +409,11 @@ const LeafletMap = (props: any) => {
                     p.name +
                     "</b>&nbsp&nbsp&nbsp<button onclick='navigator.clipboard.writeText(`https://www.phillytrails.com/route/" +
                     p.id +
-                    "`);'>" +
+                    "`); var elem = document.querySelector(`#copied`); elem.innerHTML = `Link copied to clipboard!`;'>" +
                     ReactDOMServer.renderToString(
                       <FontAwesomeIcon icon={faShareSquare} />
                     ) +
-                    "</button><br><i>" +
+                    "</button><div id='copied'></div><i>" +
                     p.length +
                     " mi. " +
                     p.type +
