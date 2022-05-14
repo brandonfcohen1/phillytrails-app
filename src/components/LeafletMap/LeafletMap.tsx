@@ -409,11 +409,11 @@ const LeafletMap = (props: any) => {
                     p.name +
                     "</b>&nbsp&nbsp&nbsp<button onclick='navigator.clipboard.writeText(`https://www.phillytrails.com/route/" +
                     p.id +
-                    "`);'>" +
+                    "`); var elem = document.querySelector(`#copied`); elem.innerHTML = `Link copied to clipboard!`;'>" +
                     ReactDOMServer.renderToString(
                       <FontAwesomeIcon icon={faShareSquare} />
                     ) +
-                    "</button><br><i>" +
+                    "</button><div id='copied'></div><i>" +
                     p.length +
                     " mi. " +
                     p.type +
