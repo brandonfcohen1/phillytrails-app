@@ -188,11 +188,6 @@ const LeafletMap = (props: any) => {
   // function to set center when loading a specific route
   const CenterMap = () => {
     const map = useMap();
-
-    useEffect(() => {
-      console.log(map);
-    }, [map]);
-
     if (window.location.toString().indexOf("route") > -1) {
       map.setView([center[0], center[1]], 16);
     }
