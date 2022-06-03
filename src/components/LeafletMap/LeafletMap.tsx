@@ -229,6 +229,7 @@ const LeafletMap = (props: any) => {
               <FeatureGroup>
                 {lines && (
                   <GeoJSON
+                    attribution="<a target='_blank' href='https://septaopendata-septa.opendata.arcgis.com/'>SEPTA</a>"
                     data={JSON.parse(lines)}
                     style={(feature) => {
                       const p = feature?.properties;
@@ -280,6 +281,7 @@ const LeafletMap = (props: any) => {
             <LayersControl.Overlay name="Indego">
               {bikes && (
                 <GeoJSON
+                  attribution="<a target='_blank' href='https://www.rideindego.com/'>Indego</a>"
                   data={JSON.parse(bikes)}
                   pointToLayer={(feature, latlng) => {
                     return L.marker(latlng, { icon: indegoIcon });
@@ -302,6 +304,7 @@ const LeafletMap = (props: any) => {
             <LayersControl.Overlay name="High Injury Network">
               {injury && (
                 <GeoJSON
+                  attribution="<a target='_blank' href='https://www.opendataphilly.org/dataset/high-injury-network'>Open Data Philly</a>"
                   data={JSON.parse(injury)}
                   onEachFeature={(feature, layer) => {
                     layer.bindPopup(
@@ -322,6 +325,7 @@ const LeafletMap = (props: any) => {
                 }
                 minZoom={16}
                 simplifyFactor={1}
+                attribution="<a target='_blank' href='https://www.dvrpc.org/'>DVRPC</a>"
                 style={(feature: any) => {
                   const p = feature?.properties;
                   let style = { opacity: 0.8, color: "#A020F0", weight: 2 };
@@ -355,6 +359,7 @@ const LeafletMap = (props: any) => {
                 }
                 minZoom={17}
                 simplifyFactor={1}
+                attribution="<a target='_blank' href='https://www.dvrpc.org/'>DVRPC</a>"
                 style={(feature: any) => {
                   let style = { opacity: 0.8, color: "#808080", weight: 2 };
                   return style;
