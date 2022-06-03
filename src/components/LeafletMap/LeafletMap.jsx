@@ -19,8 +19,9 @@ import ReactDOMServer from "react-dom/server";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareSquare } from "@fortawesome/free-solid-svg-icons";
 import { FeatureLayer } from "react-esri-leaflet";
+import "leaflet.vectorgrid";
 
-const mapboxURL = (id: string) => {
+const mapboxURL = (id) => {
   return (
     "https://api.mapbox.com/styles/v1/brandonfcohen/" +
     id +
@@ -29,7 +30,7 @@ const mapboxURL = (id: string) => {
   );
 };
 
-const LTSMapping = (ltsString: string) => {
+const LTSMapping = (ltsString) => {
   switch (ltsString) {
     case "LTS 1":
       return {
@@ -59,12 +60,13 @@ const LTSMapping = (ltsString: string) => {
   }
 };
 
-export interface mapPropsOn {
-  streets: boolean;
-  sidewalks: boolean;
-}
+const VectorGrid = ({ url }) => {
+  const map = useMap();
+  L.vectorGrid.protobuf(url).addTo(map);
+  return <></>;
+};
 
-const LeafletMap = (props: any) => {
+const LeafletMap = (props) => {
   const [trails, setTrails] = useState("");
   const [lines, setLines] = useState("");
   const [stops, setStops] = useState("");
@@ -74,7 +76,7 @@ const LeafletMap = (props: any) => {
   const [streets, setStreets] = useState(false);
   const [center, setCenter] = useState([39.9741171, -75.1914883]);
 
-  const [prevClick, setPrevClick] = useState("" as any);
+  const [prevClick, setPrevClick] = useState("");
 
   const ClearWideLines = () => {
     useMapEvents({
@@ -176,14 +178,14 @@ const LeafletMap = (props: any) => {
   const indegoIcon = L.icon({
     iconUrl: "/indego_logo.png",
     iconSize: [12, 18],
-  }) as any;
+  });
 
   const septaStopIcon = L.icon({
     iconUrl: "./septa.png",
     iconSize: [12, 18],
-  }) as any;
+  });
 
-  const routebuilt = useSelector((state: RootState) => state.counter.route);
+  const routebuilt = useSelector((state) => state.counter.route);
 
   // function to set center when loading a specific route
   const CenterMap = () => {
@@ -260,8 +262,7 @@ const LeafletMap = (props: any) => {
                 {stops && (
                   <GeoJSON
                     data={JSON.parse(stops)}
-                    // @ts-expect-error
-                    pointToLayer={(feature: Feature<Point>, latlng: LatLng) => {
+                    pointToLayer={(feature, latlng) => {
                       // Hide trolley stops
                       if (feature.properties.route.indexOf("Trolley") === -1) {
                         return L.marker(latlng, { icon: septaStopIcon });
@@ -315,20 +316,20 @@ const LeafletMap = (props: any) => {
               )}
             </LayersControl.Overlay>
             <LayersControl.Overlay name="Level of Traffic Stress">
-              <FeatureLayer
-                // @ts-expect-error
+              <VectorGrid url="https://tiles.dvrpc.org/data/pedestrian-network/{z}/{x}/{y}.pbf" />
+              {/* <FeatureLayer
                 url={
                   "https://arcgis.dvrpc.org/portal/rest/services/Transportation/BSTRESSv2_ExistingConditionLTS/FeatureServer/0"
                 }
                 minZoom={16}
                 simplifyFactor={1}
-                style={(feature: any) => {
+                style={(feature) => {
                   const p = feature?.properties;
                   let style = { opacity: 0.8, color: "#A020F0", weight: 2 };
                   style.color = LTSMapping(p.linklts)?.style.color || "#A020F0";
                   return style;
                 }}
-                onEachFeature={(feature: any, layer: any) => {
+                onEachFeature={(feature, layer) => {
                   const p = feature?.properties;
                   layer.bindPopup(
                     "<b>Street Class: </b>" +
@@ -345,21 +346,20 @@ const LeafletMap = (props: any) => {
                   loading: () => setStreets(true),
                   removefeature: () => setStreets(false),
                 }}
-              />
+              /> */}
             </LayersControl.Overlay>
             <LayersControl.Overlay name="Sidewalks">
               <FeatureLayer
-                // @ts-expect-error
                 url={
                   "https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/PedPortal_AppFeatures/FeatureServer/5"
                 }
                 minZoom={17}
                 simplifyFactor={1}
-                style={(feature: any) => {
+                style={(feature) => {
                   let style = { opacity: 0.8, color: "#808080", weight: 2 };
                   return style;
                 }}
-                onEachFeature={(feature: any, layer: any) => {
+                onEachFeature={(feature, layer) => {
                   const p = feature?.properties;
                   layer.bindPopup(
                     "<b>Material: </b>" +

@@ -2,7 +2,11 @@ import L from "leaflet";
 import { useMap } from "react-leaflet";
 import { useEffect, useState } from "react";
 import "./Legend.css";
-import { mapPropsOn } from "../LeafletMap/LeafletMap";
+
+interface mapPropsOn {
+  streets: boolean;
+  sidewalks: boolean;
+}
 
 const generateLegend = (
   legendDiv: any,
