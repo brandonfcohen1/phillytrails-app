@@ -216,7 +216,7 @@ const LeafletMap = (props: any) => {
                 zoomOffset={-1}
               />
             </LayersControl.BaseLayer>
-            <LayersControl.BaseLayer name="Satellie">
+            <LayersControl.BaseLayer name="Satellite">
               <TileLayer
                 attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
                 url={mapboxURL("ckgpuunqr162319n1i6gq8z99")}
