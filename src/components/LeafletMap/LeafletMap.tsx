@@ -72,7 +72,7 @@ const LeafletMap = (props: any) => {
   const [injury, setInjury] = useState("");
   const [sidewalks, setSidewalks] = useState(false);
   const [streets, setStreets] = useState(false);
-  const [center, setCenter] = useState([39.9741171, -75.1914883]);
+  const [center, setCenter] = useState(props.initCenter);
 
   const [prevClick, setPrevClick] = useState("" as any);
 
@@ -93,6 +93,10 @@ const LeafletMap = (props: any) => {
       prevClick.options.weight = 3;
     } catch {}
   };
+
+  useEffect(() => {
+    setCenter(props.initCenter);
+  }, [props.initCenter]);
 
   useEffect(() => {
     // load trails data
@@ -186,11 +190,16 @@ const LeafletMap = (props: any) => {
   const routebuilt = useSelector((state: RootState) => state.counter.route);
 
   // function to set center when loading a specific route
-  const CenterMap = () => {
+  const CenterMap = (center: any) => {
     const map = useMap();
     if (window.location.toString().indexOf("route") > -1) {
       map.setView([center[0], center[1]], 16);
     }
+
+    useEffect(() => {
+      center && map.flyTo(center.center, 12);
+    }, [center]);
+
     return null;
   };
 
@@ -205,7 +214,7 @@ const LeafletMap = (props: any) => {
           renderer={L.canvas({ tolerance: 5 })} // this allows for line clicks with a tolerance of 5px
         >
           <Legend streets={streets} sidewalks={sidewalks} />
-          <CenterMap />
+          <CenterMap center={center} />
 
           <LayersControl position="topright">
             <LayersControl.BaseLayer checked name="Streets">
