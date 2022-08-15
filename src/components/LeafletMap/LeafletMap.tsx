@@ -19,6 +19,7 @@ import ReactDOMServer from "react-dom/server";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareSquare } from "@fortawesome/free-solid-svg-icons";
 import { FeatureLayer } from "react-esri-leaflet";
+import { LocateUser } from "../LocateUser/LocateUser";
 
 const mapboxURL = (id: string) => {
   return (
@@ -206,25 +207,10 @@ const LeafletMap = (props: any) => {
     return null;
   };
 
-  const LocateUser = () => {
-    const setLocation = () => {
-      map &&
-        map.locate().on("locationfound", function (e: any) {
-          props.setCenter(e.latlng);
-          map.flyTo(e.latlng, map.getZoom());
-        });
-    };
-    return (
-      <div style={{ top: 120, left: 50, zIndex: 20000, position: "absolute" }}>
-        <button onClick={setLocation}>hello</button>
-      </div>
-    );
-  };
-
   return (
     <>
       <div className="map__container">
-        <LocateUser />
+        <LocateUser map={map} />
         <MapContainer
           center={props.center}
           zoom={props.id ? 16 : 13}

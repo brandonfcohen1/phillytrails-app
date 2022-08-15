@@ -1,0 +1,12 @@
+.location-button {
+    top: 80px;
+    left: 10px;
+    z-index: 2000;
+    position: absolute;
+    border-radius: 4px;
+    background-color: white;
+    padding: 3px;
+    border: 2px solid rgba(0,0,0,0.2);
+    width: 34px;
+    text-align: center;
+}
