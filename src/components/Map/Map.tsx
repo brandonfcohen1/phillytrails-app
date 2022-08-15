@@ -36,7 +36,7 @@ export default function WithAction(props: any) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [coord, setCoord] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
-  const [initCenter, setInitCenter] = useState([39.9741171, -75.1914883]);
+  const [center, setCenter] = useState([39.9741171, -75.1914883]);
 
   const toggleModal = () => {
     setModalOpen(false);
@@ -58,7 +58,7 @@ export default function WithAction(props: any) {
     {
       text: "Down the Shore",
       onClick: () => {
-        setInitCenter([39.299327, -74.5900669]);
+        setCenter([39.299327, -74.5900669]);
       },
     },
   ];
@@ -125,7 +125,12 @@ export default function WithAction(props: any) {
           </Box>
         ) : null}
 
-        <LeafletMap setCoord={setCoord} id={routeId} initCenter={initCenter} />
+        <LeafletMap
+          setCoord={setCoord}
+          id={routeId}
+          center={center}
+          setCenter={setCenter}
+        />
 
         <RouteBuilder
           drawerOpen={drawerOpen}

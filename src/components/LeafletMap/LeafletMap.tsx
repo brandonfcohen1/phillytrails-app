@@ -72,7 +72,6 @@ const LeafletMap = (props: any) => {
   const [injury, setInjury] = useState("");
   const [sidewalks, setSidewalks] = useState(false);
   const [streets, setStreets] = useState(false);
-  const [center, setCenter] = useState(props.initCenter);
   const [map, setMap] = useState<any>(null);
 
   const [prevClick, setPrevClick] = useState("" as any);
@@ -167,7 +166,10 @@ const LeafletMap = (props: any) => {
             .split("(")[1]
             .split(")")[0]
             .split(" ");
-          setCenter([parseFloat(parseCoord[1]), parseFloat(parseCoord[0])]);
+          props.setCenter([
+            parseFloat(parseCoord[1]),
+            parseFloat(parseCoord[0]),
+          ]);
         });
     }
     // eslint-disable-next-line
@@ -189,10 +191,11 @@ const LeafletMap = (props: any) => {
 
   useEffect(() => {
     if (window.location.toString().indexOf("route") > -1) {
-      map && map.setView(center, 16);
+      map && map.flyTo(props.center, 16);
+    } else {
+      map && map.flyTo(props.center, 12);
     }
-    map && map.flyTo(center, 12);
-  }, [center, map]);
+  }, [props.center, map]);
 
   const MapHook = () => {
     const getMap = useMap();
@@ -203,16 +206,28 @@ const LeafletMap = (props: any) => {
     return null;
   };
 
-  useEffect(() => {
-    setCenter(props.initCenter);
-  }, [props.initCenter]);
+  const LocateUser = () => {
+    const setLocation = () => {
+      map &&
+        map.locate().on("locationfound", function (e: any) {
+          props.setCenter(e.latlng);
+          map.flyTo(e.latlng, map.getZoom());
+        });
+    };
+    return (
+      <div style={{ top: 120, left: 50, zIndex: 20000, position: "absolute" }}>
+        <button onClick={setLocation}>hello</button>
+      </div>
+    );
+  };
 
   return (
     <>
       <div className="map__container">
+        <LocateUser />
         <MapContainer
-          center={[center[0], center[1]]}
-          zoom={13}
+          center={props.center}
+          zoom={props.id ? 16 : 13}
           style={{ height: "calc(100% - 64px)" }}
           tap={false}
           renderer={L.canvas({ tolerance: 5 })} // this allows for line clicks with a tolerance of 5px
