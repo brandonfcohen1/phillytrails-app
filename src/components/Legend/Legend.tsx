@@ -71,6 +71,7 @@ export default function Legend(props: mapPropsOn) {
 
     legend.addTo(map);
     setCurrLegend(legend);
+    // eslint-disable-next-line
   }, [map, props]);
 
   return null;

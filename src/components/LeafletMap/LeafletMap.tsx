@@ -19,6 +19,7 @@ import ReactDOMServer from "react-dom/server";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareSquare } from "@fortawesome/free-solid-svg-icons";
 import { FeatureLayer } from "react-esri-leaflet";
+import { LocateUser } from "../LocateUser/LocateUser";
 
 const mapboxURL = (id: string) => {
   return (
@@ -72,7 +73,7 @@ const LeafletMap = (props: any) => {
   const [injury, setInjury] = useState("");
   const [sidewalks, setSidewalks] = useState(false);
   const [streets, setStreets] = useState(false);
-  const [center, setCenter] = useState(props.initCenter);
+  const [map, setMap] = useState<any>(null);
 
   const [prevClick, setPrevClick] = useState("" as any);
 
@@ -93,10 +94,6 @@ const LeafletMap = (props: any) => {
       prevClick.options.weight = 3;
     } catch {}
   };
-
-  useEffect(() => {
-    setCenter(props.initCenter);
-  }, [props.initCenter]);
 
   useEffect(() => {
     // load trails data
@@ -170,10 +167,14 @@ const LeafletMap = (props: any) => {
             .split("(")[1]
             .split(")")[0]
             .split(" ");
-          setCenter([parseFloat(parseCoord[1]), parseFloat(parseCoord[0])]);
+          props.setCenter([
+            parseFloat(parseCoord[1]),
+            parseFloat(parseCoord[0]),
+          ]);
         });
     }
-  }, [props]);
+    // eslint-disable-next-line
+  }, []);
 
   // Custom Icons
 
@@ -189,16 +190,19 @@ const LeafletMap = (props: any) => {
 
   const routebuilt = useSelector((state: RootState) => state.counter.route);
 
-  // function to set center when loading a specific route
-  const CenterMap = (center: any) => {
-    const map = useMap();
+  useEffect(() => {
     if (window.location.toString().indexOf("route") > -1) {
-      map.setView([center[0], center[1]], 16);
+      map && map.flyTo(props.center, 16);
+    } else {
+      map && map.flyTo(props.center, 12);
     }
+  }, [props.center, map]);
 
+  const MapHook = () => {
+    const getMap = useMap();
     useEffect(() => {
-      center && map.flyTo(center.center, 12);
-    }, [center]);
+      setMap(getMap);
+    }, [getMap]);
 
     return null;
   };
@@ -206,15 +210,16 @@ const LeafletMap = (props: any) => {
   return (
     <>
       <div className="map__container">
+        <LocateUser map={map} />
         <MapContainer
-          center={[center[0], center[1]]}
-          zoom={13}
+          center={props.center}
+          zoom={props.id ? 16 : 13}
           style={{ height: "calc(100% - 64px)" }}
           tap={false}
           renderer={L.canvas({ tolerance: 5 })} // this allows for line clicks with a tolerance of 5px
         >
           <Legend streets={streets} sidewalks={sidewalks} />
-          <CenterMap center={center} />
+          <MapHook />
 
           <LayersControl position="topright">
             <LayersControl.BaseLayer checked name="Streets">
