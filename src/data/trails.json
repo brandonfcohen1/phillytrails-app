@@ -15,8 +15,8 @@
         ]
       },
       "properties": {
-        "id_1": 1,
-        "id": 85,
+        "id": 1,
+        "id_0": 85,
         "name": "Kelly Drive - Girard Stairs",
         "segment_description": "A set of stairs from Kelly Drive to Girard which allows for connections from the SRT and Lemon Trail to the Girard Ave Bridge.",
         "safety": "CAUTION: Access to the SRT requires crossing Kelly Drive right by a blind curve. Use extreme caution. ",
@@ -42,8 +42,8 @@
         ]
       },
       "properties": {
-        "id_1": 2,
-        "id": 86,
+        "id": 2,
+        "id_0": 86,
         "name": "Blue Trail (Andorra)",
         "segment_description": "Short connection between the Yellow Trail and Teal Trail.",
         "safety": null,
@@ -68,8 +68,8 @@
         ]
       },
       "properties": {
-        "id_1": 3,
-        "id": 111,
+        "id": 3,
+        "id_0": 111,
         "name": "Recycling Center Drive",
         "segment_description": "Connection from the Belmont Plateau XC course to the broader road network in the Chamounix area",
         "safety": null,
@@ -105,8 +105,8 @@
         ]
       },
       "properties": {
-        "id_1": 4,
-        "id": 100,
+        "id": 4,
+        "id_0": 100,
         "name": "Pencoyd Trail - East",
         "segment_description": "The Pencoyd Trail runs in between Downtown Manayunk and the Cynwyd Heritage Trail. On the Manayunk side, it crosses the river across the Pencoyd Bridge, then runs on a paved trail past an apartment complex on the West side of the river. ",
         "safety": null,
@@ -128,8 +128,8 @@
         ]
       },
       "properties": {
-        "id_1": 5,
-        "id": 139,
+        "id": 5,
+        "id_0": 139,
         "name": "Belmont Trails - 5K loop connector",
         "segment_description": "Section of the Belmont 5K course connecting the big hills with the Dark Road",
         "safety": null,
@@ -161,8 +161,8 @@
         ]
       },
       "properties": {
-        "id_1": 6,
-        "id": 123,
+        "id": 6,
+        "id_0": 123,
         "name": "Rex Avenue",
         "segment_description": "Rex Avenue dead-ends for cars in Chestnut Hill and from there pedestrians can continue down a steep hill to the Creek and a stone bridge to Forbidden Drive.",
         "safety": null,
@@ -202,8 +202,8 @@
         ]
       },
       "properties": {
-        "id_1": 7,
-        "id": 101,
+        "id": 7,
+        "id_0": 101,
         "name": "Mill Creek Trail",
         "segment_description": "A wide, rocky trail which runs parallel to Mill Creek, passing old ruins from the mill.",
         "safety": "Barker Mill is private property and closed to the public.",
@@ -265,8 +265,8 @@
         ]
       },
       "properties": {
-        "id_1": 8,
         "id": 8,
+        "id_0": 8,
         "name": "Mousetrap Trail",
         "segment_description": "Nice, quiet trail through the woods in between Belmont Ave and the Edgley area. Allows for connections to the Edgley Trails.",
         "safety": "Only cross Belmont Ave at the traffic light",
@@ -303,8 +303,8 @@
         ]
       },
       "properties": {
-        "id_1": 9,
-        "id": 121,
+        "id": 9,
+        "id_0": 121,
         "name": "Andorra Meadow Observation Loop",
         "segment_description": "A shorter loop through the meadow at the high end offering nice views.",
         "safety": null,
@@ -354,8 +354,8 @@
         ]
       },
       "properties": {
-        "id_1": 10,
-        "id": 1,
+        "id": 10,
+        "id_0": 1,
         "name": "Schuylkill River Trail - Falls Bridge to Wissahickon TC",
         "segment_description": "Section of the SRT from Falls bridge to the Wissahickon Transit Center (and Downtown Manayunk)",
         "safety": null,
@@ -397,8 +397,8 @@
         ]
       },
       "properties": {
-        "id_1": 11,
-        "id": 50,
+        "id": 11,
+        "id_0": 50,
         "name": "West Bank Greenway - Spring Garden to Market",
         "segment_description": "A large path/sidewalk along 31st and 32nd street",
         "safety": null,
@@ -480,8 +480,8 @@
         ]
       },
       "properties": {
-        "id_1": 18,
-        "id": 7,
+        "id": 18,
+        "id_0": 7,
         "name": "Reservoir Drive",
         "segment_description": "Beautiful road around the East Side of Fairmount Park",
         "safety": "There are no sidewalks for most of the road but there are wide shoulders.",
@@ -513,8 +513,8 @@
         ]
       },
       "properties": {
-        "id_1": 109,
-        "id": 105,
+        "id": 109,
+        "id_0": 105,
         "name": "Morris Park Road",
         "segment_description": "A wide gravel road which leaves from the Charles A. Papa playground and leads to several trailheads along both creeks.",
         "safety": null,
@@ -641,8 +641,8 @@
         ]
       },
       "properties": {
-        "id_1": 12,
-        "id": 9,
+        "id": 12,
+        "id_0": 9,
         "name": "Haverford College Nature Trail",
         "segment_description": "Scenic trail which travels around the edge of the Haverford College campus, through woods, open fields, and the beautiful college grounds. ",
         "safety": null,
@@ -788,8 +788,8 @@
         ]
       },
       "properties": {
-        "id_1": 13,
-        "id": 2,
+        "id": 13,
+        "id_0": 2,
         "name": "Cresheim Valley Trail",
         "segment_description": "This trail runs through a beautiful, quiet section of Wissahickon Park connecting the White Trail with Chestnut Hill. There are many side trails which offer opportunities for exploring the steep canyon and making connections/loops with different destinations in Chestnut Hill and Mt. Airy.",
         "safety": null,
@@ -827,8 +827,8 @@
         ]
       },
       "properties": {
-        "id_1": 14,
-        "id": 3,
+        "id": 14,
+        "id_0": 3,
         "name": "Tacony Creek Trail - North loop",
         "segment_description": "A short loop in the park at the North end of the Tacony Creek Trail. ",
         "safety": null,
@@ -947,8 +947,8 @@
         ]
       },
       "properties": {
-        "id_1": 15,
-        "id": 4,
+        "id": 15,
+        "id_0": 4,
         "name": "Boxers' Trail - Dirt Section",
         "segment_description": "The dirt section of Boxers' Trail is one of the best wooded trails in Philly, following the rim of the pleateau of the Parkland area. The trail winds up and down several rollings hills, offering views of the Schuylkill. At the Southern end, you can connect to the SRT via Fountain Green Dr and one of the few traffic lights across Kelly Drive.",
         "safety": null,
@@ -979,8 +979,8 @@
         ]
       },
       "properties": {
-        "id_1": 16,
-        "id": 5,
+        "id": 16,
+        "id_0": 5,
         "name": "Morris Park East Branch Trail Extension",
         "segment_description": "Between Sherwood Road and City Line Ave there are several trails on both sides of the East Branch. ",
         "safety": "It is possible to cross the creek and to reach City Line on either side but the trails and river crossings are not well maintained.",
@@ -1027,8 +1027,8 @@
         ]
       },
       "properties": {
-        "id_1": 17,
-        "id": 6,
+        "id": 17,
+        "id_0": 6,
         "name": "Trolley Trail - Edgley Section",
         "segment_description": "Direct route parallel to Chamounix Road through the woods which allows for loops with the \"Mouse\" trails. ",
         "safety": "The woods intersections are not marked and can be a bit confusing. Carry a map.",
@@ -1083,8 +1083,8 @@
         ]
       },
       "properties": {
-        "id_1": 19,
-        "id": 96,
+        "id": 19,
+        "id_0": 96,
         "name": "Saunders Woods - Center",
         "segment_description": "There are a few trails on which you can make loops in the center of Saunders Woods Preserve, including some wide grassy trails which are excellent for running.",
         "safety": null,
@@ -1126,8 +1126,8 @@
         ]
       },
       "properties": {
-        "id_1": 20,
-        "id": 10,
+        "id": 20,
+        "id_0": 10,
         "name": "Belmont Field Loop",
         "segment_description": "Loop through the fields at Belmont Hill which makes up the base loop of the Belmont Cross Country Courses. Usually run counter-clockwise, which involves running up Flagpole Hill.",
         "safety": null,
@@ -1186,8 +1186,8 @@
         ]
       },
       "properties": {
-        "id_1": 21,
-        "id": 11,
+        "id": 21,
+        "id_0": 11,
         "name": "Henry Lane Park",
         "segment_description": "A few trails run through Henry Lane Park up a small hill through beautiful forests.",
         "safety": null,
@@ -1320,8 +1320,8 @@
         ]
       },
       "properties": {
-        "id_1": 22,
-        "id": 12,
+        "id": 22,
+        "id_0": 12,
         "name": "MLK Drive",
         "segment_description": "MLK Drive runs along the West side of the Schuylkill from the Art Museum to East Falls. On summer weekends the road is closed to car traffic between East Falls and Sweet Briar Lane. There is a paved path along the road which can be used when the road is not closed, but it is not well maintained.",
         "safety": null,
@@ -1364,8 +1364,8 @@
         ]
       },
       "properties": {
-        "id_1": 23,
-        "id": 13,
+        "id": 23,
+        "id_0": 13,
         "name": "Montgomery Drive (Belmont Plateau - MLK Drive)",
         "segment_description": "A series of sidewalks and road crossings which allows connecting from MLK to Belmont Plateau. It's not a particularly pleasant stretch, with heavy car traffic and difficult road crossings. ",
         "safety": "Use caution crossing Montgomery Dr.",
@@ -1390,8 +1390,8 @@
         ]
       },
       "properties": {
-        "id_1": 24,
-        "id": 14,
+        "id": 24,
+        "id_0": 14,
         "name": "Gnome Trail",
         "segment_description": "Short connection between the Forest Loop and Teal Trail.",
         "safety": null,
@@ -1434,8 +1434,8 @@
         ]
       },
       "properties": {
-        "id_1": 25,
-        "id": 15,
+        "id": 25,
+        "id_0": 15,
         "name": "Lovers' Leap",
         "segment_description": "Lovers' Leap is a beautiful viewpoint which can be accessed by a steep climb either from Lincoln Drive or Forbidden Drive",
         "safety": null,
@@ -1463,8 +1463,8 @@
         ]
       },
       "properties": {
-        "id_1": 26,
-        "id": 97,
+        "id": 26,
+        "id_0": 97,
         "name": "Valley Green - Yellow Trail Connection S",
         "segment_description": "Steep climb between the Forbidden Drive South of Valley Green Inn and the Yellow Trail above.",
         "safety": null,
@@ -1494,8 +1494,8 @@
         ]
       },
       "properties": {
-        "id_1": 27,
-        "id": 98,
+        "id": 27,
+        "id_0": 98,
         "name": "Lincoln Drive Connection 1",
         "segment_description": "Steep climb between Lincoln Drive and the Rim Trail above",
         "safety": null,
@@ -1529,8 +1529,8 @@
         ]
       },
       "properties": {
-        "id_1": 34,
-        "id": 20,
+        "id": 34,
+        "id_0": 20,
         "name": "Youngsford Road Trail",
         "segment_description": "This train runs parallel to Youngsford Ridge right by Youngsford Road and is great for making loops with other trails in the area.",
         "safety": null,
@@ -1554,8 +1554,8 @@
         ]
       },
       "properties": {
-        "id_1": 35,
-        "id": 21,
+        "id": 35,
+        "id_0": 21,
         "name": "Falls Bridge",
         "segment_description": "A bridge across the river in between the Northern end of MLK Drive and the SRT in East Falls. There are sidewalks on both sides of the road.",
         "safety": null,
@@ -1632,8 +1632,8 @@
         ]
       },
       "properties": {
-        "id_1": 28,
-        "id": 27,
+        "id": 28,
+        "id_0": 27,
         "name": "Kenealy Nature Park",
         "segment_description": "Beautful trail on the Western side of Kenealy Nature Park parallel to Youngsford Road and a creek. ",
         "safety": "Be respectful of private property on some of the side trails off of the main trail.",
@@ -1664,8 +1664,8 @@
         ]
       },
       "properties": {
-        "id_1": 29,
-        "id": 106,
+        "id": 29,
+        "id_0": 106,
         "name": "52nd Street Underpass",
         "segment_description": "Paved trail which runs from the Parkside Evans Playground under 52nd Street along Parkside Ave",
         "safety": null,
@@ -1799,8 +1799,8 @@
         ]
       },
       "properties": {
-        "id_1": 30,
-        "id": 16,
+        "id": 30,
+        "id_0": 16,
         "name": "Rittenhousetown - Blue Bell",
         "segment_description": "From the Ten Box Parking lot, a paved path continues up to Rittenhousetown. From there, there are a few trails which lead up a steep hill to the Blue Bell parking lot. Heading North, the trail runs parallel to the creek under the Walnut Lane bridge. From there, you can follow the Orange Trail to Forbidden Drive at Kitchens Lane.",
         "safety": null,
@@ -1971,8 +1971,8 @@
         ]
       },
       "properties": {
-        "id_1": 31,
-        "id": 17,
+        "id": 31,
+        "id_0": 17,
         "name": "Cooper River Lake Loop",
         "segment_description": "A wide paved path runs around Cooper River Lake past a few picnic areas and through nice fields. The South side runs alongside shaded parks in Collingswood, wheras the North side runs by the Camden County Boathouse, Cooper River Running Track, and a large playground.",
         "safety": null,
@@ -2021,8 +2021,8 @@
         ]
       },
       "properties": {
-        "id_1": 32,
-        "id": 18,
+        "id": 32,
+        "id_0": 18,
         "name": "Schuylkill River Trail: Boathouse Row to Girard",
         "segment_description": "The Schuylkill River Trail continues past Boathouse Row along the river past several monuments on both sides of the trail.",
         "safety": null,
@@ -2060,8 +2060,8 @@
         ]
       },
       "properties": {
-        "id_1": 33,
-        "id": 19,
+        "id": 33,
+        "id_0": 19,
         "name": "Crossbow Trail- Lower Loop",
         "segment_description": "Loop off of the Crossbow Trail with connection to the Parkside Tennis Courts",
         "safety": "This is a popular mountain biking trail- be alert for bikes.",
@@ -2125,8 +2125,8 @@
         ]
       },
       "properties": {
-        "id_1": 36,
-        "id": 22,
+        "id": 36,
+        "id_0": 22,
         "name": "University Ave - Woodland Ave",
         "segment_description": "University Avenue has wide sidewalks and allows for connections from the River up to the Woodlands area. ",
         "safety": "Only cross University Ave at the crosswalks.",
@@ -2305,8 +2305,8 @@
         ]
       },
       "properties": {
-        "id_1": 37,
-        "id": 23,
+        "id": 37,
+        "id_0": 23,
         "name": "FDR Park Loop",
         "segment_description": "FDR Park is a great park by the stadiums in South Philadelphia with several trails in between the lakes and fields. This loop starts and ends at the American Swedish Historical Museum and follows the outer loop of the park, but many other combinations are possible with the network of trails in the park.",
         "safety": null,
@@ -2374,8 +2374,8 @@
         ]
       },
       "properties": {
-        "id_1": 38,
-        "id": 24,
+        "id": 38,
+        "id_0": 24,
         "name": "Manayunk Main Street",
         "segment_description": "Traveling West past Lincoln Drive, the Schuylkill River Trail follows Main Street in Manayunk. ",
         "safety": null,
@@ -2479,8 +2479,8 @@
         ]
       },
       "properties": {
-        "id_1": 39,
-        "id": 25,
+        "id": 39,
+        "id_0": 25,
         "name": "Lincoln Drive - Eastern Bank Trail",
         "segment_description": "Across the Creek and Lincoln Drive from the popular paved Lincoln Drive Trail, this dirt trail is much more rugged, hilly, and rocky, but goes through one of the most beautiful forests in Philly. Expect a lot of elevation gain and loss. There are several side trails at the Northern end which offer loops with the Upper Trail.",
         "safety": null,
@@ -2523,8 +2523,8 @@
         ]
       },
       "properties": {
-        "id_1": 50,
-        "id": 32,
+        "id": 50,
+        "id_0": 32,
         "name": "Lavender Trail - Creek",
         "segment_description": "This section of the Lavender trail runs from the Orange Trail to Chestnut Hill Ave along a small creek. One of the nicest orests in the park.",
         "safety": null,
@@ -2553,8 +2553,8 @@
         ]
       },
       "properties": {
-        "id_1": 51,
-        "id": 33,
+        "id": 51,
+        "id_0": 33,
         "name": "Eastwick Trail",
         "segment_description": "This short trail connects the Visitors' Center with 86th Street, running along Darby Creek.",
         "safety": null,
@@ -2645,8 +2645,8 @@
         ]
       },
       "properties": {
-        "id_1": 40,
-        "id": 26,
+        "id": 40,
+        "id_0": 26,
         "name": "Parkside Avenue",
         "segment_description": "Parkside Avenue loops around the West edge of Fairmount Park with beautiful woods on one side and historic architecture on the other. The Southern section has a wide sidewalk, but headed North you'll have to cross the road a few times to find a safe place to run. North of Wynnefield Ave the intersection to get to Belmont Mansion Road is a bit confusing. ",
         "safety": "Use caution when crossing the road to navigate the intersections at the Northern end.",
@@ -2675,8 +2675,8 @@
         ]
       },
       "properties": {
-        "id_1": 41,
-        "id": 99,
+        "id": 41,
+        "id_0": 99,
         "name": "Sassafras Trail",
         "segment_description": "This trail serves as a connection from Spring Mill Road to the Blue Bird area with some beautiful forest views.",
         "safety": null,
@@ -2802,8 +2802,8 @@
         ]
       },
       "properties": {
-        "id_1": 42,
-        "id": 28,
+        "id": 42,
+        "id_0": 28,
         "name": "420 Trail",
         "segment_description": "When entering the woods at Belmont this trail will be on your left. It runs through a nice section of forest and is full of twists and turns. A great way to add distance to a run at Belmont.",
         "safety": null,
@@ -2895,8 +2895,8 @@
         ]
       },
       "properties": {
-        "id_1": 43,
-        "id": 29,
+        "id": 43,
+        "id_0": 29,
         "name": "Winsor Trail",
         "segment_description": "Beautiful, wide trail from Richie Ashburn Field to Henry Lane Park through open forests and along a picturesque creek. ",
         "safety": null,
@@ -2943,8 +2943,8 @@
         ]
       },
       "properties": {
-        "id_1": 44,
-        "id": 30,
+        "id": 44,
+        "id_0": 30,
         "name": "33rd Street - S to Girard",
         "segment_description": "South of Reservoir Drive the sidewalk along 33rd Street becomes less well maintained, but this route offers beautiful views of the skyline and provides for useful connections to Girard Ave",
         "safety": null,
@@ -2971,8 +2971,8 @@
         ]
       },
       "properties": {
-        "id_1": 52,
-        "id": 34,
+        "id": 52,
+        "id_0": 34,
         "name": "Centennial Arboretum - West",
         "segment_description": "Parallel paths running from Belmont Ave to the Catholic Total Abstience Fountain to Belmont Ave with beautiful trees along the way.",
         "safety": null,
@@ -3031,8 +3031,8 @@
         ]
       },
       "properties": {
-        "id_1": 53,
-        "id": 35,
+        "id": 53,
+        "id_0": 35,
         "name": "Horticultural Drive",
         "segment_description": "A run along Horticultural Drive which connects the Belmont Plateau area to the Centennial Area",
         "safety": null,
@@ -3054,8 +3054,8 @@
         ]
       },
       "properties": {
-        "id_1": 164,
-        "id": 165,
+        "id": 164,
+        "id_0": 165,
         "name": "Strawberry Mansion Bridge - MLK Drive North",
         "segment_description": "Road down a hill which connects the Strawberry Mansion Bridge to MLK Drive. ",
         "safety": "CAUTION: Dangerous point to cross MLK Drive if the road is open to car traffic. ",
@@ -3230,8 +3230,8 @@
         ]
       },
       "properties": {
-        "id_1": 45,
-        "id": 51,
+        "id": 45,
+        "id_0": 51,
         "name": "White Trail - Chestnut Hill Ave - Valley Green",
         "segment_description": "The White Trail runs higher up the valley walls than the Orange Trail and is similarly rugged. This section has several steep climbs and is generally a quiet section of the park.",
         "safety": null,
@@ -3276,8 +3276,8 @@
         ]
       },
       "properties": {
-        "id_1": 46,
-        "id": 102,
+        "id": 46,
+        "id_0": 102,
         "name": "Belmont Trails - Nursery Hill",
         "segment_description": "A really fun stretch of the 8K Cross Country course which runs through a field adjecent to the the Greenland Greenhouses",
         "safety": null,
@@ -3298,8 +3298,8 @@
         ]
       },
       "properties": {
-        "id_1": 47,
-        "id": 103,
+        "id": 47,
+        "id_0": 103,
         "name": "Freeland Ave Steps",
         "segment_description": "This intricate old stone staircase leads down to Lincoln Drive from Freeland Ave and the Rim Trail.",
         "safety": null,
@@ -3559,8 +3559,8 @@
         ]
       },
       "properties": {
-        "id_1": 49,
-        "id": 31,
+        "id": 49,
+        "id_0": 31,
         "name": "Forbidden Drive",
         "segment_description": "The main road through the length of Wissahickon Park. It is a well maintained dirt road which is heavily traveled.",
         "safety": null,
@@ -3632,8 +3632,8 @@
         ]
       },
       "properties": {
-        "id_1": 54,
-        "id": 53,
+        "id": 54,
+        "id_0": 53,
         "name": "Sid Thayer Trail",
         "segment_description": "Long, wide trail which connects the Riverbend Environmental Center with the Youngsford Park area. Starting from the South End, the trail runs alongside Philadelphia Country Club before becoming more wooded. The forest is relatively thin and the trail offers some nice views of the river. ",
         "safety": null,
@@ -3839,8 +3839,8 @@
         ]
       },
       "properties": {
-        "id_1": 55,
-        "id": 36,
+        "id": 55,
+        "id_0": 36,
         "name": "Orange Trail - Valley Green - Blue Bell",
         "segment_description": "South from Valley Green, the White Trail runs past Devil's Pool, a popular swimming hole which can be super crowded in the summer. Headed South from there, the trail runs parallel to the river, and similar to other sections of the Orange Trail, it is rugged and rough going. By Livezy Lane you'll go through one of the more interesting features on any trail in the area, the Fingerspan Bridge.",
         "safety": null,
@@ -3872,8 +3872,8 @@
         ]
       },
       "properties": {
-        "id_1": 56,
-        "id": 37,
+        "id": 56,
+        "id_0": 37,
         "name": "Andorra Bike Bypass",
         "segment_description": "Bikes are not allowed in Andorra except on this trail, which can be used for bikers to connect from Northwestern Avenue to Forbidden Drive.",
         "safety": null,
@@ -3933,8 +3933,8 @@
         ]
       },
       "properties": {
-        "id_1": 57,
-        "id": 38,
+        "id": 57,
+        "id_0": 38,
         "name": "Newtown Lake - North Shore",
         "segment_description": "This path runs along the North shore of beautiful Newtown Lake in Haddon Township through nice fields and river views.",
         "safety": null,
@@ -3984,8 +3984,8 @@
         ]
       },
       "properties": {
-        "id_1": 58,
-        "id": 39,
+        "id": 58,
+        "id_0": 39,
         "name": "Trolley Trail - Connection to Greenland Rd",
         "segment_description": "Useful connection from the Belmont area to Greenland Rd and the Strawberry Mansion Bridge through a beautiful forest on a well-packed trail",
         "safety": null,
@@ -4015,8 +4015,8 @@
         ]
       },
       "properties": {
-        "id_1": 59,
-        "id": 40,
+        "id": 59,
+        "id_0": 40,
         "name": "Schuylkill Banks South of Boardwalk",
         "segment_description": "The newest extension of the Schuylkill River Trail continues south of South Street on the riverbank to Christian Street.",
         "safety": null,
@@ -4047,8 +4047,8 @@
         ]
       },
       "properties": {
-        "id_1": 67,
-        "id": 47,
+        "id": 67,
+        "id_0": 47,
         "name": "Tree House Loop",
         "segment_description": "A series of connecting trails around the Andorra Tree House.",
         "safety": null,
@@ -4083,8 +4083,8 @@
         ]
       },
       "properties": {
-        "id_1": 155,
         "id": 155,
+        "id_0": 155,
         "name": "Spring Garden Bridge",
         "segment_description": "Bridge from the Art Museum to West Philly with narrow sidewalks on both sides of the bridge.",
         "safety": null,
@@ -4209,8 +4209,8 @@
         ]
       },
       "properties": {
-        "id_1": 60,
-        "id": 52,
+        "id": 60,
+        "id_0": 52,
         "name": "Tinicum Trail",
         "segment_description": "The Tinicum Trail runs parallel to I-95 and connects the Emergent Wetland area of the park with the Western section. It is a nice, well-maintained dirt road but the proximity to I-95 is bothersome.",
         "safety": null,
@@ -4400,8 +4400,8 @@
         ]
       },
       "properties": {
-        "id_1": 61,
-        "id": 41,
+        "id": 61,
+        "id_0": 41,
         "name": "Tacony Creek Trail",
         "segment_description": "Unique among the trails which follow rivers in Philadelphia, the Tacony Creek Trail is paved. The trail follows the river for close to 3 miles from Juniata Park to the city border with Cheltenham. The trail crosses under several large bridges, similar to Pennypack Park.",
         "safety": null,
@@ -4425,8 +4425,8 @@
         ]
       },
       "properties": {
-        "id_1": 62,
-        "id": 42,
+        "id": 62,
+        "id_0": 42,
         "name": "Stony Lane",
         "segment_description": "Dirt road in between Henry Lane and Youngsford Road.",
         "safety": null,
@@ -4461,8 +4461,8 @@
         ]
       },
       "properties": {
-        "id_1": 63,
-        "id": 43,
+        "id": 63,
+        "id_0": 43,
         "name": "Winsor - Sid Thayer",
         "segment_description": "Very steep short trail which connects the Winsor Trail to Lafayette Road to access the Sid Thayer Trail.",
         "safety": null,
@@ -4510,8 +4510,8 @@
         ]
       },
       "properties": {
-        "id_1": 64,
-        "id": 44,
+        "id": 64,
+        "id_0": 44,
         "name": "Lemon Trail",
         "segment_description": "This trail appears on very few maps, but is actually well marked. It is similar to Boxers' trail but a little more rugged, and passes by several beautiful views of the river. At the Northern end, there is a steep scramble (or staircase) option to connect with Girard Ave.",
         "safety": null,
@@ -4548,8 +4548,8 @@
         ]
       },
       "properties": {
-        "id_1": 65,
-        "id": 45,
+        "id": 65,
+        "id_0": 45,
         "name": "Sedgley-Poplar Sidewalk",
         "segment_description": "Large sidewalk up Sedgley and Poplar to Girard. Slight hill and light traffic through a nice section of the park.",
         "safety": null,
@@ -4607,8 +4607,8 @@
         ]
       },
       "properties": {
-        "id_1": 66,
-        "id": 46,
+        "id": 66,
+        "id_0": 46,
         "name": "Darby Creek Trail",
         "segment_description": "The Darby Creek Trail is my favorite trail at John Heinz. Unlike many of the other \"roads\" it is a single-track trail with water on both sides with skyline views to the East.",
         "safety": null,
@@ -4676,8 +4676,8 @@
         ]
       },
       "properties": {
-        "id_1": 68,
-        "id": 48,
+        "id": 68,
+        "id_0": 48,
         "name": "Lincoln Drive - Eastern Bank Trail Upper Loop",
         "segment_description": "At the Northern End of the East Side of Lincoln Drive, this trail offers a loop higher up on the hill than the main trail. There are many side connecting trails in the area.",
         "safety": null,
@@ -4705,8 +4705,8 @@
         ]
       },
       "properties": {
-        "id_1": 69,
-        "id": 49,
+        "id": 69,
+        "id_0": 49,
         "name": "Green Trail - Forest Loop Connector",
         "segment_description": "A short connection from the Green Trail back to the Forest Loop to make a larger loop through Andorra without going down to Forbidden Drive.",
         "safety": null,
@@ -4812,8 +4812,8 @@
         ]
       },
       "properties": {
-        "id_1": 70,
-        "id": 54,
+        "id": 70,
+        "id_0": 54,
         "name": "Woodland Walk",
         "segment_description": "Woodland Walk runs diagonal to the grid system from the Woodlands to 30th Street Station through the Penn and Drexel campuses.",
         "safety": null,
@@ -4873,8 +4873,8 @@
         ]
       },
       "properties": {
-        "id_1": 71,
-        "id": 55,
+        "id": 71,
+        "id_0": 55,
         "name": "Falls Road to MLK",
         "segment_description": "A steep hill down from Wynnefield Heights to the river. There is no sidewalk but the road has a wide shoulder.",
         "safety": "Use caution on road shoulder.",
@@ -4946,8 +4946,8 @@
         ]
       },
       "properties": {
-        "id_1": 72,
-        "id": 56,
+        "id": 72,
+        "id_0": 56,
         "name": "Morris Park West Branch Trail",
         "segment_description": "The West Branch Trail runs alongside the West Branch of Indian Creek from City Line Ave to the Charles A. Papa Playground though wild landscapes and scenery. The West Branch of the creek is gorgeous and the geology around the creek is very unique for this area. You'll find beautiful small waterfalls around Indian Rock and other points. At the Southern end, the trail loops around a small pond with interesting views.",
         "safety": "As of June 2021 this trail is very overgrown and hard to follow at points.",
@@ -5087,8 +5087,8 @@
         ]
       },
       "properties": {
-        "id_1": 79,
-        "id": 63,
+        "id": 79,
+        "id_0": 63,
         "name": "Kitchen Sink Trail",
         "segment_description": "A mountain biking trail on the Eastern side of the Belmont area which winds back and forth through beautiful forest (if a bit close to 76). The trail intersects the Trolley Trail and others, and offers over 1.5 miles of uninterrupted woods trails.",
         "safety": null,
@@ -5258,8 +5258,8 @@
         ]
       },
       "properties": {
-        "id_1": 73,
-        "id": 57,
+        "id": 73,
+        "id_0": 57,
         "name": "Wetland Loop Trail",
         "segment_description": "The main loop trail at John Heinz NWR, this dirt road winds between Darby Creek and Emergent Wetland on the West Side, and through the woods on the East Side. There are several viewing platforms, including one two-story platform. ",
         "safety": null,
@@ -5324,8 +5324,8 @@
         ]
       },
       "properties": {
-        "id_1": 74,
-        "id": 58,
+        "id": 74,
+        "id_0": 58,
         "name": "Haddon Lake Park Trail",
         "segment_description": "From the South end of Haddon Lake, this trail continues through a beautiful narrow park offering an opportunity to add miles onto a loop around Haddon Lake.",
         "safety": null,
@@ -5355,8 +5355,8 @@
         ]
       },
       "properties": {
-        "id_1": 75,
-        "id": 59,
+        "id": 75,
+        "id_0": 59,
         "name": "Yellow Poplar Trail",
         "segment_description": "Rocky trail running along Sawmill Run",
         "safety": null,
@@ -5472,8 +5472,8 @@
         ]
       },
       "properties": {
-        "id_1": 76,
-        "id": 60,
+        "id": 76,
+        "id_0": 60,
         "name": "Mighty Mouse Trail",
         "segment_description": "Winding, wild trail around the woods to the North of the Edgley Fields which makes for an excellent trail run. The Western trailhead can be hard to find- it is basically directly across the small street from Mouse Trap, South of the guardrails.",
         "safety": "The woods intersections are not marked and can be a bit confusing. Carry a map.",
@@ -5496,8 +5496,8 @@
         ]
       },
       "properties": {
-        "id_1": 77,
-        "id": 61,
+        "id": 77,
+        "id_0": 61,
         "name": "Covered Bridge",
         "segment_description": "A gem in Wissahickon- you'll feel like you're in Vermont crossing the creek over the Thomas Mill Covered Bridge, which dates back to 1855.",
         "safety": null,
@@ -5610,8 +5610,8 @@
         ]
       },
       "properties": {
-        "id_1": 78,
-        "id": 62,
+        "id": 78,
+        "id_0": 62,
         "name": "Trolley Trail - Belmont Trails",
         "segment_description": "Nice, well mainted trail which winds through the woods parallel to the Belmont Plateau XC trails",
         "safety": null,
@@ -5644,8 +5644,8 @@
         ]
       },
       "properties": {
-        "id_1": 80,
-        "id": 64,
+        "id": 80,
+        "id_0": 64,
         "name": "Fountain Green Drive",
         "segment_description": "Road which connects Kelly Drive and the fields in the East Park. Can be used to make a loop with Boxers' Trail. ",
         "safety": "There are no sidewalks for most of the road but there are wide shoulders.",
@@ -5696,8 +5696,8 @@
         ]
       },
       "properties": {
-        "id_1": 81,
-        "id": 65,
+        "id": 81,
+        "id_0": 65,
         "name": "Waverly Heights Trail",
         "segment_description": "In the Kenealy Nature Preserve, this trail runs up a small valley along a creek up towards Waverly Road.",
         "safety": null,
@@ -5727,8 +5727,8 @@
         ]
       },
       "properties": {
-        "id_1": 82,
-        "id": 66,
+        "id": 82,
+        "id_0": 66,
         "name": "Valley View Trail",
         "segment_description": "The most direct connection from Spring Mill Road to the Blue Bird area.",
         "safety": null,
@@ -5842,8 +5842,8 @@
         ]
       },
       "properties": {
-        "id_1": 83,
-        "id": 67,
+        "id": 83,
+        "id_0": 67,
         "name": "Wild Mouse Trail",
         "segment_description": "Winding, wild trail through the woods Northeast of the Edgley Fields which makes for an excellent trail run. The winding route maximizes the limited space in the woods here and allows for longer runs.",
         "safety": "The woods intersections are not marked and can be a bit confusing. Carry a map.",
@@ -5867,8 +5867,8 @@
         ]
       },
       "properties": {
-        "id_1": 84,
-        "id": 68,
+        "id": 84,
+        "id_0": 68,
         "name": "Yellow Trail - Blue Stone Bridge Connection",
         "segment_description": "Steep climb between Forbidden Drive and the Yellow Trail above",
         "safety": null,
@@ -5899,8 +5899,8 @@
         ]
       },
       "properties": {
-        "id_1": 85,
-        "id": 69,
+        "id": 85,
+        "id_0": 69,
         "name": "Scout House Trail",
         "segment_description": "Trail from the Scout House off Wigard Ave to the Yellow Trail",
         "safety": null,
@@ -5968,8 +5968,8 @@
         ]
       },
       "properties": {
-        "id_1": 86,
-        "id": 70,
+        "id": 86,
+        "id_0": 70,
         "name": "Haddon Lake Loop",
         "segment_description": "Haddon Lake is a beautiful lake with a nice paved trail around it.",
         "safety": null,
@@ -5997,8 +5997,8 @@
         ]
       },
       "properties": {
-        "id_1": 87,
-        "id": 71,
+        "id": 87,
+        "id_0": 71,
         "name": "Livezy Lane Trail",
         "segment_description": "Steep climb between Forbidden Drive and the Yellow Trail above by Livezy Drive at Henry Lane.",
         "safety": null,
@@ -6035,8 +6035,8 @@
         ]
       },
       "properties": {
-        "id_1": 88,
-        "id": 73,
+        "id": 88,
+        "id_0": 73,
         "name": "West Bank Greenway - 34th Street by Zoo",
         "segment_description": "A large path along 34th street along the straight stretch of 34th street by the Zoo.",
         "safety": null,
@@ -6084,8 +6084,8 @@
         ]
       },
       "properties": {
-        "id_1": 89,
-        "id": 74,
+        "id": 89,
+        "id_0": 74,
         "name": "Big Boardwalk Trail",
         "segment_description": "This paved path runs from the Vistors' Center to a boardwalk across Emergent Wetland which offers great views.",
         "safety": null,
@@ -6124,8 +6124,8 @@
         ]
       },
       "properties": {
-        "id_1": 90,
-        "id": 84,
+        "id": 90,
+        "id_0": 84,
         "name": "Sedgley Drive",
         "segment_description": "Fun route through Lemon Hill fields, eventually connecting through woods to Girard Ave",
         "safety": null,
@@ -6265,8 +6265,8 @@
         ]
       },
       "properties": {
-        "id_1": 91,
-        "id": 75,
+        "id": 91,
+        "id_0": 75,
         "name": "Yellow Trail - Southern Section",
         "segment_description": "The section of the Yellow Trail in between Lincoln Drive and the Janette Street Trailhead climbs up from Lincoln Drive and follows the rim of the canyon while staying above the Lovers' Leap Trail. The rocky trail runs up and down above Forbidden Drive under the Walnut Lane Bridge. Around the Henry Ave Bridge there are many side trails and it can be easy to get lost. ",
         "safety": null,
@@ -6315,8 +6315,8 @@
         ]
       },
       "properties": {
-        "id_1": 92,
-        "id": 76,
+        "id": 92,
+        "id_0": 76,
         "name": "Morris Park Upper Trails",
         "segment_description": "Several trails run atop a steep hill over the East Branch trail which are well maintained and offer beautiful forest views.",
         "safety": null,
@@ -6343,8 +6343,8 @@
         ]
       },
       "properties": {
-        "id_1": 93,
-        "id": 77,
+        "id": 93,
+        "id_0": 77,
         "name": "The Quaker Path",
         "segment_description": "A spur off of the Haverford College Nature Trail, this runs over a pedestian bridge across Railroad Ave to the Haverford Friends Meeting House.",
         "safety": null,
@@ -6373,8 +6373,8 @@
         ]
       },
       "properties": {
-        "id_1": 94,
-        "id": 78,
+        "id": 94,
+        "id_0": 78,
         "name": "Horticultural Drive Path - West",
         "segment_description": "Wide paved path continuing West from the Horticulatural Center to Belmont Ave.",
         "safety": null,
@@ -6453,8 +6453,8 @@
         ]
       },
       "properties": {
-        "id_1": 95,
-        "id": 79,
+        "id": 95,
+        "id_0": 79,
         "name": "Mill Creek Valley Park - Upper Trail",
         "segment_description": "This trail runs higher up the valley wall than the Lower Trail, and is less maintained. There is also a clearing up here where an oil pipeline runs that can make following the trail challenging.",
         "safety": null,
@@ -6495,8 +6495,8 @@
         ]
       },
       "properties": {
-        "id_1": 96,
-        "id": 80,
+        "id": 96,
+        "id_0": 80,
         "name": "Ben Franklin Bridge",
         "segment_description": "Classic path which runs along the Ben Franklin Bridge offering sweeping views of Philadelphia and New Jersey",
         "safety": null,
@@ -6530,8 +6530,8 @@
         ]
       },
       "properties": {
-        "id_1": 97,
-        "id": 81,
+        "id": 97,
+        "id_0": 81,
         "name": "Schuylkill Banks Boardwalk",
         "segment_description": "This section of the Schuylkill River Trail runs over an elevated boardwalk over the river from Locust Street to South Street.",
         "safety": null,
@@ -6608,8 +6608,8 @@
         ]
       },
       "properties": {
-        "id_1": 98,
-        "id": 82,
+        "id": 98,
+        "id_0": 82,
         "name": "Rolling Hill - Trail 1",
         "segment_description": "The most gradual path up from Mill Creek to the parking area, this trail runs through a few switchbacks on its course up/down the hill.",
         "safety": null,
@@ -6637,8 +6637,8 @@
         ]
       },
       "properties": {
-        "id_1": 108,
-        "id": 95,
+        "id": 108,
+        "id_0": 95,
         "name": "Morris Park West Spur",
         "segment_description": "Connection from the gravel road to the West Branch Trail.",
         "safety": null,
@@ -6678,8 +6678,8 @@
         ]
       },
       "properties": {
-        "id_1": 99,
-        "id": 83,
+        "id": 99,
+        "id_0": 83,
         "name": "Yellow Trail (Andorra)",
         "segment_description": "The Yellow Trail connects the Treehouse with the main ridge of the Forest Loop, and runs by the Great Beech, a Pennsylvania State Champion Tree with which is over 100 ft high.",
         "safety": null,
@@ -6762,8 +6762,8 @@
         ]
       },
       "properties": {
-        "id_1": 100,
-        "id": 87,
+        "id": 100,
+        "id_0": 87,
         "name": "Newtown Lake - South Shore",
         "segment_description": "This path runs along the South shore of beautiful Newtown Lake in Haddon Township and is a bit more shaded than the Northern Shore. There are side trails through the woods leading up to other roads in nearby neighboorhoods.",
         "safety": null,
@@ -6818,8 +6818,8 @@
         ]
       },
       "properties": {
-        "id_1": 101,
-        "id": 88,
+        "id": 101,
+        "id_0": 88,
         "name": "Avenue of the Republic Path",
         "segment_description": "Wide paved path running parallel to Avenue of the Republic.",
         "safety": null,
@@ -6853,8 +6853,8 @@
         ]
       },
       "properties": {
-        "id_1": 102,
-        "id": 89,
+        "id": 102,
+        "id_0": 89,
         "name": "Greenwald Trail- South Loop",
         "segment_description": "If you follow the Greenwald Trail over a bridge at the East end of the park you can continue on a loop back to the main parking area. This path is a bit more rugged than the main trail.",
         "safety": null,
@@ -6920,8 +6920,8 @@
         ]
       },
       "properties": {
-        "id_1": 103,
-        "id": 90,
+        "id": 103,
+        "id_0": 90,
         "name": "Saunders Woods - East",
         "segment_description": "This trail goes quickly into the woods from the main trailhead through a beautiful small valley, then runs along the stream where there are a few side trails.",
         "safety": null,
@@ -7015,8 +7015,8 @@
         ]
       },
       "properties": {
-        "id_1": 104,
-        "id": 91,
+        "id": 104,
+        "id_0": 91,
         "name": "Andorra Meadow Loop",
         "segment_description": "One of the highlights of the Andorra Natural Area is the Andorra Meadow, an open grassland which was cleared of all invasive species. This loop winds around the meadow offering beautiful views of the river valley and of the tall trees surrounding the meadow.",
         "safety": null,
@@ -7047,8 +7047,8 @@
         ]
       },
       "properties": {
-        "id_1": 105,
-        "id": 92,
+        "id": 105,
+        "id_0": 92,
         "name": "Germany Hill Loop",
         "segment_description": "Short loop at the top end of Germany Hill with a very steep hill.",
         "safety": null,
@@ -7092,8 +7092,8 @@
         ]
       },
       "properties": {
-        "id_1": 106,
-        "id": 93,
+        "id": 106,
+        "id_0": 93,
         "name": "Germany Hill",
         "segment_description": "Rugged trail through surprisingly wild woods in the center of Manayunk. From Smick Street you'll ascend a large hill up to Cinnaminson Street. There are several side trails.",
         "safety": null,
@@ -7127,8 +7127,8 @@
         ]
       },
       "properties": {
-        "id_1": 107,
-        "id": 94,
+        "id": 107,
+        "id_0": 94,
         "name": "Blue Bird Loop",
         "segment_description": "This gorgeous trail loops around the main grounds of the Riverbend Environmental Center, offering interesting forest views and exceptional views of the Schuylkill River out towards Conshohocken.",
         "safety": null,
@@ -7215,8 +7215,8 @@
         ]
       },
       "properties": {
-        "id_1": 110,
-        "id": 107,
+        "id": 110,
+        "id_0": 107,
         "name": "Ivy Ridge Line Path",
         "segment_description": "The Manayunk Bridge follows the path of the old Ivy Ridge Train Line, and if you continue West underneath the power lines you can follow a series of paths and parking lots for a half mile to the current Ivy Ridge Train Station.",
         "safety": null,
@@ -7313,8 +7313,8 @@
         ]
       },
       "properties": {
-        "id_1": 111,
-        "id": 108,
+        "id": 111,
+        "id_0": 108,
         "name": "Woodland Trail",
         "segment_description": "This trail makes a loop around the quieter Western section of the park, partially along Darby Creek and partially through the woods.",
         "safety": null,
@@ -7374,8 +7374,8 @@
         ]
       },
       "properties": {
-        "id_1": 112,
-        "id": 109,
+        "id": 112,
+        "id_0": 109,
         "name": "Hostel Trail - Chamounix to Falls Road",
         "segment_description": "There are many trails in this section of the park. The Hostel Trail is the trail entrance to the left at the end of Chamounix Drive, and follows a relatively straight path down the hill to a creek, then up to Falls Road.",
         "safety": null,
@@ -7438,8 +7438,8 @@
         ]
       },
       "properties": {
-        "id_1": 113,
-        "id": 110,
+        "id": 113,
+        "id_0": 110,
         "name": "Maria Barnaby Greenwald Trail",
         "segment_description": "This dirt path runs parallel to the river through the length of the park through beautiful forests. It is rocky in places and can stay muddy and wet for days after a large rain.",
         "safety": null,
@@ -7481,8 +7481,8 @@
         ]
       },
       "properties": {
-        "id_1": 114,
-        "id": 122,
+        "id": 114,
+        "id_0": 122,
         "name": "Penn Park - Bridge to Campus",
         "segment_description": "A long bridge which connects Penn Park to the Penn campus.",
         "safety": null,
@@ -7548,8 +7548,8 @@
         ]
       },
       "properties": {
-        "id_1": 115,
-        "id": 112,
+        "id": 115,
+        "id_0": 112,
         "name": "Chamounix Drive",
         "segment_description": "A wide paved trail runs alongside Chamounix Drive. ",
         "safety": null,
@@ -7616,8 +7616,8 @@
         ]
       },
       "properties": {
-        "id_1": 116,
-        "id": 113,
+        "id": 116,
+        "id_0": 113,
         "name": "Rolling Hill Meadow Loop",
         "segment_description": "Many small trails make several loops possible, but a nice loop can be made on a combination of trails through the fields and woods (above where the trails would head down the steep hill).",
         "safety": null,
@@ -7654,8 +7654,8 @@
         ]
       },
       "properties": {
-        "id_1": 117,
-        "id": 114,
+        "id": 117,
+        "id_0": 114,
         "name": "Bartram's Community Boathouse",
         "segment_description": "A few paths are mowed through the grass which lead from the Bartram's Mile section to the Community Boathouse.",
         "safety": null,
@@ -7699,8 +7699,8 @@
         ]
       },
       "properties": {
-        "id_1": 118,
-        "id": 115,
+        "id": 118,
+        "id_0": 115,
         "name": "Pencoyd Trail - West",
         "segment_description": "When the paved trail ends, you can continue under I-76 until you can locate a tunnel underneath the train tracks. After crossing under the train tracks, the trail runs up a steep canyon to the Cynwyd Heritage Trail. Coming from the Cynwyd side, you'll notice a dirt path veering off into the woods and a sign warning you that the train is not maintained. Take the first left here to make sure you end up at the tunnel under the train tracks, or you may end up on a steep slope and have to cross the train tracks on foot. ",
         "safety": "The section of the trail is not marked or maintained. Use caution.",
@@ -7749,8 +7749,8 @@
         ]
       },
       "properties": {
-        "id_1": 119,
-        "id": 116,
+        "id": 119,
+        "id_0": 116,
         "name": "Flat Rock Park",
         "segment_description": "Nice short trail around the parking lots at Flat Rock Park with beautiful river views",
         "safety": null,
@@ -7779,8 +7779,8 @@
         ]
       },
       "properties": {
-        "id_1": 121,
-        "id": 118,
+        "id": 121,
+        "id_0": 118,
         "name": "Forest Loop - Cedars House",
         "segment_description": "A short but steep connection from the Forest Loop to the Cedars House Cafe and Forbidden Drive.",
         "safety": null,
@@ -7865,8 +7865,8 @@
         ]
       },
       "properties": {
-        "id_1": 122,
-        "id": 119,
+        "id": 122,
+        "id_0": 119,
         "name": "Cabbage Patch Trail",
         "segment_description": "A variation of the Trolley Trail at the Southern end.",
         "safety": null,
@@ -7904,8 +7904,8 @@
         ]
       },
       "properties": {
-        "id_1": 123,
-        "id": 120,
+        "id": 123,
+        "id_0": 120,
         "name": "Gorgas Lane Trail",
         "segment_description": "This beautiful short trail runs in between the Goragas Ave Trailhead and Forbidden Drive alongside a small creek.",
         "safety": null,
@@ -7954,8 +7954,8 @@
         ]
       },
       "properties": {
-        "id_1": 124,
         "id": 124,
+        "id_0": 124,
         "name": "Belmont Plateau Trails - Parachute Hill/Suicide Hill",
         "segment_description": "A section of the Belmont Plateau 5K and 8K XC courses with 2 very steep but short hills.",
         "safety": null,
@@ -8023,8 +8023,8 @@
         ]
       },
       "properties": {
-        "id_1": 125,
         "id": 125,
+        "id_0": 125,
         "name": "Boxers' Trail - Strawberry Mansion Bridge connection",
         "segment_description": "The Northern end of the Boxers' Trail connects with the Strawberry Mansion Bridge, allowing for loops with the West Side Trails. There is also a staircase which leads down to Kelly Drive and the SRT but this is a very dangerous place to cross Kelly Drive",
         "safety": "Use caution crossing Strawberry Mansion Bridge Dr",
@@ -8085,8 +8085,8 @@
         ]
       },
       "properties": {
-        "id_1": 132,
-        "id": 130,
+        "id": 132,
+        "id_0": 130,
         "name": "Morris Park East Branch Trail",
         "segment_description": "The East Branch Trail through Morris Park is a beautiful, well maintained trail which follows the East Branch through beautiful forests. ",
         "safety": null,
@@ -8220,8 +8220,8 @@
         ]
       },
       "properties": {
-        "id_1": 126,
         "id": 126,
+        "id_0": 126,
         "name": "Mill Creek Valley Park - Southern Loop",
         "segment_description": "At the Southern End of Mill Creek Valley Park you can keep running up the creek until the trail makes a loop at the top of the small canyon. The trail is rugged but easy to follow here. ",
         "safety": null,
@@ -8297,8 +8297,8 @@
         ]
       },
       "properties": {
-        "id_1": 127,
         "id": 127,
+        "id_0": 127,
         "name": "South Philly Meadow",
         "segment_description": "A new trail for 2021, this path was build out of the former grounds of the FDR Golf Course and winds through open fields, wetlands, and forests.",
         "safety": null,
@@ -8410,8 +8410,8 @@
         ]
       },
       "properties": {
-        "id_1": 128,
         "id": 128,
+        "id_0": 128,
         "name": "Centennial Trail",
         "segment_description": "Paved trail through the Centennial District of Fairmount Park. The trail winds around landmarks such as the Please Touch Museum, the Japanese House, and the Horticultural Center.",
         "safety": null,
@@ -8472,8 +8472,8 @@
         ]
       },
       "properties": {
-        "id_1": 129,
-        "id": 162,
+        "id": 129,
+        "id_0": 162,
         "name": "W Ford Rd - Chamounix to Strawberry Mansion Bridge",
         "segment_description": "Steep hill in between Chamounix Drive and the Stawberry Mansion Bridge. This side has a nice paved trail through the woods.",
         "safety": null,
@@ -8563,8 +8563,8 @@
         ]
       },
       "properties": {
-        "id_1": 130,
-        "id": 129,
+        "id": 130,
+        "id_0": 129,
         "name": "Pennypack Park - Rhawn Street South",
         "segment_description": "South from the Rhawn Street parking lot the trail runs through a series of open fields where you'll see a lot of picnics on the weekends.",
         "safety": null,
@@ -8585,8 +8585,8 @@
         ]
       },
       "properties": {
-        "id_1": 131,
-        "id": 146,
+        "id": 131,
+        "id_0": 146,
         "name": "Girard Ave Bridge",
         "segment_description": "The bridge is a big connection point in the park but sees relatively little foot traffic. There are wide sidewalks on both sides of the road with guardrails between the sidewalk and the road. The connections to the SRT and MLK drive are not well marked but this bridge allows for great combinations of routes on both sides of the river.",
         "safety": null,
@@ -8668,8 +8668,8 @@
         ]
       },
       "properties": {
-        "id_1": 133,
-        "id": 131,
+        "id": 133,
+        "id_0": 131,
         "name": "Cooper River Lake to Pennypacker Park Connection",
         "segment_description": "A paved path continues Eastward along Park Drive from Cooper River Lake to the Cooper River Dog Park. From there, the paved path continues along the river to Grove Street.",
         "safety": "Cross Grove Street either at the light or the crosswalk across the river.",
@@ -8719,8 +8719,8 @@
         ]
       },
       "properties": {
-        "id_1": 134,
-        "id": 132,
+        "id": 134,
+        "id_0": 132,
         "name": "Saunders Woods - West",
         "segment_description": "From the trailhead this trail follows the edge of Saunders Woods Preserve through the grassy open area before dropping into the woods at the Northern end.",
         "safety": null,
@@ -8743,8 +8743,8 @@
         ]
       },
       "properties": {
-        "id_1": 135,
-        "id": 133,
+        "id": 135,
+        "id_0": 133,
         "name": "Strawberry Mansion Bridge",
         "segment_description": "The Strawberry Mansion Bridge is my favorite river crossing. It's a beautiful old steel truss bridge originally built to carry a trolley around Fairmount Park, and was fully restored in the early 90s. There is a wide boardwalk for pedestrians on both sides of the bridge and beautiful views in all directions.",
         "safety": null,
@@ -8796,8 +8796,8 @@
         ]
       },
       "properties": {
-        "id_1": 136,
-        "id": 134,
+        "id": 136,
+        "id_0": 134,
         "name": "Rolling Hill - Trail 3",
         "segment_description": "A really nice steep, wide path up the hill from Mill Creek. At the lower end, the trail has been re-routed onto switchbacks by an Eagle Scount project.",
         "safety": null,
@@ -8889,8 +8889,8 @@
         ]
       },
       "properties": {
-        "id_1": 137,
-        "id": 135,
+        "id": 137,
+        "id_0": 135,
         "name": "Orange Trail - Covered Bridge - Valley Green",
         "segment_description": "South from Bells Mill Road the Orange Trail runs very close to the creek and is one of the more rugged trails in the park. Expect a rocky, wet, tough trail.",
         "safety": null,
@@ -8971,8 +8971,8 @@
         ]
       },
       "properties": {
-        "id_1": 138,
-        "id": 136,
+        "id": 138,
+        "id_0": 136,
         "name": "Trolley Trail - Greenland Rd to Chamounix",
         "segment_description": "This section of the Trolley Trail includes some steep hills and remote woods in between Greenland Road and Chamounix.",
         "safety": null,
@@ -9003,8 +9003,8 @@
         ]
       },
       "properties": {
-        "id_1": 139,
-        "id": 147,
+        "id": 139,
+        "id_0": 147,
         "name": "West Bank Greenway - Zoo to Spring Garden",
         "segment_description": "A large path/sidewalk along Mantua Ave. The tree branches can get low on the trail.",
         "safety": null,
@@ -9060,8 +9060,8 @@
         ]
       },
       "properties": {
-        "id_1": 154,
         "id": 154,
+        "id_0": 154,
         "name": "Morris Park East West Connector",
         "segment_description": "Rugged trail through the woods connecting the East and West Branch trails without going all the way to the Charles A. Papa Playground",
         "safety": null,
@@ -9171,8 +9171,8 @@
         ]
       },
       "properties": {
-        "id_1": 140,
-        "id": 137,
+        "id": 140,
+        "id_0": 137,
         "name": "Trolley Trail - Chamounix to Edgley",
         "segment_description": "From Chamounix, the Trolley Trail heads downhill towards the creek before running under the famous Chamounix Tunnel, a beautiful stone arch bridge in the middle of the woods. The trail then follows the creek around towards Ford Road, eventually crossing Ford Road and connecting to the trails in the Edgley section of the park.",
         "safety": null,
@@ -9207,8 +9207,8 @@
         ]
       },
       "properties": {
-        "id_1": 141,
-        "id": 138,
+        "id": 141,
+        "id_0": 138,
         "name": "Lansdowne Creek Path",
         "segment_description": "A short but beautiful paved path which cuts through the sharp but small valley down to Lansdowne Creek between Lansdowne Drive and Horticultural Drive.",
         "safety": null,
@@ -9280,8 +9280,8 @@
         ]
       },
       "properties": {
-        "id_1": 142,
-        "id": 140,
+        "id": 142,
+        "id_0": 140,
         "name": "Hunting Park Drive",
         "segment_description": "One of the few traffic lights on Kelly Drive allows for safe crossing and connection up to Strawberry Mansion. The sidewalk runs up through a cemetary, then you can turn onto Ridge Ave to Strawberry Mansion",
         "safety": null,
@@ -9312,8 +9312,8 @@
         ]
       },
       "properties": {
-        "id_1": 143,
-        "id": 141,
+        "id": 143,
+        "id_0": 141,
         "name": "Penn Park - Connection to South Street",
         "segment_description": "A trail goes over the Weave Bridge then through a parking lot which connects to South Street via a set of stairs at the Hollenback Center",
         "safety": null,
@@ -9341,8 +9341,8 @@
         ]
       },
       "properties": {
-        "id_1": 144,
-        "id": 142,
+        "id": 144,
+        "id_0": 142,
         "name": "Lincoln Drive Connection 2",
         "segment_description": "Steep climb between Lincoln Drive and the Rim Trail above",
         "safety": null,
@@ -9370,8 +9370,8 @@
         ]
       },
       "properties": {
-        "id_1": 145,
-        "id": 143,
+        "id": 145,
+        "id_0": 143,
         "name": "Valley Green - Yellow Trail Connection N",
         "segment_description": "Steep climb between the Forbidden Drive North of Valley Green Inn and the Yellow Trail above.",
         "safety": null,
@@ -9445,8 +9445,8 @@
         ]
       },
       "properties": {
-        "id_1": 146,
-        "id": 144,
+        "id": 146,
+        "id_0": 144,
         "name": "Lemon Hill",
         "segment_description": "Lemon Hill Drive winds up and around Lemon Hill, which offers skyline views and wide open fields.",
         "safety": null,
@@ -9514,8 +9514,8 @@
         ]
       },
       "properties": {
-        "id_1": 153,
         "id": 153,
+        "id_0": 153,
         "name": "Belmont Mansion Road",
         "segment_description": "Nice road with excellent views which winds around Belmont Plateau",
         "safety": null,
@@ -9551,8 +9551,8 @@
         ]
       },
       "properties": {
-        "id_1": 183,
         "id": 183,
+        "id_0": 183,
         "name": "Penn Park - Bridge to Walnut Street",
         "segment_description": "A long, fun bridge connects Penn park to Walnut Street",
         "safety": null,
@@ -9683,8 +9683,8 @@
         ]
       },
       "properties": {
-        "id_1": 147,
-        "id": 145,
+        "id": 147,
+        "id_0": 145,
         "name": "Houston Meadow Trail",
         "segment_description": "One of the finest sections of Wissahickon Park. Steep climbs from either Bells Mill Rd or Forbidden Drive take you to the stretch of trail through Houston Meadown, which meanders through grasssy meadows with beautiful views. ",
         "safety": null,
@@ -9772,8 +9772,8 @@
         ]
       },
       "properties": {
-        "id_1": 148,
         "id": 148,
+        "id_0": 148,
         "name": "Rim Trail above Lincoln Drive",
         "segment_description": "This trail runs along the edge of the plateau above the Lincoln Drive section of the Wissahickon. There are several breathtaking viewpoints of the Wissahickon. This trail is less traveled and maintained than other sections of the Wissahickon.",
         "safety": null,
@@ -9808,8 +9808,8 @@
         ]
       },
       "properties": {
-        "id_1": 149,
         "id": 149,
+        "id_0": 149,
         "name": "Mill Creek Road connector",
         "segment_description": "Steep trail down from the Mill Creek Valley trails to Mill Creek Valley road which makes for some good loops with the road or the Rolling Hill Trails",
         "safety": "Use caution on the narrow Mill Creek Road",
@@ -9938,8 +9938,8 @@
         ]
       },
       "properties": {
-        "id_1": 150,
         "id": 150,
+        "id_0": 150,
         "name": "Crossbow Trail",
         "segment_description": "Well maintained mountain biking trail which runs in between Parkside Evans Playground and Belmont Ave. It makes for a great trail run and is a nice alternative to Parkside Ave.",
         "safety": "This is a popular mountain biking trail- be alert for bikes.",
@@ -9975,8 +9975,8 @@
         ]
       },
       "properties": {
-        "id_1": 151,
         "id": 151,
+        "id_0": 151,
         "name": "33rd Street - N to Strawberry Mansion",
         "segment_description": "A wide sidewalk runs along 33rd Street from Strawberry Mansion",
         "safety": null,
@@ -10041,8 +10041,8 @@
         ]
       },
       "properties": {
-        "id_1": 152,
         "id": 152,
+        "id_0": 152,
         "name": "Cooper River Trail - Pennypacker Park",
         "segment_description": "A paved path runs along Park Drive at the edge of Pennypacker Park. This is a great way to enjoy the park on paved trails since many of the other trails are dirt and rocky.",
         "safety": null,
@@ -10115,8 +10115,8 @@
         ]
       },
       "properties": {
-        "id_1": 156,
         "id": 156,
+        "id_0": 156,
         "name": "Morris Park Upper Trails",
         "segment_description": "Several trails run atop a steep hill over the East Branch trail which are well maintained and offer beautiful forest views.",
         "safety": null,
@@ -10168,8 +10168,8 @@
         ]
       },
       "properties": {
-        "id_1": 157,
         "id": 157,
+        "id_0": 157,
         "name": "Belmont Plateau Trails - Main Road",
         "segment_description": "A section of the Belmont Plateau 5K and 8K XC courses which connects with the other woods loops. Can also be used to reach the Strawberry Mansion Bridge area.",
         "safety": null,
@@ -10200,8 +10200,8 @@
         ]
       },
       "properties": {
-        "id_1": 158,
         "id": 158,
+        "id_0": 158,
         "name": "Turkey Foot Trail",
         "segment_description": "This trail offers a quiet, wooded connection between the Wetland Loop Trail and points West on the Tinicum Trail.",
         "safety": null,
@@ -10225,8 +10225,8 @@
         ]
       },
       "properties": {
-        "id_1": 159,
         "id": 159,
+        "id_0": 159,
         "name": "Yellow Trail - Kitchens Lane Connection",
         "segment_description": "Steep climb between Forbidden Drive and the Yellow Trail above",
         "safety": null,
@@ -10260,8 +10260,8 @@
         ]
       },
       "properties": {
-        "id_1": 160,
         "id": 160,
+        "id_0": 160,
         "name": "Fountain Street Steps",
         "segment_description": "This series of pedestrian-only steps run froms Umbria Street down to the canal.",
         "safety": null,
@@ -10337,8 +10337,8 @@
         ]
       },
       "properties": {
-        "id_1": 161,
         "id": 161,
+        "id_0": 161,
         "name": "Cynwyd Heritage Trail",
         "segment_description": "Former rail line converted to a wide paved trail in between Manayunk and Cynwyd Station. There is a large bridge over the Schuylkill which connects to Manayunk which offers excellent views. From the river up to Cynwyd there is a consistent incline. ",
         "safety": null,
@@ -10392,8 +10392,8 @@
         ]
       },
       "properties": {
-        "id_1": 162,
-        "id": 163,
+        "id": 162,
+        "id_0": 163,
         "name": "Rose Glen Loop",
         "segment_description": "Beautiful narrow, rolling trail around the Northern end of Rolling Hill Park. Many side trails offer opportunities for exploration.",
         "safety": null,
@@ -10459,8 +10459,8 @@
         ]
       },
       "properties": {
-        "id_1": 163,
-        "id": 164,
+        "id": 163,
+        "id_0": 164,
         "name": "Rolling Hill - Trail 2",
         "segment_description": "Slightly steeper and rockier path up from Mill Creek to the parking area than the path just to the Southwest. There are many small connector trails which run in between the trails.",
         "safety": null,
@@ -10526,8 +10526,8 @@
         ]
       },
       "properties": {
-        "id_1": 165,
-        "id": 166,
+        "id": 165,
+        "id_0": 166,
         "name": "Mill Creek Valley Park - Lower Trail",
         "segment_description": "The main trail through Mill Creek Valley Park, this rugged trail is a true gem. A nice trail run through a quiet park with great elevation gain/loss makes for one of the best trail runs in the area.",
         "safety": null,
@@ -10558,8 +10558,8 @@
         ]
       },
       "properties": {
-        "id_1": 166,
-        "id": 167,
+        "id": 166,
+        "id_0": 167,
         "name": "Girard Ave- 33rd St to Bridge",
         "segment_description": "Connect from Poplar Drive / 33rd Street to the Girard Ave Bridge",
         "safety": null,
@@ -10633,8 +10633,8 @@
         ]
       },
       "properties": {
-        "id_1": 167,
-        "id": 168,
+        "id": 167,
+        "id_0": 168,
         "name": "Gray's Ferry Crescent",
         "segment_description": "Extension of Schuylkill Banks around Gray's Ferry Crescent. There is a paved trail through a nice park with interesting views of the river.",
         "safety": null,
@@ -10734,8 +10734,8 @@
         ]
       },
       "properties": {
-        "id_1": 168,
-        "id": 169,
+        "id": 168,
+        "id_0": 169,
         "name": "Bartram's Mile",
         "segment_description": "The Southernmost section of Schuylkill Banks - this path runs north and south of Bartram's Garden through interesting forests and historical industrial artifacts. Eventually this section of trail will connect to the Gray's Ferry Crescent via the Schuylkill Crossing Swing Bridge.",
         "safety": null,
@@ -10788,8 +10788,8 @@
         ]
       },
       "properties": {
-        "id_1": 169,
-        "id": 170,
+        "id": 169,
+        "id_0": 170,
         "name": "Brass Monkey Trail",
         "segment_description": "A fun cut through the woods in between the main Belmont road and the Dark road. ",
         "safety": null,
@@ -10817,8 +10817,8 @@
         ]
       },
       "properties": {
-        "id_1": 170,
-        "id": 171,
+        "id": 170,
+        "id_0": 171,
         "name": "Road to Treehouse",
         "segment_description": "Gravel road up a decent hill to the Tree House from Forbidden Drive.",
         "safety": null,
@@ -10920,8 +10920,8 @@
         ]
       },
       "properties": {
-        "id_1": 171,
-        "id": 172,
+        "id": 171,
+        "id_0": 172,
         "name": "The Woodlands",
         "segment_description": "The Woodlands Cemetery in West Philly has a roughly ~1 mile loop on a combination of dirt and paved trails around the cemetery. At the South end, there are some nice views of the Lower Schuylkill and train tracks.",
         "safety": null,
@@ -10954,8 +10954,8 @@
         ]
       },
       "properties": {
-        "id_1": 184,
         "id": 184,
+        "id_0": 184,
         "name": "Black Road",
         "segment_description": "Shaded, steep road which connects MLK Drive with the Centennial area. Useful connection for loops with MLK Drive.",
         "safety": null,
@@ -11046,8 +11046,8 @@
         ]
       },
       "properties": {
-        "id_1": 172,
-        "id": 173,
+        "id": 172,
+        "id_0": 173,
         "name": "John Brown Trail",
         "segment_description": "This winding mountain biking trail offers a seldom-travelled alternative to the Trolley Trail from the Chamounix North Field. ",
         "safety": null,
@@ -11137,8 +11137,8 @@
         ]
       },
       "properties": {
-        "id_1": 173,
-        "id": 174,
+        "id": 173,
+        "id_0": 174,
         "name": "Knight Park",
         "segment_description": "This large park in Collingswood has many trails which offer different loop options. This route follows the \"ring road\" around the baseball and soccer fields.",
         "safety": null,
@@ -11204,8 +11204,8 @@
         ]
       },
       "properties": {
-        "id_1": 174,
-        "id": 175,
+        "id": 174,
+        "id_0": 175,
         "name": "East Kenealy Nature Preserve Trail",
         "segment_description": "Between Youngsford Road and the Waverly Heights area, this trail winds through nice forests and by a few interesting retention ponds and makes for a wonderful trail run.",
         "safety": null,
@@ -11342,8 +11342,8 @@
         ]
       },
       "properties": {
-        "id_1": 175,
-        "id": 178,
+        "id": 175,
+        "id_0": 178,
         "name": "Schuylkill River Trail to Kelly Drive",
         "segment_description": "Center City segment of Schuylkill Banks that connects to the greater Schuylkill River Trail and Kelly Drive.",
         "safety": null,
@@ -11393,8 +11393,8 @@
         ]
       },
       "properties": {
-        "id_1": 185,
         "id": 185,
+        "id_0": 185,
         "name": "Bartram's Garden Grounds",
         "segment_description": "A few paths run through the grounds of Bartram’s Garden down to and along the river and by the Sankofa Community Garden.",
         "safety": null,
@@ -11461,8 +11461,8 @@
         ]
       },
       "properties": {
-        "id_1": 201,
         "id": 201,
+        "id_0": 201,
         "name": "Green Trail (Andorra)",
         "segment_description": "A steep trail which switches back in places and connects the Andorra Meadow to Forbidden Drive at Bells Mill Road.",
         "safety": null,
@@ -11538,8 +11538,8 @@
         ]
       },
       "properties": {
-        "id_1": 216,
         "id": 216,
+        "id_0": 216,
         "name": "Carpenter's Woods - East",
         "segment_description": "There are many intersecting trails through peaceful Carpenter's Woods which allow for exploration and creative loops.",
         "safety": null,
@@ -11696,8 +11696,8 @@
         ]
       },
       "properties": {
-        "id_1": 176,
-        "id": 180,
+        "id": 176,
+        "id_0": 180,
         "name": "Pennypack Park - Rhawn Street North",
         "segment_description": "North from the Rhawn Street parking lot is a nice paved trail along the river and under some large bridges. There are many beautiful paths down to the river.",
         "safety": null,
@@ -11744,8 +11744,8 @@
         ]
       },
       "properties": {
-        "id_1": 177,
-        "id": 187,
+        "id": 177,
+        "id_0": 187,
         "name": "Belmont Plateau Trails - Dark Road",
         "segment_description": "A section of the Belmont Plateau 8K XC course through a beautiful stretch of forest.",
         "safety": null,
@@ -12013,8 +12013,8 @@
         ]
       },
       "properties": {
-        "id_1": 178,
-        "id": 176,
+        "id": 178,
+        "id_0": 176,
         "name": "Yellow Trail - Janette  - Wises Mill",
         "segment_description": "South from Wises Mill Road the Yellow Trail winds along the rim of the canyon walls with quite a bit of elevation gain/loss with great views of the valley.",
         "safety": null,
@@ -12057,8 +12057,8 @@
         ]
       },
       "properties": {
-        "id_1": 202,
-        "id": 212,
+        "id": 202,
+        "id_0": 212,
         "name": "Warbler Woods Trail",
         "segment_description": "This short but scenic path between the Big Boardwalk Trail and the Wetland Loop Trail has some nice side paths to the water. OpenStreetMap has this trail running further South but this section is closed.",
         "safety": null,
@@ -12283,8 +12283,8 @@
         ]
       },
       "properties": {
-        "id_1": 179,
-        "id": 177,
+        "id": 179,
+        "id_0": 177,
         "name": "White Trail - Valley Green - Park Line Drive",
         "segment_description": "South from Valley Green, the White Trail runs past Devil's Pool, a popular swimming hole which can be super crowded in the summer. Headed South from there, the trail is better maintained than the Northern section and runs through a beautiful stretch of quiet woods. At the very Southern end, there are a few switchbacks up a steep canyon that is one of the most fun hills in the park.",
         "safety": null,
@@ -12314,8 +12314,8 @@
         ]
       },
       "properties": {
-        "id_1": 180,
-        "id": 179,
+        "id": 180,
+        "id_0": 179,
         "name": "Schuylkill River Trail through Boathouse Row",
         "segment_description": "Schuylkill River Trail through the Boathouse Row section. This section is often very crowded.",
         "safety": null,
@@ -12541,8 +12541,8 @@
         ]
       },
       "properties": {
-        "id_1": 181,
         "id": 181,
+        "id_0": 181,
         "name": "Cobbs Creek Trail",
         "segment_description": "This long paved trail runs through Cobbs Creek Park, sometimes along roadways and sometimes along the creek itself, along the Western edge of the city. It is well-maintained and runs past several park areas and side trails down to the creek. ",
         "safety": null,
@@ -12573,8 +12573,8 @@
         ]
       },
       "properties": {
-        "id_1": 182,
         "id": 182,
+        "id_0": 182,
         "name": "Leverington Ave Trail",
         "segment_description": "This steep trail runs in between Henry Lane at Leverington Ave and Forbidden Drive.",
         "safety": null,
@@ -12687,8 +12687,8 @@
         ]
       },
       "properties": {
-        "id_1": 186,
         "id": 186,
+        "id_0": 186,
         "name": "Forest Loop Trail",
         "segment_description": "The main loop trail in the Andorra Natural Area, this will take you through wildly unique forest up and down some large hills. Use this trail to link to the other trails in the Andorra Natural Area. ",
         "safety": null,
@@ -12805,8 +12805,8 @@
         ]
       },
       "properties": {
-        "id_1": 187,
-        "id": 188,
+        "id": 187,
+        "id_0": 188,
         "name": "Mill Creek - Hollow Road Loop",
         "segment_description": "From Mill Creek Valley Park you can make a nice loop to the East. This trail is less trafficked and less well marked than the other trails in the area, but has some good hills to run.",
         "safety": null,
@@ -12839,8 +12839,8 @@
         ]
       },
       "properties": {
-        "id_1": 188,
-        "id": 189,
+        "id": 188,
+        "id_0": 189,
         "name": "Centennial Arboretum - East",
         "segment_description": "Parallel paths running west from the Horticulatural Center to Belmont Ave with beautiful trees along the way. There is a fence at the Western End so you cannot continue to Belmont Ave from there. ",
         "safety": null,
@@ -12915,8 +12915,8 @@
         ]
       },
       "properties": {
-        "id_1": 189,
-        "id": 190,
+        "id": 189,
+        "id_0": 190,
         "name": "Concourse Lake",
         "segment_description": "Short but fun loop around Concourse Lake near the Centennial Area",
         "safety": null,
@@ -12982,8 +12982,8 @@
         ]
       },
       "properties": {
-        "id_1": 190,
-        "id": 191,
+        "id": 190,
+        "id_0": 191,
         "name": "Hopkins Pond Loop",
         "segment_description": "From the main parking area at Pennypacker Park this path crosses the river then runs up a hill to Hopkins Pond near downtown Haddonfield. The loop around the pond is beautiful, but a bit rugged (exposed roots, etc.). There are many side trails which connect to nearby streets. ",
         "safety": null,
@@ -13010,8 +13010,8 @@
         ]
       },
       "properties": {
-        "id_1": 191,
-        "id": 192,
+        "id": 191,
+        "id_0": 192,
         "name": "Janette St Trail",
         "segment_description": "Nice trail which runs from the Janette Street Trailhead to Forbidden Drive",
         "safety": null,
@@ -13057,8 +13057,8 @@
         ]
       },
       "properties": {
-        "id_1": 192,
-        "id": 193,
+        "id": 192,
+        "id_0": 193,
         "name": "Mt Pleasant Loop",
         "segment_description": "This road runs to the Mt Pleasant and Rockland Mansions  around the \"Dairy Fields\" in a beautiful section of the East Park. There are also paths through the woods from the Mansions leading down to Boxers' Trail",
         "safety": null,
@@ -13177,8 +13177,8 @@
         ]
       },
       "properties": {
-        "id_1": 193,
-        "id": 194,
+        "id": 193,
+        "id_0": 194,
         "name": "Schuylkill River Trail - Manayunk to Conshohocken",
         "segment_description": "Heading West from Manayunk the SRT runs a bit set back from the river on a really nice wide paved path.",
         "safety": null,
@@ -13239,8 +13239,8 @@
         ]
       },
       "properties": {
-        "id_1": 194,
-        "id": 195,
+        "id": 194,
+        "id_0": 195,
         "name": "Greenland Drive - Chamounix to Strawberry Mansion Bridge",
         "segment_description": "Steep hill in between Chamounix Drive and the Stawberry Mansion Bridge. There is no sidewalk/path, but the shoulder is wide enough for safe travel.",
         "safety": "Use caution on road shoulder.",
@@ -13326,8 +13326,8 @@
         ]
       },
       "properties": {
-        "id_1": 195,
-        "id": 196,
+        "id": 195,
+        "id_0": 196,
         "name": "Orange Trail - Covered Bridge - Germantown Ave",
         "segment_description": "The Northernmost section of the Orange Trail is tamer than the rest, and provides a quiet path along the creek at the Northern End of the park up to Germantown Ave.",
         "safety": null,
@@ -13349,8 +13349,8 @@
         ]
       },
       "properties": {
-        "id_1": 196,
-        "id": 197,
+        "id": 196,
+        "id_0": 197,
         "name": "Strawberry Mansion Bridge - MLK Drive South",
         "segment_description": "Road down a hill which connects the Strawberry Mansion Bridge to MLK Drive. ",
         "safety": "CAUTION: Dangerous point to cross MLK Drive if the road is open to car traffic. ",
@@ -13402,8 +13402,8 @@
         ]
       },
       "properties": {
-        "id_1": 197,
-        "id": 198,
+        "id": 197,
+        "id_0": 198,
         "name": "Youngsford Ridge Trail",
         "segment_description": "This is a rocky trail which runs atop a spine of a small ridge offering one of the most interesting trail runs in the Philadelphia area. It's a rugged trail with awesome forest views and serious elevation gain/loss.",
         "safety": null,
@@ -13440,8 +13440,8 @@
         ]
       },
       "properties": {
-        "id_1": 198,
-        "id": 199,
+        "id": 198,
+        "id_0": 199,
         "name": "Teal Trail (Andorra)",
         "segment_description": "The Teal Trail switches back parallel to the Yellow trail, joining the Forest Loop at the Fallen Magnolia, a massive tree (diameter of over 4 ft!) which fell in 2008.",
         "safety": null,
@@ -13473,8 +13473,8 @@
         ]
       },
       "properties": {
-        "id_1": 199,
-        "id": 210,
+        "id": 199,
+        "id_0": 210,
         "name": "Saunders Woods - Henry Lane Park Connection Trail",
         "segment_description": "This is an awesome trail which runs along a small creek in between Saunders Woods Preserve and Henry Lane Park. ",
         "safety": "Use caution crossing Conshohocken State Road",
@@ -13536,8 +13536,8 @@
         ]
       },
       "properties": {
-        "id_1": 200,
         "id": 200,
+        "id_0": 200,
         "name": "River Fields Drive",
         "segment_description": "River Fields Drive follows runs parallel to 76 South from South Street. It is a lightly used road through some interesting parts of Penn's campus, but overall it is not the most pleasant path due to proximity to 76. It can be used to access Gray's Ferry Crescent from South Street.",
         "safety": null,
@@ -13609,8 +13609,8 @@
         ]
       },
       "properties": {
-        "id_1": 203,
-        "id": 202,
+        "id": 203,
+        "id_0": 202,
         "name": "Read Trail",
         "segment_description": "This loop to the West of the Riverbend Environmental Center is hard to find (not marked), but you'll be rewarded with excellent views of Conshohocken and a remote stretch of forest above the Conshohocken Curve on 76. The Southern entrance off the Sassafras Trail is easier to find. When headed South from the main pavilion, you'll see a trail headed to the West leading to a gate. From the gate, continue on the path to Aloha Lane. Make a left on Aloha Lane, then a right on Bryn Tyddyn Drive. Approximately 0.15 miles down Bryn Tydden Drive, you'll see a path headed into the woods on the right. From here, the path is easy to follow (if not well maintained), and will lead you back to Riverbend.",
         "safety": "Respect private property when route finding.",
@@ -13688,8 +13688,8 @@
         ]
       },
       "properties": {
-        "id_1": 204,
-        "id": 203,
+        "id": 204,
+        "id_0": 203,
         "name": "Manayunk Canal Towpath",
         "segment_description": "Section of the Schuylkill River Trail through downtown Manayunk on the canal towpath. A mix of dirt trail and wooden boardwalks. The trail gets quite narrow and crowded in parts.",
         "safety": null,
@@ -13730,8 +13730,8 @@
         ]
       },
       "properties": {
-        "id_1": 205,
-        "id": 204,
+        "id": 205,
+        "id_0": 204,
         "name": "Brewery Hill Drive",
         "segment_description": "A short, steep road which connects Girard Ave (and easy access to the bridge) with the SRT. The actual road is wide enough to be safe but it is a dangerous spot to cross Kelly Drive.",
         "safety": "CAUTION: Access to the SRT requires crossing Kelly Drive right by a blind curve. Use extreme caution. ",
@@ -13806,8 +13806,8 @@
         ]
       },
       "properties": {
-        "id_1": 206,
-        "id": 205,
+        "id": 206,
+        "id_0": 205,
         "name": "Boxers' Trail - Paved Section",
         "segment_description": "The paved section of Boxers' Trail winds around the fields from the dirt section of the trail to Strawberry Mansion.",
         "safety": null,
@@ -13845,8 +13845,8 @@
         ]
       },
       "properties": {
-        "id_1": 207,
-        "id": 211,
+        "id": 207,
+        "id_0": 211,
         "name": "Jack-in-the-Pulpit Trail",
         "segment_description": "Short, steep trail which switches back from the Yellow Poplar Trail up to the Blue Bird Loop area.",
         "safety": null,
@@ -13876,8 +13876,8 @@
         ]
       },
       "properties": {
-        "id_1": 208,
-        "id": 213,
+        "id": 208,
+        "id_0": 213,
         "name": "The Rail Park",
         "segment_description": "The start of Philly's answer to the \"High Line\",  this short section of the former Reading Viaduct is short but is an engaging space with great city views and urban rail history.",
         "safety": null,
@@ -13908,8 +13908,8 @@
         ]
       },
       "properties": {
-        "id_1": 209,
-        "id": 214,
+        "id": 209,
+        "id_0": 214,
         "name": "White Trail - Mt Pleasant",
         "segment_description": "This trail follows the canyon up from the White Trail towards Mt Plesant Road and connections to Carpetner's Woods",
         "safety": null,
@@ -13956,8 +13956,8 @@
         ]
       },
       "properties": {
-        "id_1": 214,
-        "id": 215,
+        "id": 214,
+        "id_0": 215,
         "name": "White Trail - High Route",
         "segment_description": "A parallel route of the White Trail which runs a bit higher up the valley with connections up to Mt Pleasant Road and Carpenter's Woods",
         "safety": null,
@@ -14001,8 +14001,8 @@
         ]
       },
       "properties": {
-        "id_1": 215,
         "id": 215,
+        "id_0": 215,
         "name": "Carpenter's Woods - West",
         "segment_description": "This route through Carpenter's Woods follows the beautiful creek parallel to Mt Pleasant Road through the full length of the park.",
         "safety": null,
@@ -14207,8 +14207,8 @@
         ]
       },
       "properties": {
-        "id_1": 210,
-        "id": 206,
+        "id": 210,
+        "id_0": 206,
         "name": "Yellow Trail  - Wises Mill - Bells Mill",
         "segment_description": "The Northern section of the Yellow Trail runs just above Forbidden Drive and Wises Mill Road through a very quiet section of the park. Expect a few large hills in either direction.",
         "safety": null,
@@ -14311,8 +14311,8 @@
         ]
       },
       "properties": {
-        "id_1": 211,
-        "id": 207,
+        "id": 211,
+        "id_0": 207,
         "name": "Lavender Trail - Rim",
         "segment_description": "One of the most beautiful sections of Wissahickon, this trail runs up from the Orange Trail up a pristine valley in Chestnut Hill. There are beautiful forest views, with some open views of the canyon.",
         "safety": null,
@@ -14372,8 +14372,8 @@
         ]
       },
       "properties": {
-        "id_1": 212,
-        "id": 208,
+        "id": 212,
+        "id_0": 208,
         "name": "Locust Walk",
         "segment_description": "Locust Walk is a classic historic promenade through Penn's campus, past ivy-covered campus buildings and through open quads.",
         "safety": null,
@@ -14487,8 +14487,8 @@
         ]
       },
       "properties": {
-        "id_1": 213,
-        "id": 209,
+        "id": 213,
+        "id_0": 209,
         "name": "Schuylkill River Trail - Girard Ave Bridge to Falls Bridge",
         "segment_description": "Beautiful section of the Schuylkill River Trail which is generally less crowded than the trail closer to Center City.",
         "safety": null,
@@ -14575,8 +14575,8 @@
         ]
       },
       "properties": {
-        "id_1": 217,
         "id": 217,
+        "id_0": 217,
         "name": "Harry Olsen Trail",
         "segment_description": "The Harry Olson Trail follows the West bank of the Schuylkill between Flat Rock Park and Pencoyd. The trail is not maintained and quite wild in parts, but offers some of the most amazing riverside views in the area. From the West, the trail can be accessed from the dirt road to the Flat Rock Dam. From the East, there is a stone path down from the I-76EB ramp on the West Side of the Green Lane Bridge.",
         "safety": "CAUTION: The Harry Olson Trail is in the flood plain of the river and sections will be submerged when the river level is high. Do not attempt during or after a rain storm. Consult the <a href=\"https://waterdata.usgs.gov/pa/nwis/uv/?site_no=01474500&PARAmeter_cd=00065,00060,00010\" target=\"_blank\">river level gauge in Philadelphia</a>. The USGS claims that the Flat Rock area will be submerged at 11ft, but use caution when the river is elevated at all. The trail was passable when the gauge was at 6ft.",
@@ -14613,8 +14613,8 @@
         ]
       },
       "properties": {
-        "id_1": 221,
         "id": 221,
+        "id_0": 221,
         "name": "Cooper's Poynt",
         "segment_description": "This park in North Camden has a nice paved loop trail. At the North end there are some really interesting water views.",
         "safety": null,
@@ -14666,8 +14666,8 @@
         ]
       },
       "properties": {
-        "id_1": 220,
         "id": 220,
+        "id_0": 220,
         "name": "Pyne Point Park",
         "segment_description": "This park is small but has an amazing walking/bike trail with nice waterfront views.",
         "safety": null,
@@ -14756,8 +14756,8 @@
         ]
       },
       "properties": {
-        "id_1": 219,
         "id": 219,
+        "id_0": 219,
         "name": "Wiggins Promenade",
         "segment_description": "The riverfront promendade in Camden runs in between the Susquehanna Bank Center and Campbell's Field, past the aquarium and marina. Of particular interest is the newly redesigned RCA pier which has a few side trails and awesome views of Philly.",
         "safety": null,
@@ -14909,8 +14909,8 @@
         ]
       },
       "properties": {
-        "id_1": 218,
         "id": 218,
+        "id_0": 218,
         "name": "Delaware River Trail",
         "segment_description": "The Delaware River Trail currently runs between Penn Treaty Park and Tasker Street (though it is currently closed between Reed and Tasker). The North section of the trail starts at Penn Treaty Park and runs along the river by Sugarhouse Casino before turning inland through their parking lot. From there the trail runs South alongside Columbus Blvd on fully separated bi-directional bike lane. South past Washington Ave the trail turns again towards the river and runs through quiet parks between the River and the shopping centers along Washington Ave.",
         "safety": null,
@@ -14935,8 +14935,8 @@
         ]
       },
       "properties": {
-        "id_1": 231,
-        "id": null,
+        "id": 231,
+        "id_0": null,
         "name": "Trails End",
         "segment_description": "This trail heading West from the end of 51st Street follows an old railroad to the bay. The trail is sandy and can get wet/muddy in spots.",
         "safety": null,
@@ -14967,8 +14967,8 @@
         ]
       },
       "properties": {
-        "id_1": 229,
-        "id": null,
+        "id": 229,
+        "id_0": null,
         "name": "Sea Isle City Boardwalk",
         "segment_description": "Pedestrian promenade along the beach in Sea Isle City, with stores, restaurants, and attractions. Can get busy around the pier.",
         "safety": "Check summertime bike hour restrictions.",
@@ -15005,8 +15005,8 @@
         ]
       },
       "properties": {
-        "id_1": 224,
-        "id": null,
+        "id": 224,
+        "id_0": null,
         "name": "Great Egg Harbor Bike Path",
         "segment_description": "Alongside the Parkway Bridge across the Great Egg Harbor River there is a completely protected bike path which offers amazing river views. There are parks at each end to access the path.",
         "safety": null,
@@ -15051,8 +15051,8 @@
         ]
       },
       "properties": {
-        "id_1": 226,
-        "id": null,
+        "id": 226,
+        "id_0": null,
         "name": "Atlantic City Inlet Boardwalk",
         "segment_description": "North of the Ocean Casino this quieter stretch of boardwalk offers interesting views of the Inlet, Brigantine, and Atlantic City history as it follows the water towards Gardner's Basin.",
         "safety": "Check summertime bike hour restrictions.",
@@ -15126,8 +15126,8 @@
         ]
       },
       "properties": {
-        "id_1": 227,
-        "id": null,
+        "id": 227,
+        "id_0": null,
         "name": "Ocean City Boardwalk",
         "segment_description": "A Jersey Shore classic, this is one of the widest boardwalks, with nominally marked lanes for walkers, bikers, surreys, etc. It will get very crowded around the main attractions, but the Northern and Southern sections are quieter.",
         "safety": "Check summertime bike hour restrictions.",
@@ -15169,8 +15169,8 @@
         ]
       },
       "properties": {
-        "id_1": 233,
-        "id": null,
+        "id": 233,
+        "id_0": null,
         "name": "Fernhill Park",
         "segment_description": "Beautiful wide paved trail runs the length of Fernhill Park, with a decent downhill towards the river.",
         "safety": null,
@@ -15191,8 +15191,8 @@
         ]
       },
       "properties": {
-        "id_1": 236,
-        "id": null,
+        "id": 236,
+        "id_0": null,
         "name": "Brookline Trail - Llanerch Section",
         "segment_description": "The Southern section of the Pennsy Trail is woodchipped instead of paved, and runs from Manoa Road to Langhorne Ave. There are plans to link to the Northern section of trail with a bridge over Manoa Road.",
         "safety": "Use caution crossing Manoa Road.",
@@ -15238,8 +15238,8 @@
         ]
       },
       "properties": {
-        "id_1": 225,
-        "id": null,
+        "id": 225,
+        "id_0": null,
         "name": "Hathaway Lane",
         "segment_description": "From 1902 - 1966 the Red Arrow 103 Trolley operated on this Right-of-Way between Ardmore and 69th Street. Since 1966 it was been a private SEPTA busway. Since buses only run every 30 minutes here, the road is routinely used by locals for walking and biking, making it a very unqiue recreation trail. ",
         "safety": "Watch out for SEPTA buses.",
@@ -15272,8 +15272,8 @@
         ]
       },
       "properties": {
-        "id_1": 235,
-        "id": null,
+        "id": 235,
+        "id_0": null,
         "name": "Pennsy Trail - Brookline Section",
         "segment_description": "This old railroad grade is now a paved trail running from Eagle Road to Manoa Road in Havertown. There are plans to link to the Southern section of trail with a bridge over Manoa Road.",
         "safety": "Use caution crossing Manoa Road.",
@@ -15335,8 +15335,8 @@
         ]
       },
       "properties": {
-        "id_1": 232,
-        "id": null,
+        "id": 232,
+        "id_0": null,
         "name": "Ventnor City Boardwalk",
         "segment_description": "The Ventnor section of the boardwalk is more narrow than Atlantic City but also sees less traffic.",
         "safety": "Check summertime bike hour restrictions.",
@@ -15416,8 +15416,8 @@
         ]
       },
       "properties": {
-        "id_1": 228,
-        "id": null,
+        "id": 228,
+        "id_0": null,
         "name": "Ocean City Route 52 Bridge Bike Path",
         "segment_description": "Alongside the Route 52 Bridge between Ocean City and Somers Point is a fully protected bike and pedestrian path.",
         "safety": null,
@@ -15510,8 +15510,8 @@
         ]
       },
       "properties": {
-        "id_1": 222,
-        "id": null,
+        "id": 222,
+        "id_0": null,
         "name": "Atlantic City Boardwalk",
         "segment_description": "The classic American boardwalk! North of the former Atlantic Club it's very wide, but gets crowded by the casinos. ",
         "safety": "Check summertime bike hour restrictions.",
@@ -15592,8 +15592,8 @@
         ]
       },
       "properties": {
-        "id_1": 120,
-        "id": 117,
+        "id": 120,
+        "id_0": 117,
         "name": "Lincoln Drive Trail",
         "segment_description": "A paved path across the creek from Lincoln Drive which serves as a very scenic connection between the SRT and Wissahickon",
         "safety": null,
@@ -15822,8 +15822,8 @@
         ]
       },
       "properties": {
-        "id_1": 230,
-        "id": null,
+        "id": 230,
+        "id_0": null,
         "name": "Somers Point - Pleasantville Bike Path",
         "segment_description": "This 7-mile long former railroad grade linking Somers Point and Pleasantville is now a beautiful bike path. Passes through parks and quiet residential neighborhoods. Check out the shelters along the route which were the old train stops.",
         "safety": "Use caution at major road crossings.",
@@ -15927,8 +15927,8 @@
         ]
       },
       "properties": {
-        "id_1": 223,
-        "id": null,
+        "id": 223,
+        "id_0": null,
         "name": "Corsons Inlet State Park",
         "segment_description": "Beautiful state park with sandy trails leading through pine forests to the beach.",
         "safety": null,
@@ -16007,8 +16007,8 @@
         ]
       },
       "properties": {
-        "id_1": 234,
-        "id": null,
+        "id": 234,
+        "id_0": null,
         "name": "Atlantic City Waterfront Walk",
         "segment_description": "A hidden gem on the salt marshes of Atlantic City, this paved path runs behind the Borgata and Harrah's with really unique views of the marshland.",
         "safety": null,
@@ -16035,8 +16035,8 @@
         ]
       },
       "properties": {
-        "id_1": 48,
-        "id": 104,
+        "id": 48,
+        "id_0": 104,
         "name": "Lansdowne Drive - Girard to MLK",
         "segment_description": "A connection from the Girard Ave Bridge to MLK Drive with protected bike lanes.",
         "safety": null,
