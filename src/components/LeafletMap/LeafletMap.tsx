@@ -20,6 +20,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareSquare } from "@fortawesome/free-solid-svg-icons";
 import { FeatureLayer } from "react-esri-leaflet";
 import { LocateUser } from "../LocateUser/LocateUser";
+import { FeatureCollection } from "geojson";
+import trailsImport from "../../data/trails.json";
+import linesImport from "../../data/transit_lines.json";
+import stopsImport from "../../data/transit_stops.json";
+import injuryImport from "../../data/high_injury_network_2020.json";
+
+const trails = trailsImport as FeatureCollection;
+const lines = linesImport as FeatureCollection;
+const stops = stopsImport as FeatureCollection;
+const injury = injuryImport as FeatureCollection;
 
 const mapboxURL = (id: string) => {
   return (
@@ -66,11 +76,7 @@ export interface mapPropsOn {
 }
 
 const LeafletMap = (props: any) => {
-  const [trails, setTrails] = useState("");
-  const [lines, setLines] = useState("");
-  const [stops, setStops] = useState("");
   const [bikes, setBikes] = useState("");
-  const [injury, setInjury] = useState("");
   const [sidewalks, setSidewalks] = useState(false);
   const [streets, setStreets] = useState(false);
   const [map, setMap] = useState<any>(null);
@@ -96,37 +102,6 @@ const LeafletMap = (props: any) => {
   };
 
   useEffect(() => {
-    // load trails data
-    fetch(process.env.REACT_APP_API_URL + "/api/geojson/trails", {
-      mode: "cors",
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        setTrails(JSON.stringify(res));
-      })
-      .catch();
-
-    // load transit lines data
-    fetch(process.env.REACT_APP_API_URL + "/api/geojson/transit_lines", {
-      mode: "cors",
-    })
-      .catch()
-      .then((res) => res.json())
-      .then((res) => {
-        setLines(JSON.stringify(res));
-      })
-      .catch();
-
-    // load transit stops data
-    fetch(process.env.REACT_APP_API_URL + "/api/geojson/transit_stops", {
-      mode: "cors",
-    })
-      .catch()
-      .then((res) => res.json())
-      .then((res) => {
-        setStops(JSON.stringify(res));
-      });
-
     // load Indego data
     fetch("https://kiosks.bicycletransit.workers.dev/phl")
       .then((res) => res.json())
@@ -134,47 +109,20 @@ const LeafletMap = (props: any) => {
         setBikes(JSON.stringify(res));
       })
       .catch();
-
-    // load High Injury Network data
-    fetch(
-      process.env.REACT_APP_API_URL + "/api/geojson/high_injury_network_2020",
-      {
-        mode: "cors",
-      }
-    )
-      .catch()
-      .then((res) => res.json())
-      .then((res) => {
-        setInjury(JSON.stringify(res));
-      });
   }, []);
 
   useEffect(() => {
     // get route details based on id, if /route/id is accessed
-    if (props.id) {
-      fetch(
-        process.env.REACT_APP_API_URL + "/api/center/trail/" + props.id.id,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-        }
-      )
-        .then((res) => res.json())
-        .then((res) => {
-          const parseCoord = res.rows[0].centroid
-            .split("(")[1]
-            .split(")")[0]
-            .split(" ");
-          props.setCenter([
-            parseFloat(parseCoord[1]),
-            parseFloat(parseCoord[0]),
-          ]);
-        });
+    if (props.id && trails?.features?.length > 0) {
+      const thisTrail = trails?.features?.find(
+        (trail) => trail.properties?.id?.toString() === props.id.id.toString()
+      );
+      if (thisTrail && thisTrail.geometry.type === "LineString") {
+        const c = thisTrail.geometry.coordinates;
+        props.setCenter([c[0][1], c[0][0]]);
+      }
     }
-    // eslint-disable-next-line
-  }, []);
+  }, [trails, props.id]);
 
   // Custom Icons
 
@@ -244,7 +192,7 @@ const LeafletMap = (props: any) => {
                 {lines && (
                   <GeoJSON
                     attribution="<a target='_blank' href='https://septaopendata-septa.opendata.arcgis.com/'>SEPTA</a>"
-                    data={JSON.parse(lines)}
+                    data={lines}
                     style={(feature) => {
                       const p = feature?.properties;
                       let style = { opacity: 0.8, color: "#A020F0" };
@@ -274,7 +222,7 @@ const LeafletMap = (props: any) => {
                 )}
                 {stops && (
                   <GeoJSON
-                    data={JSON.parse(stops)}
+                    data={stops}
                     // @ts-expect-error
                     pointToLayer={(feature: Feature<Point>, latlng: LatLng) => {
                       // Hide trolley stops
@@ -319,7 +267,7 @@ const LeafletMap = (props: any) => {
               {injury && (
                 <GeoJSON
                   attribution="<a target='_blank' href='https://www.opendataphilly.org/dataset/high-injury-network'>Open Data Philly</a>"
-                  data={JSON.parse(injury)}
+                  data={injury}
                   onEachFeature={(feature, layer) => {
                     layer.bindPopup(
                       "<b>Street: </b>" + feature.properties.street_name
@@ -399,7 +347,7 @@ const LeafletMap = (props: any) => {
 
           {trails && (
             <GeoJSON
-              data={JSON.parse(trails)}
+              data={trails}
               style={(feature) => {
                 let style = { opacity: 0.8, color: "#FF0000" };
                 switch (feature?.properties.type) {
