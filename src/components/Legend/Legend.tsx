@@ -44,7 +44,7 @@ export default function Legend(props: mapPropsOn) {
       div = generateLegend(
         div,
         "Trails",
-        ["paved trail", "paved road", "dirt road", "dirt trail"],
+        ["paved trail", "paved road", "dirt trail", "dirt road"],
         ["#454545", "#000000", "#FF0000", "#800000"]
       );
 
