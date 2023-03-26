@@ -9,9 +9,9 @@ import {
 } from "react-router-dom";
 
 // Google Analytics
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
+
 ReactGA.initialize("G-2MPC78804W");
-ReactGA.pageview(window.location.pathname + window.location.search);
 
 export default function App() {
   return (
