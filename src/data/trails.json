@@ -1200,17 +1200,6 @@
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [-75.18155, 39.96345],
-          [-75.18151, 39.96356],
-          [-75.1815, 39.96362],
-          [-75.18146, 39.96371],
-          [-75.18145, 39.96374],
-          [-75.18142, 39.96378],
-          [-75.18162, 39.96386],
-          [-75.18188, 39.96396],
-          [-75.18215, 39.96406],
-          [-75.1823, 39.96409],
-          [-75.18269, 39.9642],
           [-75.18446, 39.96468],
           [-75.1846, 39.96473],
           [-75.18465, 39.96475],
@@ -1323,11 +1312,14 @@
         "id": 22,
         "id_0": 12,
         "name": "MLK Drive",
-        "segment_description": "MLK Drive runs along the West side of the Schuylkill from the Art Museum to East Falls. On summer weekends the road is closed to car traffic between East Falls and Sweet Briar Lane. There is a paved path along the road which can be used when the road is not closed, but it is not well maintained.",
-        "safety": null,
+        "segment_description": "MLK Drive runs along the West side of the Schuylkill from the Art Museum to East Falls. On summer weekends the road is closed to car traffic between East Falls and Sweet Briar Lane. There is a paved path along the road which can be used when the road is not closed, which was recently rebuilt.",
+        "safety": "NOTE: Until 2025 the MLK Bridge will be closed for repair. Use detour on either Spring Garden or Girard to access MLK at Sweetbriar.",
         "type": "paved road",
-        "length": 4.1
-      }
+        "length": 4.1,
+        "shape": "Line",
+        "category": "default"
+      },
+      "id": "bfeb7dce-a64f-44f7-b499-fd6c5e10d962"
     },
     {
       "type": "Feature",
